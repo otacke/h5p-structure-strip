@@ -180,7 +180,8 @@
         "type": "text",
         "label": "Text for \"Show solution\" button",
         "importance": "low",
-        "default": "Show solution"
+        "default": "Show solution",
+        "widget": "none"
       },
       {
         "name": "allSegmentsGood",

@@ -93,7 +93,7 @@ export default class StructureStrip extends H5P.Question {
         Util.copyTextToClipboard(text);
       }, true, {}, {});
 
-      if (this.params.behaviour.feedbackMode === 'onDemand') {
+      if (this.params.behaviour.feedbackMode === 'onRequest') {
         // Check answer button
         this.addButton('check-answer', this.params.l10n.checkAnswer, () => {
           this.content.checkAnswer();

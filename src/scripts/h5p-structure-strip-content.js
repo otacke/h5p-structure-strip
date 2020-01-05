@@ -49,7 +49,7 @@ export default class StructureStripContent {
       stripsContainer.appendChild(instanceSegment.getDOM());
     });
 
-    if (this.params.feedbackMode === 'onDemand') {
+    if (this.params.feedbackMode === 'onRequest') {
       // Build feedback
       this.feedback = new StructureStripFeedback({
         title: 'Feedback'
@@ -93,7 +93,7 @@ export default class StructureStripContent {
    * Hide feedback.
    */
   hideFeedback() {
-    if (this.params.feedbackMode !== 'onDemand') {
+    if (this.params.feedbackMode !== 'onRequest') {
       return;
     }
     this.feedback.hide();
@@ -181,7 +181,7 @@ export default class StructureStripContent {
    * Check answer.
    */
   checkAnswer() {
-    if (this.params.feedbackMode !== 'onDemand') {
+    if (this.params.feedbackMode !== 'onRequest') {
       return;
     }
 

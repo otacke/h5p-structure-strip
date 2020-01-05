@@ -114,11 +114,13 @@
         "type": "boolean",
         "importance": "low",
         "default": true,
-        "optional": true
+        "optional": true,
+        "widget": "none"
       },
       {
         "name": "slack",
         "label": "Slack",
+        "description": "Percentage of slack that's acceptable for a section's length compared to the section with largest weight.",
         "type": "number",
         "importance": "low",
         "default": 10,
@@ -128,12 +130,13 @@
       {
         "name": "feedbackMode",
         "label": "Feedback mode",
+        "description": "Decide whether you want to display feedback continuously or only when the student requests it.",
         "type": "select",
         "importance": "low",
         "options": [
           {
-            "label": "On demand",
-            "value": "onDemand"
+            "label": "On request",
+            "value": "onRequest"
           },
           {
             "label": "Continuously",
@@ -190,7 +193,7 @@
         "name": "segmentTooShort",
         "type": "text",
         "label": "Section too short",
-        "description": "Short status shown for sections that are too short (@title will be replaced by the section title).",
+        "description": "Short status shown for sections that are too short (@title will be replaced by the section title, @chars will be replaced by the number of characters missing).",
         "importance": "low",
         "default": "Your @title is too short."
       },
@@ -198,25 +201,25 @@
         "name": "segmentTooLong",
         "type": "text",
         "label": "Section too long",
-        "description": "Text shown for sections that are too long (@title will be replaced by the section title).",
+        "description": "Text shown for sections that are too long (@title will be replaced by the section title, @chars will be replaced by the number of characters needing removal).",
         "importance": "low",
-        "default": "Your @title is too long."
+        "default": "Your @title is too long. Remove at least @chars characters."
       },
       {
         "name": "tooShort",
         "type": "text",
         "label": "Section too short (live update)",
-        "description": "Short live status shown for sections that are too short.",
+        "description": "Status shown continuously for sections that are too short (@chars will be replaced by the number of characters missing).",
         "importance": "low",
-        "default": "too short"
+        "default": "@chars characters too short"
       },
       {
         "name": "tooLong",
         "type": "text",
         "label": "Section too long (live update)",
-        "description": "Short live status shown for sections that are too short.",
+        "description": "Status shown continuously for sections that are too short (@chars will be replaced by the number of characters needing removal).",
         "importance": "low",
-        "default": "too long"
+        "default": "@chars characters too long"
       }
     ]
   }

@@ -184,7 +184,7 @@
         "type": "text",
         "label": "Feedback text shown when all segments are within tolerable length.",
         "importance": "low",
-        "default": "Your sections' lenghts are all fine."
+        "default": "Your sections' lengths are all fine."
       },
       {
         "name": "segmentTooShort",

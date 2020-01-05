@@ -85,8 +85,8 @@ export default class StructureStripContent {
    * @return {object[]} Texts of all strips.
    */
   getText(concatenated = false) {
-    const texts = this.segments.map( strip => strip.getText());
-    return concatenated ? texts.join('\n') : texts;
+    const texts = this.segments.map(strip => strip.getText());
+    return concatenated ? texts.filter(text => text !== '').join('\n') : texts;
   }
 
   /**
@@ -118,13 +118,12 @@ export default class StructureStripContent {
     }
 
     const feedbackTexts = this.buildFeedbackTexts({
-      alright: '&nbsp;',
       tooLong: this.params.l10n.tooLong,
       tooShort: this.params.l10n.tooShort
     });
 
     feedbackTexts.forEach( (text, index) => {
-      this.segments[index].setStatus(text);
+      this.segments[index].setStatus(text || '&nbsp;');
     });
   }
 

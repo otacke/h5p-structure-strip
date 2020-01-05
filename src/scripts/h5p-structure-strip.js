@@ -97,6 +97,7 @@ export default class StructureStrip extends H5P.Question {
         // Check answer button
         this.addButton('check-answer', this.params.l10n.checkAnswer, () => {
           this.content.checkAnswer();
+          this.trigger('resize');
 
           this.hideButton('check-answer');
 

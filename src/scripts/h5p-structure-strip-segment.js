@@ -87,6 +87,14 @@ export default class StructureStripSegment {
   }
 
   /**
+   * Get id.
+   * @return {number} Id.
+   */
+  getId() {
+    return this.params.id;
+  }
+
+  /**
    * Get text.
    * @return {string} Text.
    */

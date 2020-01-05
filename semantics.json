@@ -1,0 +1,223 @@
+[
+  {
+    "name": "taskDescription",
+    "type": "text",
+    "label": "Task description",
+    "description": "Explain to your students what's expected of them.",
+    "widget": "html",
+    "optional": true,
+    "enterMode": "div",
+    "tags": [
+      "strong",
+      "em",
+      "u",
+      "a",
+      "ul",
+      "ol",
+      "h2",
+      "h3",
+      "hr"
+    ]
+  },
+  {
+    "name": "segments",
+    "type": "list",
+    "label": "Segments",
+    "entity": "Segment",
+    "min": 1,
+    "widgets": [
+      {
+        "name": "VerticalTabs",
+        "label": "Default"
+      }
+    ],
+    "field": {
+      "name": "segmentParams",
+      "type": "group",
+      "label": "Segment parameters",
+      "fields": [
+        {
+          "name": "title",
+          "type": "text",
+          "label": "Title"
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "widget": "html",
+          "label": "Description",
+          "enterMode": "div",
+          "tags": [
+            "strong",
+            "em",
+            "u",
+            "a",
+            "ul",
+            "ol",
+            "h2",
+            "h3",
+            "hr"
+          ]
+        },
+        {
+          "name": "weight",
+          "type": "number",
+          "label": "Weight",
+          "min": 1,
+          "default": 1
+        },
+        {
+          "name": "colorBackground",
+          "type": "text",
+          "label": "Background color",
+          "importance": "medium",
+          "optional": true,
+          "default": "rgba(255, 255, 255, 0)",
+          "widget": "colorSelector",
+          "spectrum": {
+            "showInput": true
+          }
+        },
+        {
+          "name": "colorText",
+          "type": "text",
+          "label": "Text color",
+          "importance": "medium",
+          "optional": true,
+          "default": "#000000",
+          "widget": "colorSelector",
+          "spectrum": {
+            "showInput": true
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "behaviour",
+    "type": "group",
+    "label": "Behavioural settings",
+    "importance": "low",
+    "description": "These options will let you control how the task behaves.",
+    "fields": [
+      {
+        "name": "enableRetry",
+        "label": "Enable \"Retry\"",
+        "type": "boolean",
+        "importance": "low",
+        "default": true,
+        "optional": true
+      },
+      {
+        "name": "enableSolutionsButton",
+        "label": "Enable \"Solution\"",
+        "type": "boolean",
+        "importance": "low",
+        "default": true,
+        "optional": true
+      },
+      {
+        "name": "slack",
+        "label": "Slack",
+        "type": "number",
+        "importance": "low",
+        "default": 10,
+        "min": 0,
+        "max": 50
+      },
+      {
+        "name": "feedbackMode",
+        "label": "Feedback mode",
+        "type": "select",
+        "importance": "low",
+        "options": [
+          {
+            "label": "On demand",
+            "value": "onDemand"
+          },
+          {
+            "label": "Continuously",
+            "value": "continuously"
+          }
+        ],
+        "default": "continuously"
+      }
+    ]
+  },
+  {
+    "name": "l10n",
+    "type": "group",
+    "common": true,
+    "label": "User interface",
+    "importance": "low",
+    "fields": [
+      {
+        "name": "copy",
+        "type": "text",
+        "label": "Text for \"Copy\" button",
+        "importance": "low",
+        "default": "Copy"
+      },
+      {
+        "name": "checkAnswer",
+        "type": "text",
+        "label": "Text for \"Check\" button",
+        "importance": "low",
+        "default": "Check"
+      },
+      {
+        "name": "tryAgain",
+        "label": "Text for \"Retry\" button",
+        "type": "text",
+        "importance": "low",
+        "default": "Retry"
+      },
+      {
+        "name": "showSolution",
+        "type": "text",
+        "label": "Text for \"Show solution\" button",
+        "importance": "low",
+        "default": "Show solution"
+      },
+      {
+        "name": "allSegmentsGood",
+        "type": "text",
+        "label": "Feedback text shown when all segments are within tolerable length.",
+        "importance": "low",
+        "default": "Your sections' lenghts are all fine."
+      },
+      {
+        "name": "segmentTooShort",
+        "type": "text",
+        "label": "Section too short",
+        "description": "Short status shown for sections that are too short (@title will be replaced by the section title).",
+        "importance": "low",
+        "default": "Your @title is too short."
+      },
+      {
+        "name": "segmentTooLong",
+        "type": "text",
+        "label": "Section too long",
+        "description": "Text shown for sections that are too long (@title will be replaced by the section title).",
+        "importance": "low",
+        "default": "Your @title is too long."
+      },
+      {
+        "name": "tooShort",
+        "type": "text",
+        "label": "Section too short (live update)",
+        "description": "Short live status shown for sections that are too short.",
+        "importance": "low",
+        "default": "too short"
+      },
+      {
+        "name": "tooLong",
+        "type": "text",
+        "label": "Section too long (live update)",
+        "description": "Short live status shown for sections that are too short.",
+        "importance": "low",
+        "default": "too long"
+      }
+    ]
+  }
+]

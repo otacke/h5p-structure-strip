@@ -1,0 +1,53 @@
+{
+  "title": "Structure Strip",
+  "description": "Let your students write texts while giving them some structural guidance",
+  "majorVersion": 0,
+  "minorVersion": 1,
+  "patchVersion": 0,
+  "runnable": 1,
+  "author": "Oliver Tacke",
+  "license": "MIT",
+  "machineName": "H5P.StructureStrip",
+  "embedTypes": [
+    "iframe"
+  ],
+  "preloadedJs": [
+    {
+      "path": "dist/h5p-structure-strip.js"
+    }
+  ],
+  "preloadedCss": [
+    {
+      "path": "dist/h5p-structure-strip.css"
+    }
+  ],
+  "preloadedDependencies": [
+    {
+      "machineName": "H5P.Question",
+      "majorVersion": 1,
+      "minorVersion": 4
+    },
+    {
+      "machineName": "H5P.JoubelUI",
+      "majorVersion": 1,
+      "minorVersion": 3
+    },
+    {
+      "machineName": "H5P.TextInputField",
+      "majorVersion": 1,
+      "minorVersion": 2
+    }
+  ],
+  "editorDependencies": [
+    {
+      "machineName": "H5PEditor.VerticalTabs",
+      "majorVersion": 1,
+      "minorVersion": 3
+    },
+    {
+      "machineName": "H5PEditor.ColorSelector",
+      "majorVersion": 1,
+      "minorVersion": 2
+    }
+  ]
+}

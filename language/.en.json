@@ -1,10 +1,41 @@
 {
   "semantics": [
     {
-      "label": "Text",
-      "placeholder": "Hello world",
-      "default": "Hello %username",
-      "description": "Says hello to someone"
+      "label": "Task description",
+      "description": "Explain to your students what's expected of them."
+    },
+    {
+      "label": "Segments",
+      "entity": "Segment",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
+      "field": {
+        "label": "Segment parameters",
+        "fields": [
+          {
+            "label": "Title"
+          },
+          {
+            "label": "Description"
+          },
+          {
+            "label": "Weight"
+          },
+          {
+            "label": "Background color",
+            "default": "rgba(255, 255, 255, 0)",
+            "spectrum": {}
+          },
+          {
+            "label": "Text color",
+            "default": "#000000",
+            "spectrum": {}
+          }
+        ]
+      }
     },
     {
       "label": "Behavioural settings",
@@ -15,12 +46,33 @@
         },
         {
           "label": "Enable \"Solution\""
+        },
+        {
+          "label": "Slack",
+          "description": "Percentage of slack that's acceptable for a section's length compared to the section with largest weight."
+        },
+        {
+          "label": "Feedback mode",
+          "description": "Decide whether you want to display feedback continuously or only when the student requests it.",
+          "options": [
+            {
+              "label": "On request"
+            },
+            {
+              "label": "Continuously"
+            }
+          ],
+          "default": "continuously"
         }
       ]
     },
     {
       "label": "User interface",
       "fields": [
+        {
+          "label": "Text for \"Copy\" button",
+          "default": "Copy"
+        },
         {
           "label": "Text for \"Check\" button",
           "default": "Check"
@@ -32,6 +84,30 @@
         {
           "label": "Text for \"Show solution\" button",
           "default": "Show solution"
+        },
+        {
+          "label": "Feedback text shown when all segments are within tolerable length.",
+          "default": "Your sections' lengths are all fine."
+        },
+        {
+          "label": "Section too short",
+          "description": "Short status shown for sections that are too short (@title will be replaced by the section title, @chars will be replaced by the number of characters missing).",
+          "default": "Your @title is too short."
+        },
+        {
+          "label": "Section too long",
+          "description": "Text shown for sections that are too long (@title will be replaced by the section title, @chars will be replaced by the number of characters needing removal).",
+          "default": "Your @title is too long. Remove at least @chars characters."
+        },
+        {
+          "label": "Section too short (live update)",
+          "description": "Status shown continuously for sections that are too short (@chars will be replaced by the number of characters missing).",
+          "default": "@chars characters too short"
+        },
+        {
+          "label": "Section too long (live update)",
+          "description": "Status shown continuously for sections that are too short (@chars will be replaced by the number of characters needing removal).",
+          "default": "@chars characters too long"
         }
       ]
     }

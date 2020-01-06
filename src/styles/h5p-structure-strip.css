@@ -15,6 +15,7 @@
 }
 
 .h5p-structure-strip-text-strip {
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -23,7 +24,6 @@
 }
 
 .h5p-structure-strip-text-strip-description-container {
-  border-radius: 0.5em 0 0 0.5em;
   display: flex;
   flex-direction: column;
   flex: 1 0 0;
@@ -51,7 +51,6 @@
 }
 
 .h5p-structure-strip-text-strip-input-field {
-  border-radius: 0 0.5em 0.5em 0;
   box-sizing: border-box;
   height: 100%;
   margin: 0;

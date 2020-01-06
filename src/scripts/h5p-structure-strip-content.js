@@ -155,7 +155,7 @@ export default class StructureStripContent {
       ) {
         let gap = Math.ceil(referenceLength * (1 - this.params.slack / 100) - normalizedLength);
         if (gap === 0 && index === this.mostImportantSegment.getId()) {
-          gap = this.greatestCommonDivisor * this.mostImportantSegment.getWeight() - this.mostImportantSegment.getText().length;
+          gap =  this.mostImportantSegment.getWeight() / this.greatestCommonDivisor - this.mostImportantSegment.getText().length;
         }
 
         if (gap === 0) {

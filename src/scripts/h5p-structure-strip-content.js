@@ -136,45 +136,42 @@ export default class StructureStripContent {
    * @param {string[]} Feedback texts.
    */
   buildFeedbackTexts(textTemplates) {
-    const referenceLength = this.mostImportantSegment.getText().length / this.mostImportantSegment.getWeight();
+    const referenceLength = Math.max(this.mostImportantSegment.getText().length, this.mostImportantSegment.getWeight() / this.greatestCommonDivisor);
+    const normalizedReferenceLength = referenceLength / this.mostImportantSegment.getWeight();
+    const normalizedLengthMax = normalizedReferenceLength * (1 + this.params.slack / 100);
+    const normalizedLengthMin = normalizedReferenceLength * (1 - this.params.slack / 100);
 
     const feedbackTexts = [];
-    this.segments.forEach((segment, index) => {
+    this.segments.forEach(segment => {
       const normalizedLength = segment.getText().length / segment.getWeight();
 
-      // TODO: Clean up!
-      if (normalizedLength > referenceLength * (1 + this.params.slack / 100)) {
-        const gap = Math.floor(normalizedLength - referenceLength * (1 + this.params.slack / 100));
+      let gap;
 
-        if (gap > 0) {
-          feedbackTexts.push(
-            textTemplates.tooLong
-              .replace(/@title/g, segment.getTitle())
-              .replace(/@chars/g, gap)
-          );
-        }
-      }
-      else if (
-        segment.getText().length < segment.getWeight() / this.greatestCommonDivisor ||
-          normalizedLength < referenceLength * (1 - this.params.slack / 100)
-      ) {
-        let gap = Math.ceil(referenceLength * (1 - this.params.slack / 100) - normalizedLength);
-        if (gap === 0 && index === this.mostImportantSegment.getId()) {
-          gap =  this.mostImportantSegment.getWeight() / this.greatestCommonDivisor - this.mostImportantSegment.getText().length;
-        }
+      if (normalizedLength > normalizedLengthMax) {
 
+        // Too long compared to reference
+        gap = Math.floor((normalizedLength - normalizedLengthMax) * segment.getWeight());
         if (gap === 0) {
+          // Compensate for tiny text lengths
           feedbackTexts.push(null);
         }
         else {
           feedbackTexts.push(
-            textTemplates.tooShort
-              .replace(/@title/g, segment.getTitle())
-              .replace(/@chars/g, gap)
+            textTemplates.tooLong.replace(/@title/g, segment.getTitle()).replace(/@chars/g, gap)
           );
         }
       }
+      else if (normalizedLength < normalizedLengthMin) {
+
+        // To short compared to reference
+        gap = Math.ceil((normalizedLengthMin - normalizedLength) * segment.getWeight());
+        feedbackTexts.push(
+          textTemplates.tooShort.replace(/@title/g, segment.getTitle()).replace(/@chars/g, gap)
+        );
+      }
       else {
+
+        // Alright
         feedbackTexts.push(textTemplates.alright);
       }
     });

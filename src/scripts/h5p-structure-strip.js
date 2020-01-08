@@ -24,6 +24,7 @@ export default class StructureStrip extends H5P.Question {
 
     // Make sure all variables are set
     this.params = Util.extend({
+      media: {},
       segments: [],
       behaviour: {
         enableSolutionsButton: true,
@@ -53,6 +54,28 @@ export default class StructureStrip extends H5P.Question {
      * Register the DOM elements with H5P.Question
      */
     this.registerDomElements = () => {
+      // Set optional media
+      const media = this.params.media.type;
+      if (media && media.library) {
+        const type = media.library.split(' ')[0];
+        // Image
+        if (type === 'H5P.Image') {
+          if (media.params.file) {
+            this.setImage(media.params.file.path, {
+              disableImageZooming: this.params.media.disableImageZooming,
+              alt: media.params.alt,
+              title: media.params.title
+            });
+          }
+        }
+        // Video
+        else if (type === 'H5P.Video') {
+          if (media.params.sources) {
+            this.setVideo(media);
+          }
+        }
+      }
+
       this.content = new StructureStripContent(
         {
           feedbackMode: this.params.behaviour.feedbackMode,

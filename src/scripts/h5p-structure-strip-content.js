@@ -141,13 +141,18 @@ export default class StructureStripContent {
     const feedbackTexts = [];
     this.segments.forEach((segment, index) => {
       const normalizedLength = segment.getText().length / segment.getWeight();
+
+      // TODO: Clean up!
       if (normalizedLength > referenceLength * (1 + this.params.slack / 100)) {
-        const gap = Math.ceil(normalizedLength - referenceLength * (1 + this.params.slack / 100));
-        feedbackTexts.push(
-          textTemplates.tooLong
-            .replace(/@title/g, segment.getTitle())
-            .replace(/@chars/g, gap)
-        );
+        const gap = Math.floor(normalizedLength - referenceLength * (1 + this.params.slack / 100));
+
+        if (gap > 0) {
+          feedbackTexts.push(
+            textTemplates.tooLong
+              .replace(/@title/g, segment.getTitle())
+              .replace(/@chars/g, gap)
+          );
+        }
       }
       else if (
         segment.getText().length < segment.getWeight() / this.greatestCommonDivisor ||

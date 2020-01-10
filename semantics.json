@@ -165,6 +165,24 @@
         "max": 50
       },
       {
+        "name": "textLengthMin",
+        "label": "Minimum text length",
+        "description": "Define a minimum total text length",
+        "type": "number",
+        "importance": "low",
+        "min": 0,
+        "optional": true
+      },
+      {
+        "name": "textLengthMax",
+        "label": "Maximum text length",
+        "description": "Define a maximum total text length",
+        "type": "number",
+        "importance": "low",
+        "min": 0,
+        "optional": true
+      },
+      {
         "name": "feedbackMode",
         "label": "Feedback mode",
         "description": "Decide whether you want to display feedback continuously or only when the student requests it.",

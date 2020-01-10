@@ -69,6 +69,14 @@
           "description": "Percentage of slack that's acceptable for a section's length compared to the section with largest weight."
         },
         {
+          "label": "Minimum text length",
+          "description": "Define a minimum total text length"
+        },
+        {
+          "label": "Maximum text length",
+          "description": "Define a maximum total text length"
+        },
+        {
           "label": "Feedback mode",
           "description": "Decide whether you want to display feedback continuously or only when the student requests it.",
           "options": [

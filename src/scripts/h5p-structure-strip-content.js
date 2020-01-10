@@ -9,10 +9,7 @@ export default class StructureStripContent {
    * @param {object} params Parameters.
    */
   constructor(params) {
-    this.params = Util.extend({
-      segments: [],
-      slack: 10
-    }, params);
+    this.params = params;
 
     this.segments = [];
 
@@ -65,6 +62,15 @@ export default class StructureStripContent {
       return (current.getWeight() > previous.getWeight()) ? current : previous;
     });
 
+    // Percentage of reference segment
+    this.mostImportantSegmentPercentage = this.mostImportantSegment.getWeight() / this.segments.reduce((previous, current) => previous + current.getWeight(), 0);
+
+    // Maximum text length adjusted for weigth and slack mustn't be smaller that minimum text length
+    if (this.params.textLengthMax * this.mostImportantSegmentPercentage * (1 - this.params.slack / 100) < this.params.textLengthMin) {
+      this.params.textLengthMax = Number.POSITIVE_INFINITY;
+    }
+
+    // Greatest common divisor of segment weights.
     this.greatestCommonDivisor = Util.greatestCommonDivisorArray(this.segments.map(segment => segment.getWeight()));
 
     if (this.params.feedbackMode === 'continuously') {
@@ -136,7 +142,10 @@ export default class StructureStripContent {
    * @param {string[]} Feedback texts.
    */
   buildFeedbackTexts(textTemplates) {
-    const referenceLength = Math.max(this.mostImportantSegment.getText().length, this.mostImportantSegment.getWeight() / this.greatestCommonDivisor);
+    let referenceLength = Math.max(this.mostImportantSegment.getText().length, this.mostImportantSegment.getWeight() / this.greatestCommonDivisor);
+    referenceLength = Math.max( referenceLength, this.params.textLengthMin * this.mostImportantSegmentPercentage);
+    referenceLength = Math.min( referenceLength, this.params.textLengthMax * this.mostImportantSegmentPercentage);
+
     const normalizedReferenceLength = referenceLength / this.mostImportantSegment.getWeight();
     const normalizedLengthMax = normalizedReferenceLength * (1 + this.params.slack / 100);
     const normalizedLengthMin = normalizedReferenceLength * (1 - this.params.slack / 100);
@@ -145,12 +154,10 @@ export default class StructureStripContent {
     this.segments.forEach(segment => {
       const normalizedLength = segment.getText().length / segment.getWeight();
 
-      let gap;
-
       if (normalizedLength > normalizedLengthMax) {
 
         // Too long compared to reference
-        gap = Math.floor((normalizedLength - normalizedLengthMax) * segment.getWeight());
+        const gap = Math.floor((normalizedLength - normalizedLengthMax) * segment.getWeight());
         if (gap === 0) {
           // Compensate for tiny text lengths
           feedbackTexts.push(null);
@@ -164,7 +171,7 @@ export default class StructureStripContent {
       else if (normalizedLength < normalizedLengthMin) {
 
         // To short compared to reference
-        gap = Math.ceil((normalizedLengthMin - normalizedLength) * segment.getWeight());
+        const gap = Math.ceil((normalizedLengthMin - normalizedLength) * segment.getWeight());
         feedbackTexts.push(
           textTemplates.tooShort.replace(/@title/g, segment.getTitle()).replace(/@chars/g, gap)
         );

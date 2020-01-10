@@ -30,6 +30,8 @@ export default class StructureStrip extends H5P.Question {
         enableSolutionsButton: true,
         enableRetry: true,
         slack: 10,
+        textLengthMin: 0,
+        textLengthMax: Number.POSITIVE_INFINITY,
         feedbackMode: 'continuously'
       },
       l10n: {
@@ -90,6 +92,8 @@ export default class StructureStrip extends H5P.Question {
           segments: this.params.segments,
           slack: this.params.behaviour.slack,
           taskDescription: this.params.taskDescription,
+          textLengthMax: this.params.behaviour.textLengthMax,
+          textLengthMin: this.params.behaviour.textLengthMin
         }
       );
 

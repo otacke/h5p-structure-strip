@@ -59,8 +59,8 @@
   {
     "name": "segments",
     "type": "list",
-    "label": "Segments",
-    "entity": "Segment",
+    "label": "Sections",
+    "entity": "section",
     "min": 1,
     "widgets": [
       {
@@ -81,8 +81,10 @@
         {
           "name": "description",
           "type": "text",
+          "label": "Hints",
+          "description": "Optionally add hints or particular instructions for this section.",
+          "optional": true,
           "widget": "html",
-          "label": "Description",
           "enterMode": "div",
           "tags": [
             "strong",
@@ -100,6 +102,7 @@
           "name": "weight",
           "type": "number",
           "label": "Weight",
+          "description": "Enter the weight of this section relative to other sections.",
           "min": 1,
           "default": 1
         },
@@ -109,10 +112,18 @@
           "label": "Background color",
           "importance": "medium",
           "optional": true,
-          "default": "rgba(255, 255, 255, 0)",
+          "default": "#96ceb4",
           "widget": "colorSelector",
           "spectrum": {
-            "showInput": true
+            "showInput": true,
+            "showInitial": true,
+            "showPalette": true,
+            "palette": [
+              ["#96ceb4","#ffeead","#ff6f69","ffcc5c","#88d8b0"],
+              ["#845ec2", "#d65db1", "#ff6f91", "#ff9671", "#ffc75f"],
+              ["#a8e6cf","#dcedc1","#ffd3b6","#ffaaa5","#ff8b94"],
+              ["#009688", "#35a79c", "#54b2a9", "#65c3ba", "#83d0c9"]
+            ]
           }
         },
         {
@@ -121,10 +132,15 @@
           "label": "Text color",
           "importance": "medium",
           "optional": true,
-          "default": "#000000",
+          "default": "#1c1c1c",
           "widget": "colorSelector",
           "spectrum": {
-            "showInput": true
+            "showInput": true,
+            "showPalette": true,
+            "palette": [
+              ["#000000", "#1c1c1c", "#393939", "#555555", "#717171"],
+              ["#8e8e8e", "#aaaaaa", "#c6c6c6", "#e3e3e3", "#ffffff"]
+            ]
           }
         }
       ]
@@ -242,7 +258,7 @@
         "name": "allSegmentsGood",
         "type": "text",
         "label": "All segments good",
-        "description": "Feedback text shown when all segments are within tolerable length.",
+        "description": "Feedback text shown when all sections are of tolerable length.",
         "importance": "low",
         "default": "Your sections' lengths are all fine."
       },
@@ -252,7 +268,7 @@
         "label": "Section too short",
         "description": "Short status shown for sections that are too short (@title will be replaced by the section title, @chars will be replaced by the number of characters missing).",
         "importance": "low",
-        "default": "Your @title is too short."
+        "default": "Your @title is too short. You need at least @char more characters."
       },
       {
         "name": "segmentTooLong",
@@ -299,19 +315,20 @@
     "type": "group",
     "common": true,
     "label": "Readspeaker",
+    "description": "FOO",
     "importance": "low",
     "fields": [
       {
         "name": "feedback",
         "type": "text",
-        "label": "Feedback",
+        "label": "Feedback (text for readspeakers)",
         "importance": "low",
         "default": "Feedback"
       },
       {
         "name": "copyToClipboard",
         "type": "text",
-        "label": "Copy your text to the clipboard",
+        "label": "Copy your text to the clipboard (text for readspeakers)",
         "importance": "low",
         "default": "Copy your text to the clipboard."
       }

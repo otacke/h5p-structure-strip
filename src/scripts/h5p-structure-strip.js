@@ -40,15 +40,15 @@ export default class StructureStrip extends H5P.Question {
         showSolution: 'Show solution',
         tryAgain: 'Retry',
         allSegmentsGood: 'Your sections\' lenghts are all fine.',
-        segmentTooShort: 'Your @title is too short.',
-        segmentTooLong: 'Your @title is too long.',
-        tooShort: 'too short',
-        tooLong: 'too long',
-        copyToClipboardError: 'Your text could not be copied to the clipboard.',
-        copyToClipboardSuccess: 'Your text was copied to the clipboard.'
+        segmentTooShort: 'Your @title is too short. You need at least @char more characters.',
+        segmentTooLong: 'Your @title is too long. Remove at least @chars characters.',
+        tooShort: '@chars characters too short',
+        tooLong: '@chars characters too long',
+        copyToClipboardError: 'Your text could not be copied to the clipboard',
+        copyToClipboardSuccess: 'Your text was copied to the clipboard'
       },
       a11y: {
-        copyToClipboard: 'Copy your text to the clipboard.',
+        copyToClipboard: 'Copy your text to the clipboard',
         feedback: 'Feedback'
       }
     }, params);

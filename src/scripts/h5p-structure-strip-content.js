@@ -56,7 +56,7 @@ export default class StructureStripContent {
     // Percentage of reference segment
     this.mostImportantSegmentPercentage = this.mostImportantSegment.getWeight() / this.segments.reduce((previous, current) => previous + current.getWeight(), 0);
 
-    // Maximum text length adjusted for weigth and slack mustn't be smaller that minimum text length
+    // Maximum text length adjusted for weight and slack mustn't be smaller that minimum text length
     if (this.params.textLengthMax * this.mostImportantSegmentPercentage < this.params.textLengthMin) {
       this.params.textLengthMax = Number.POSITIVE_INFINITY;
     }

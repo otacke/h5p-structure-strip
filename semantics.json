@@ -157,7 +157,7 @@
       {
         "name": "slack",
         "label": "Slack",
-        "description": "Percentage of slack that's acceptable for a section's length compared to the section with largest weight.",
+        "description": "Percentage of slack that's acceptable for a section's weight.",
         "type": "number",
         "importance": "low",
         "default": 10,
@@ -167,7 +167,7 @@
       {
         "name": "textLengthMin",
         "label": "Minimum text length",
-        "description": "Define a minimum total text length",
+        "description": "Define an absolute minimum total text length.",
         "type": "number",
         "importance": "low",
         "min": 0,
@@ -176,7 +176,7 @@
       {
         "name": "textLengthMax",
         "label": "Maximum text length",
-        "description": "Define a maximum total text length",
+        "description": "Define an absolute maximum total text length.",
         "type": "number",
         "importance": "low",
         "min": 0,

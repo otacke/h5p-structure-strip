@@ -277,6 +277,20 @@
         "description": "Status shown continuously for sections that are too short (@chars will be replaced by the number of characters needing removal).",
         "importance": "low",
         "default": "@chars characters too long"
+      },
+      {
+        "name": "copyToClipboardSuccess",
+        "type": "text",
+        "label": "Text copied to clipboard",
+        "importance": "low",
+        "default": "Your text was copied to the clipboard"
+      },
+      {
+        "name": "copyToClipboardError",
+        "type": "text",
+        "label": "Cannot copy to clipboard",
+        "importance": "low",
+        "default": "Your text could not be copied to the clipboard"
       }
     ]
   },
@@ -300,20 +314,6 @@
         "label": "Copy your text to the clipboard",
         "importance": "low",
         "default": "Copy your text to the clipboard."
-      },
-      {
-        "name": "copyToClipboardSuccess",
-        "type": "text",
-        "label": "Text copied to clipboard",
-        "importance": "low",
-        "default": "Your text was copied to the clipboard."
-      },
-      {
-        "name": "copyToClipboardError",
-        "type": "text",
-        "label": "Cannot copy to clipboard",
-        "importance": "low",
-        "default": "Your text could not be copied to the clipboard."
       }
     ]
   }

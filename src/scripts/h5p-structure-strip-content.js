@@ -1,4 +1,3 @@
-import StructureStripFeedback from './h5p-structure-strip-feedback';
 import StructureStripSegment from './h5p-structure-strip-segment';
 import Util from './h5p-structure-strip-util';
 
@@ -46,14 +45,6 @@ export default class StructureStripContent {
       stripsContainer.appendChild(instanceSegment.getDOM());
     });
 
-    if (this.params.feedbackMode === 'onRequest') {
-      // Build feedback
-      this.feedback = new StructureStripFeedback({
-        title: 'Feedback'
-      });
-      this.content.appendChild(this.feedback.getDOM());
-    }
-
     // Determine reference segment
     this.mostImportantSegment = this.segments.reduce( (previous, current) => {
       if (!previous) {
@@ -93,16 +84,6 @@ export default class StructureStripContent {
   getText(concatenated = false) {
     const texts = this.segments.map(strip => strip.getText());
     return concatenated ? texts.filter(text => text !== '').join('\n') : texts;
-  }
-
-  /**
-   * Hide feedback.
-   */
-  hideFeedback() {
-    if (this.params.feedbackMode !== 'onRequest') {
-      return;
-    }
-    this.feedback.hide();
   }
 
   /**
@@ -214,13 +195,13 @@ export default class StructureStripContent {
     });
 
     feedbackTexts = feedbackTexts.filter(text => text !== null);
+    if (feedbackTexts.length === 0) {
+      feedbackTexts = [this.params.l10n.allSegmentsGood];
+    }
 
     // Compute feedback text HTML
     let feedbackTextHTML = '';
-    if (feedbackTexts.length === 0) {
-      feedbackTextHTML = `<p>${this.params.l10n.allSegmentsGood}</p>`;
-    }
-    else if (feedbackTexts.length === 1) {
+    if (feedbackTexts.length === 1) {
       feedbackTextHTML = `<p>${feedbackTexts[0]}</p>`;
     }
     else {
@@ -229,7 +210,6 @@ export default class StructureStripContent {
       }</ul>`;
     }
 
-    this.feedback.setText(feedbackTextHTML);
-    this.feedback.show();
+    return feedbackTextHTML;
   }
 }

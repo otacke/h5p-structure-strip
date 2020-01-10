@@ -59,26 +59,19 @@
   width: 100%;
 }
 
-.h5p-structure-strip-feedback-container {
-  background-color: #FAFAFA;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.h5p-structure-strip-feedback-title {
-  flex-grow: 0;
-  font-size: 1.1em;
-  font-weight: bold;
-}
-
-.h5p-structure-strip-feedback-text {
-}
-
 .h5p-structure-strip-display-none {
   display: none;
 }
 
-.h5p-question-copy.h5p-joubelui-button::before {
+.h5p-structure-strip .h5p-question-copy.h5p-joubelui-button::before {
   content: "\F0C5";
+}
+
+.h5p-structure-strip .h5p-question-scorebar {
+  display: none;
+}
+
+.h5p-structure-strip .h5p-question-buttons.has-scorebar {
+  margin-left: 1em;
+  width: calc(100% - 1.5em);
 }

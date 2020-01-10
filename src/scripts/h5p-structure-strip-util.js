@@ -28,7 +28,7 @@ class Util {
    */
   static htmlDecode(input) {
     var dparser = new DOMParser().parseFromString(input, 'text/html');
-    return dparser.documentElement.textContent;
+    return dparser.documentElement.textContent.replace(/(\r\n|\n|\r)/gm, '');
   }
 
   /**
@@ -37,8 +37,8 @@ class Util {
    * @param {number} [b=1] Second number.
    * @return {number} Greatest common divisor.
    */
-  static greatestCommonDivisor(a=1, b=1) {
-    return (!b) ? a : Util.greatestCommonDivisor(b, a%b);
+  static greatestCommonDivisor(a = 1, b = 1) {
+    return (!b) ? a : Util.greatestCommonDivisor(b, a % b);
   }
 
   /**
@@ -61,14 +61,17 @@ class Util {
    * Cmp. https://stackoverflow.com/a/30810322
    * @param {string} text Text to copy to clipboard.
    */
-  static copyTextToClipboard(text) {
+  static copyTextToClipboard(text, callback = () => {}) {
     if (!navigator.clipboard) {
-      Util.fallbackCopyTextToClipboard(text);
+      Util.fallbackCopyTextToClipboard(text, callback);
       return;
     }
 
-    navigator.clipboard.writeText(text).then(() => {}, error => {
+    navigator.clipboard.writeText(text).then(() => {
+      callback(true);
+    }, error => {
       console.error('Cannot copy to clipboard: ', error);
+      callback(false);
     });
   }
 
@@ -76,7 +79,7 @@ class Util {
    * Copy text to clipboard.
    * @param {string} text Text to copy.
    */
-  static fallbackCopyTextToClipboard(text) {
+  static fallbackCopyTextToClipboard(text, callback = () => {}) {
     const textArea = document.createElement("textarea");
 
     // Place in top-left corner of screen regardless of scroll position.
@@ -106,14 +109,17 @@ class Util {
     textArea.focus();
     textArea.select();
 
+    let result = true;
     try {
       document.execCommand('copy');
     }
     catch (error) {
       console.warn('Cannot copy to clipboard.');
+      result = false;
     }
 
     document.body.removeChild(textArea);
+    callback(result);
   }
 }
 

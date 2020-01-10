@@ -50,11 +50,16 @@ export default class StructureStripSegment {
     this.inputField = document.createElement('textarea');
     this.inputField.classList.add('h5p-structure-strip-text-strip-input-field');
     this.inputField.setAttribute('rows', 5);
+    this.inputField.setAttribute('aria-label', this.buildAriaLabel([this.params.title]));
     this.inputField.value = this.params.text;
 
     if (this.params.feedbackMode === 'continuously') {
       ['change', 'keyup', 'paste'].forEach(event => {
         this.inputField.addEventListener(event, this.params.callbackContentChanged);
+      });
+
+      this.inputField.addEventListener('focus', () => {
+        this.inputField.setAttribute('aria-label', this.buildAriaLabel([this.params.title, this.descriptionStatus.innerHTML]));
       });
     }
 
@@ -130,10 +135,23 @@ export default class StructureStripSegment {
    * Set status text.
    * @param {string} [text=''] Status text to set.
    */
-  setStatus(text='') {
+  setStatus(text = '') {
     if (!this.descriptionStatus) {
       return;
     }
     this.descriptionStatus.innerHTML = text;
+  }
+
+  /**
+   * Build aria label.
+   * @param {string[]} [texts=[]] Texts.
+   * @return {string} Aria label.
+   */
+  buildAriaLabel(texts = []) {
+    return texts
+      .map(text => {
+        text = Util.htmlDecode(text);
+        return (text.slice(-1) === '.') ? text.slice(0, -1) : text;
+      }).join('. ');
   }
 }

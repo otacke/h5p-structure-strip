@@ -241,7 +241,8 @@
       {
         "name": "allSegmentsGood",
         "type": "text",
-        "label": "Feedback text shown when all segments are within tolerable length.",
+        "label": "All segments good",
+        "description": "Feedback text shown when all segments are within tolerable length.",
         "importance": "low",
         "default": "Your sections' lengths are all fine."
       },
@@ -276,6 +277,43 @@
         "description": "Status shown continuously for sections that are too short (@chars will be replaced by the number of characters needing removal).",
         "importance": "low",
         "default": "@chars characters too long"
+      }
+    ]
+  },
+  {
+    "name": "a11y",
+    "type": "group",
+    "common": true,
+    "label": "Readspeaker",
+    "importance": "low",
+    "fields": [
+      {
+        "name": "feedback",
+        "type": "text",
+        "label": "Feedback",
+        "importance": "low",
+        "default": "Feedback"
+      },
+      {
+        "name": "copyToClipboard",
+        "type": "text",
+        "label": "Copy your text to the clipboard",
+        "importance": "low",
+        "default": "Copy your text to the clipboard."
+      },
+      {
+        "name": "copyToClipboardSuccess",
+        "type": "text",
+        "label": "Text copied to clipboard",
+        "importance": "low",
+        "default": "Your text was copied to the clipboard."
+      },
+      {
+        "name": "copyToClipboardError",
+        "type": "text",
+        "label": "Cannot copy to clipboard",
+        "importance": "low",
+        "default": "Your text could not be copied to the clipboard."
       }
     ]
   }

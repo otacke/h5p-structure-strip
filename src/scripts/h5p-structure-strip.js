@@ -44,6 +44,12 @@ export default class StructureStrip extends H5P.Question {
         segmentTooLong: 'Your @title is too long.',
         tooShort: 'too short',
         tooLong: 'too long'
+      },
+      a11y: {
+        copyToClipboard: 'Copy your text to the clipboard.',
+        copyToClipboardError: 'Your text could not be copied to the clipboard.',
+        copyToClipboardSuccess: 'Your text was copied to the clipboard.',
+        feedback: 'Feedback'
       }
     }, params);
     this.contentId = contentId;
@@ -113,18 +119,21 @@ export default class StructureStrip extends H5P.Question {
      * Add all the buttons that shall be passed to H5P.Question.
      */
     this.addButtons = () => {
-
-      // Copy to clipboard button
-      this.addButton('copy', this.params.l10n.copy, () => {
-        const text = this.content.getText(true);
-        Util.copyTextToClipboard(text);
-      }, true, {}, {});
+      // Show solution button
+      this.addButton('show-solution', this.params.l10n.showSolution, () => {
+        // TODO: Implement something useful to do on click
+      }, false, {}, {});
 
       if (this.params.behaviour.feedbackMode === 'onRequest') {
         // Check answer button
         this.addButton('check-answer', this.params.l10n.checkAnswer, () => {
-          this.content.checkAnswer();
-          this.trigger('resize');
+          const feedback = this.content.checkAnswer();
+          this.setFeedback(
+            feedback,
+            null,
+            null,
+            this.params.a11y.feedback
+          );
 
           this.hideButton('check-answer');
 
@@ -134,13 +143,9 @@ export default class StructureStrip extends H5P.Question {
         }, true, {}, {});
       }
 
-      // Show solution button
-      this.addButton('show-solution', this.params.l10n.showSolution, () => {
-        // TODO: Implement something useful to do on click
-      }, false, {}, {});
-
       // Retry button
       this.addButton('try-again', this.params.l10n.tryAgain, () => {
+        this.removeFeedback();
         this.showButton('check-answer');
         this.hideButton('try-again');
 
@@ -148,6 +153,19 @@ export default class StructureStrip extends H5P.Question {
 
         this.trigger('resize');
       }, false, {}, {});
+
+      // Copy to clipboard button
+      this.addButton('copy', this.params.l10n.copy, () => {
+        const text = this.content.getText(true);
+        Util.copyTextToClipboard(text, (result) => {
+          if (result === true) {
+            this.read(this.params.a11y.copyToClipboardSuccess);
+          }
+          else {
+            this.read(this.params.a11y.copyToClipboardError);
+          }
+        });
+      }, true, {'aria-label': this.params.a11y.copyToClipboard}, {});
     };
 
     /**
@@ -186,7 +204,6 @@ export default class StructureStrip extends H5P.Question {
      * @see contract at {@link https://h5p.org/documentation/developers/contracts#guides-header-5}
      */
     this.resetTask = () => {
-      this.content.hideFeedback();
       this.content.enableSegments();
     };
 

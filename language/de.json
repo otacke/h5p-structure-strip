@@ -1,0 +1,156 @@
+{
+  "semantics": [
+    {
+      "label": "Medien",
+      "fields": [
+        {
+          "label": "Typ",
+          "description": "Medien, die wahlweise oberhalb der Aufgabe angezeigt werden."
+        },
+        {
+          "label": "Bildzoom deaktivieren"
+        }
+      ]
+    },
+    {
+      "label": "Aufgabenbeschreibung",
+      "description": "Beschreibe hier die Aufgabe für die Lernenden."
+    },
+    {
+      "label": "Abschnitte",
+      "entity": "Abschnitt",
+      "widgets": [
+        {
+          "label": "Voreinstellung"
+        }
+      ],
+      "field": {
+        "label": "Einstellungen für den Abschnitt",
+        "fields": [
+          {
+            "label": "Titel"
+          },
+          {
+            "label": "Hinweise",
+            "description": "Füge hier wahlweise Hinweise oder besondere Anweisungen für den Abschnitt ein."
+          },
+          {
+            "label": "Gewichtung",
+            "description": "Gib hie die Gewichtung für den Abschnitt relativ zu den anderen ein."
+          },
+          {
+            "label": "Hintergrundfarbe",
+            "default": "#96ceb4"
+          },
+          {
+            "label": "Textfarbe",
+            "default": "#1c1c1c"
+          }
+        ]
+      }
+    },
+    {
+      "label": "Verhaltenseinstellungen",
+      "description": "Diese Optionen legen fest, wie die Aufgabe im Detail funktioniert.",
+      "fields": [
+        {
+          "label": "\"Wiederholen\" aktivieren"
+        },
+        {
+          "label": "\"Lösung anzeigen\" ermöglichen"
+        },
+        {
+          "label": "Spielraum",
+          "description": "Prozentualer Spielraum, der noch akzeptabel für die Länge eines Abschnitts ist."
+        },
+        {
+          "label": "Minimale Textlänge",
+          "description": "Lege eine absolute Obergrenze für die Textlänge fest."
+        },
+        {
+          "label": "Maximale Textlänge",
+          "description": "Lege eine absolute Untergrenze für die Textlänge fest."
+        },
+        {
+          "label": "Modus der Rückmeldung",
+          "description": "Entscheide, ob es direkt bei der Eingabe Rückmeldung geben soll oder erst auf Wunsch.",
+          "options": [
+            {
+              "label": "Auf Wunsch"
+            },
+            {
+              "label": "Bei der Eingabe"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Bedienoberfläche",
+      "fields": [
+        {
+          "label": "Beschriftung des \"Kopieren\"-Buttons",
+          "default": "Copy"
+        },
+        {
+          "label": "Beschriftung des \"Überprüfen\"-Buttons",
+          "default": "Überprüfen"
+        },
+        {
+          "label": "Beschriftung des \"Wiederholen\"-Buttons",
+          "default": "Wiederholen"
+        },
+        {
+          "label": "Beschriftung \"Lösung anzeigen\"-Buttons",
+          "default": "Lösung anzeigen"
+        },
+        {
+          "label": "Alle Abschnitte in Ordnung",
+          "description": "Feedback text shown when all sections are of tolerable length.",
+          "default": "Your sections' lengths are all fine."
+        },
+        {
+          "label": "Abschnitt zu kurz",
+          "description": "Rückmeldungstext für Abschnitte, die zu kurz sind (@title wird durch den Abschnittstitel ersetzt, @chars wird durch die Anzahl zu ergänzender Zeichen ersetzt).",
+          "default": "Dein @title ist zu kurz. Füge mindestens @chars Zeichen hinzu."
+        },
+        {
+          "label": "Abschnitt zu lang",
+          "description": "Rückmeldungstext für Abschnitte, die zu lang sind (@title wird durch den Abschnittstitel ersetzt, @chars wird durch die Anzahl überschüssiger Zeichen ersetzt).",
+          "default": "Dein @title ist zu lang. Entferne mindestens @char Zeichen."
+        },
+        {
+          "label": "Abschnitt zu kurz (bei Eingabe)",
+          "description": "Status bei Eingabe für Abschnitte, die zu kurz sind (@chars wird durch die Anzahl zu ergänzender Zeichen ersetzt).",
+          "default": "@chars Zeichen zu kurz"
+        },
+        {
+          "label": "Abschnitt zu lang (bei Eingabe)",
+          "description": "Status bei Eingabe für Abschnitte, die zu lang sind (@chars wird durch die Anzahl überschüssiger Zeichen ersetzt).",
+          "default": "@chars Zeichen zu lang"
+        },
+        {
+          "label": "Text in die Zwischenablage kopiert",
+          "default": "Dein Text wurde in die Zwischenablage kopiert"
+        },
+        {
+          "label": "Kann nicht in die Zwischenablage kopieren",
+          "default": "Dein Text konnte nicht in die Zwischenablage kopiert werden"
+        }
+      ]
+    },
+    {
+      "label": "Vorlesewerkzeug (Barrierefreiheit)",
+      "fields": [
+        {
+          "label": "Rückmeldung (Text für Vorlesewerkzeuge)",
+          "default": "Rückmeldung"
+        },
+        {
+          "label": "Kopiere Text in die Zwischenablage (Text für Vorlesewerkzeuge)",
+          "default": "Kopiere Text in die Zwischenablage"
+        }
+      ]
+    }
+  ]
+}

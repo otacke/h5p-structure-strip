@@ -48,7 +48,7 @@ export default class StructureStrip extends H5P.Question {
         copyToClipboardSuccess: 'Your text was copied to the clipboard'
       },
       a11y: {
-        copyToClipboard: 'Copy your text to the clipboard',
+        copyToClipboard: 'Copy text to clipboard',
         feedback: 'Feedback'
       }
     }, params);

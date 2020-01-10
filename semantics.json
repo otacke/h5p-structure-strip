@@ -71,7 +71,7 @@
     "field": {
       "name": "segmentParams",
       "type": "group",
-      "label": "Segment parameters",
+      "label": "Section parameters",
       "fields": [
         {
           "name": "title",
@@ -173,7 +173,7 @@
       {
         "name": "slack",
         "label": "Slack",
-        "description": "Percentage of slack that's acceptable for a section's weight.",
+        "description": "Percentage of slack that's acceptable for a section's length.",
         "type": "number",
         "importance": "low",
         "default": 10,
@@ -201,7 +201,7 @@
       {
         "name": "feedbackMode",
         "label": "Feedback mode",
-        "description": "Decide whether you want to display feedback continuously or only when the student requests it.",
+        "description": "Decide whether you want to display feedback while typing or only when the student requests it.",
         "type": "select",
         "importance": "low",
         "options": [
@@ -210,7 +210,7 @@
             "value": "onRequest"
           },
           {
-            "label": "Continuously",
+            "label": "While typing",
             "value": "continuously"
           }
         ],
@@ -257,7 +257,7 @@
       {
         "name": "allSegmentsGood",
         "type": "text",
-        "label": "All segments good",
+        "label": "All sections good",
         "description": "Feedback text shown when all sections are of tolerable length.",
         "importance": "low",
         "default": "Your sections' lengths are all fine."
@@ -266,7 +266,7 @@
         "name": "segmentTooShort",
         "type": "text",
         "label": "Section too short",
-        "description": "Short status shown for sections that are too short (@title will be replaced by the section title, @chars will be replaced by the number of characters missing).",
+        "description": "Feedback text shown for sections that are too short (@title will be replaced by the section title, @chars will be replaced by the number of characters missing).",
         "importance": "low",
         "default": "Your @title is too short. You need at least @char more characters."
       },
@@ -274,23 +274,23 @@
         "name": "segmentTooLong",
         "type": "text",
         "label": "Section too long",
-        "description": "Text shown for sections that are too long (@title will be replaced by the section title, @chars will be replaced by the number of characters needing removal).",
+        "description": "Feedback text shown for sections that are too long (@title will be replaced by the section title, @chars will be replaced by the number of characters needing removal).",
         "importance": "low",
         "default": "Your @title is too long. Remove at least @chars characters."
       },
       {
         "name": "tooShort",
         "type": "text",
-        "label": "Section too short (live update)",
-        "description": "Status shown continuously for sections that are too short (@chars will be replaced by the number of characters missing).",
+        "label": "Section too short (when typing)",
+        "description": "Status shown when typing for sections that are too short (@chars will be replaced by the number of characters missing).",
         "importance": "low",
         "default": "@chars characters too short"
       },
       {
         "name": "tooLong",
         "type": "text",
-        "label": "Section too long (live update)",
-        "description": "Status shown continuously for sections that are too short (@chars will be replaced by the number of characters needing removal).",
+        "label": "Section too long (when typing)",
+        "description": "Status shown when typing for sections that are too long (@chars will be replaced by the number of characters needing removal).",
         "importance": "low",
         "default": "@chars characters too long"
       },
@@ -315,7 +315,6 @@
     "type": "group",
     "common": true,
     "label": "Readspeaker",
-    "description": "FOO",
     "importance": "low",
     "fields": [
       {
@@ -330,7 +329,7 @@
         "type": "text",
         "label": "Copy your text to the clipboard (text for readspeakers)",
         "importance": "low",
-        "default": "Copy your text to the clipboard."
+        "default": "Copy text to clipboard"
       }
     ]
   }

@@ -1,0 +1,163 @@
+{
+  "semantics": [
+    {
+      "label": "Media",
+      "fields": [
+        {
+          "label": "Type",
+          "description": "Optional media to display above the question."
+        },
+        {
+          "label": "Disable image zooming",
+          "showWhen": {
+            "rules": [
+              {}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "Task description",
+      "description": "Explain to your students what's expected of them."
+    },
+    {
+      "label": "Sections",
+      "entity": "section",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
+      "field": {
+        "label": "Section parameters",
+        "fields": [
+          {
+            "label": "Title"
+          },
+          {
+            "label": "Hints",
+            "description": "Optionally add hints or particular instructions for this section."
+          },
+          {
+            "label": "Weight",
+            "description": "Enter the weight of this section relative to other sections."
+          },
+          {
+            "label": "Background color",
+            "default": "#96ceb4",
+            "spectrum": {}
+          },
+          {
+            "label": "Text color",
+            "default": "#1c1c1c",
+            "spectrum": {}
+          }
+        ]
+      }
+    },
+    {
+      "label": "Behavioural settings",
+      "description": "These options will let you control how the task behaves.",
+      "fields": [
+        {
+          "label": "Enable \"Retry\""
+        },
+        {
+          "label": "Enable \"Solution\""
+        },
+        {
+          "label": "Slack",
+          "description": "Percentage of slack that's acceptable for a section's length."
+        },
+        {
+          "label": "Minimum text length",
+          "description": "Define an absolute minimum total text length."
+        },
+        {
+          "label": "Maximum text length",
+          "description": "Define an absolute maximum total text length."
+        },
+        {
+          "label": "Feedback mode",
+          "description": "Decide whether you want to display feedback while typing or only when the student requests it.",
+          "options": [
+            {
+              "label": "On request"
+            },
+            {
+              "label": "While typing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "User interface",
+      "fields": [
+        {
+          "label": "Text for \"Copy\" button",
+          "default": "Copy"
+        },
+        {
+          "label": "Text for \"Check\" button",
+          "default": "Check"
+        },
+        {
+          "label": "Text for \"Retry\" button",
+          "default": "Retry"
+        },
+        {
+          "label": "Text for \"Show solution\" button",
+          "default": "Show solution"
+        },
+        {
+          "label": "All segments good",
+          "description": "Feedback text shown when all sections are of tolerable length.",
+          "default": "Your sections' lengths are all fine."
+        },
+        {
+          "label": "Section too short",
+          "description": "Feedback text shown for sections that are too short (@title will be replaced by the section title, @chars will be replaced by the number of characters missing).",
+          "default": "Your @title is too short. You need at least @char more characters."
+        },
+        {
+          "label": "Section too long",
+          "description": "Feedback text shown for sections that are too long (@title will be replaced by the section title, @chars will be replaced by the number of characters needing removal).",
+          "default": "Your @title is too long. Remove at least @chars characters."
+        },
+        {
+          "label": "Section too short (when typing)",
+          "description": "Status shown when typing for sections that are too short (@chars will be replaced by the number of characters missing).",
+          "default": "@chars characters too short"
+        },
+        {
+          "label": "Section too long (when typing)",
+          "description": "Status shown when typing for sections that are too long (@chars will be replaced by the number of characters needing removal).",
+          "default": "@chars characters too long"
+        },
+        {
+          "label": "Text copied to clipboard",
+          "default": "Your text was copied to the clipboard"
+        },
+        {
+          "label": "Cannot copy to clipboard",
+          "default": "Your text could not be copied to the clipboard"
+        }
+      ]
+    },
+    {
+      "label": "Readspeaker",
+      "fields": [
+        {
+          "label": "Feedback (text for readspeakers)",
+          "default": "Feedback"
+        },
+        {
+          "label": "Copy text to clipboard (text for readspeakers)",
+          "default": "Copy text to clipboard."
+        }
+      ]
+    }
+  ]
+}

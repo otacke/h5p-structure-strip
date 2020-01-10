@@ -1,4 +1,4 @@
-import StructureStripSegment from './h5p-structure-strip-segment';
+import StructureStripSection from './h5p-structure-strip-section';
 import Util from './h5p-structure-strip-util';
 
 /** Class representing the content */
@@ -10,11 +10,12 @@ export default class StructureStripContent {
   constructor(params) {
     this.params = params;
 
-    this.segments = [];
+    this.sections = [];
 
     this.content = document.createElement('div');
     this.content.classList.add('h5p-structure-strip-content');
 
+    // Main task description
     if (this.params.taskDescription) {
       const taskDescription = document.createElement('div');
       taskDescription.classList.add('h5p-structure-strip-task-description');
@@ -22,50 +23,52 @@ export default class StructureStripContent {
       this.content.appendChild(taskDescription);
     }
 
+    // Strips container
     const stripsContainer = document.createElement('div');
     stripsContainer.classList.add('h5p-structure-strip-text-strips-container');
     this.content.appendChild(stripsContainer);
 
     // Build strips
-    this.params.segments.forEach((segment, index) => {
-      const instanceSegment = new StructureStripSegment({
+    this.params.sections.forEach((section, index) => {
+      const instanceSection = new StructureStripSection({
         callbackContentChanged: () => {
-          this.updateSegments();
+          this.updateSections();
         },
-        colorBackground: segment.colorBackground,
-        colorText: segment.colorText,
-        description: segment.description,
+        colorBackground: section.colorBackground,
+        colorText: section.colorText,
+        description: section.description,
         feedbackMode: this.params.feedbackMode,
         id: index,
         text: (this.params.previousState.texts) ? this.params.previousState.texts[index] : '',
-        title: segment.title || '',
-        weight: segment.weight
+        title: section.title || '',
+        weight: section.weight
       });
-      this.segments.push(instanceSegment);
-      stripsContainer.appendChild(instanceSegment.getDOM());
+      this.sections.push(instanceSection);
+      stripsContainer.appendChild(instanceSection.getDOM());
     });
 
-    // Determine reference segment
-    this.mostImportantSegment = this.segments.reduce( (previous, current) => {
+    // Determine reference section (largest weight)
+    this.referenceSection = this.sections.reduce( (previous, current) => {
       if (!previous) {
         return current;
       }
       return (current.getWeight() > previous.getWeight()) ? current : previous;
     });
 
-    // Percentage of reference segment
-    this.mostImportantSegmentPercentage = this.mostImportantSegment.getWeight() / this.segments.reduce((previous, current) => previous + current.getWeight(), 0);
+    // Percentage of reference section
+    const sectionsTotalWeight = this.sections.reduce((previous, current) => previous + current.getWeight(), 0);
+    this.referenceSectionPercentage = this.referenceSection.getWeight() / sectionsTotalWeight;
 
     // Maximum text length adjusted for weight and slack mustn't be smaller that minimum text length
-    if (this.params.textLengthMax * this.mostImportantSegmentPercentage < this.params.textLengthMin) {
+    if (this.params.textLengthMax * this.referenceSectionPercentage < this.params.textLengthMin) {
       this.params.textLengthMax = Number.POSITIVE_INFINITY;
     }
 
-    // Greatest common divisor of segment weights.
-    this.greatestCommonDivisor = Util.greatestCommonDivisorArray(this.segments.map(segment => segment.getWeight()));
+    // Greatest common divisor of section weights.
+    this.greatestCommonDivisor = Util.greatestCommonDivisorArray(this.sections.map(section => section.getWeight()));
 
-    if (this.params.feedbackMode === 'continuously') {
-      this.updateSegments();
+    if (this.params.feedbackMode === 'whileTyping') {
+      this.updateSections();
     }
   }
 
@@ -82,25 +85,24 @@ export default class StructureStripContent {
    * @return {object[]} Texts of all strips.
    */
   getText(concatenated = false) {
-    const texts = this.segments.map(strip => strip.getText());
+    const texts = this.sections.map(strip => strip.getText());
     return concatenated ? texts.filter(text => text !== '').join('\n') : texts;
   }
 
   /**
-   * Enable segments.
+   * Enable sections.
    */
-  enableSegments() {
-    this.segments.forEach(segment => {
-      segment.enable();
+  enableSections() {
+    this.sections.forEach(section => {
+      section.enable();
     });
   }
 
   /**
-   * Update segments' status.
-   * TODO: Only update all segments if reference segment was changed.
+   * Update sections' status.
    */
-  updateSegments() {
-    if (this.params.feedbackMode !== 'continuously') {
+  updateSections() {
+    if (this.params.feedbackMode !== 'whileTyping') {
       return;
     }
 
@@ -109,8 +111,9 @@ export default class StructureStripContent {
       tooShort: this.params.l10n.tooShort
     });
 
-    feedbackTexts.forEach( (text, index) => {
-      this.segments[index].setStatus(text || '&nbsp;');
+    feedbackTexts.forEach((text, index) => {
+      // Use &nbsp; for height
+      this.sections[index].setStatus(text || '&nbsp;');
     });
   }
 
@@ -120,50 +123,51 @@ export default class StructureStripContent {
    * @param {string} textTemplates.alright Text for good section length.
    * @param {string} textTemplates.tooLong Text for section that is too long.
    * @param {string} textTemplates.tooShort Text for section that is too short.
-   * @param {string[]} Feedback texts.
+   * @return {string[]} Feedback texts.
    */
   buildFeedbackTexts(textTemplates) {
-    let referenceLength = Math.max(this.mostImportantSegment.getText().length, this.mostImportantSegment.getWeight() / this.greatestCommonDivisor);
+    let referenceLength = Math.max(this.referenceSection.getText().length, this.referenceSection.getWeight() / this.greatestCommonDivisor);
 
     // Don't use slack for absolute text length minimum/maximum
     let slackPercentage = this.params.slack / 100;
-    if (referenceLength < this.params.textLengthMin * this.mostImportantSegmentPercentage) {
-      referenceLength = this.params.textLengthMin * this.mostImportantSegmentPercentage;
+    if (referenceLength < this.params.textLengthMin * this.referenceSectionPercentage) {
+      referenceLength = this.params.textLengthMin * this.referenceSectionPercentage;
       slackPercentage = 0;
     }
-    if (referenceLength > this.params.textLengthMax * this.mostImportantSegmentPercentage) {
-      referenceLength = this.params.textLengthMax * this.mostImportantSegmentPercentage;
+    if (referenceLength > this.params.textLengthMax * this.referenceSectionPercentage) {
+      referenceLength = this.params.textLengthMax * this.referenceSectionPercentage;
       slackPercentage = 0;
     }
 
-    const normalizedReferenceLength = referenceLength / this.mostImportantSegment.getWeight();
-    const normalizedLengthMax = normalizedReferenceLength * (1 + slackPercentage);
-    const normalizedLengthMin = normalizedReferenceLength * (1 - slackPercentage);
+    // Use normed values
+    const normedReferenceLength = referenceLength / this.referenceSection.getWeight();
+    const normedLengthMax = normedReferenceLength * (1 + slackPercentage);
+    const normedLengthMin = normedReferenceLength * (1 - slackPercentage);
 
     const feedbackTexts = [];
-    this.segments.forEach(segment => {
-      const normalizedLength = segment.getText().length / segment.getWeight();
+    this.sections.forEach(section => {
+      const normedLength = section.getText().length / section.getWeight();
 
-      if (normalizedLength > normalizedLengthMax) {
+      if (normedLength > normedLengthMax) {
 
         // Too long compared to reference
-        const gap = Math.round((normalizedLength - normalizedLengthMax) * segment.getWeight());
+        const gap = Math.round((normedLength - normedLengthMax) * section.getWeight());
         if (gap === 0) {
           // Compensate for tiny text lengths
           feedbackTexts.push(null);
         }
         else {
           feedbackTexts.push(
-            textTemplates.tooLong.replace(/@title/g, segment.getTitle()).replace(/@chars/g, gap)
+            textTemplates.tooLong.replace(/@title/g, section.getTitle()).replace(/@chars/g, gap)
           );
         }
       }
-      else if (normalizedLength < normalizedLengthMin) {
+      else if (normedLength < normedLengthMin) {
 
         // To short compared to reference
-        const gap = Math.round((normalizedLengthMin - normalizedLength) * segment.getWeight());
+        const gap = Math.round((normedLengthMin - normedLength) * section.getWeight());
         feedbackTexts.push(
-          textTemplates.tooShort.replace(/@title/g, segment.getTitle()).replace(/@chars/g, gap)
+          textTemplates.tooShort.replace(/@title/g, section.getTitle()).replace(/@chars/g, gap)
         );
       }
       else {
@@ -178,25 +182,27 @@ export default class StructureStripContent {
 
   /**
    * Check answer.
+   * @param {string[]} HTMl feedback.
    */
   checkAnswer() {
     if (this.params.feedbackMode !== 'onRequest') {
       return;
     }
 
-    this.segments.forEach(segment => {
-      segment.disable();
+    this.sections.forEach(section => {
+      section.disable();
     });
 
     let feedbackTexts = this.buildFeedbackTexts({
       alright: null,
-      tooLong: this.params.l10n.segmentTooLong,
-      tooShort: this.params.l10n.segmentTooShort
+      tooLong: this.params.l10n.sectionTooLong,
+      tooShort: this.params.l10n.sectionTooShort
     });
 
+    // Remove empty feedback
     feedbackTexts = feedbackTexts.filter(text => text !== null);
     if (feedbackTexts.length === 0) {
-      feedbackTexts = [this.params.l10n.allSegmentsGood];
+      feedbackTexts = [this.params.l10n.allSectionsGood];
     }
 
     // Compute feedback text HTML

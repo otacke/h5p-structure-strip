@@ -57,7 +57,7 @@
     ]
   },
   {
-    "name": "segments",
+    "name": "sections",
     "type": "list",
     "label": "Sections",
     "entity": "section",
@@ -69,7 +69,7 @@
       }
     ],
     "field": {
-      "name": "segmentParams",
+      "name": "sectionParams",
       "type": "group",
       "label": "Section parameters",
       "fields": [
@@ -211,10 +211,10 @@
           },
           {
             "label": "While typing",
-            "value": "continuously"
+            "value": "whileTyping"
           }
         ],
-        "default": "continuously"
+        "default": "whileTyping"
       }
     ]
   },
@@ -255,7 +255,7 @@
         "widget": "none"
       },
       {
-        "name": "allSegmentsGood",
+        "name": "allSectionsGood",
         "type": "text",
         "label": "All sections good",
         "description": "Feedback text shown when all sections are of tolerable length.",
@@ -263,7 +263,7 @@
         "default": "Your sections' lengths are all fine."
       },
       {
-        "name": "segmentTooShort",
+        "name": "sectionTooShort",
         "type": "text",
         "label": "Section too short",
         "description": "Feedback text shown for sections that are too short (@title will be replaced by the section title, @chars will be replaced by the number of characters missing).",
@@ -271,7 +271,7 @@
         "default": "Your @title is too short. You need at least @char more characters."
       },
       {
-        "name": "segmentTooLong",
+        "name": "sectionTooLong",
         "type": "text",
         "label": "Section too long",
         "description": "Feedback text shown for sections that are too long (@title will be replaced by the section title, @chars will be replaced by the number of characters needing removal).",

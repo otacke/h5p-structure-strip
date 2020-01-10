@@ -1,7 +1,7 @@
 import Util from './h5p-structure-strip-util';
 
 /** Class representing the content */
-export default class StructureStripSegment {
+export default class StructureStripSection {
   /**
    * @constructor
    * @param {object} params Parameters.
@@ -27,23 +27,27 @@ export default class StructureStripSegment {
     descriptionContainer.style.backgroundColor = this.params.colorBackground;
     descriptionContainer.style.color = this.params.colorText;
 
+    // Title
     const descriptionTitle = document.createElement('div');
     descriptionTitle.classList.add('h5p-structure-strip-text-strip-description-title');
     descriptionTitle.innerHTML = Util.htmlDecode(this.params.title);
     descriptionContainer.appendChild(descriptionTitle);
 
+    // Hints
     const descriptionText = document.createElement('div');
     descriptionText.classList.add('h5p-structure-strip-text-strip-description-text');
     descriptionText.innerHTML = this.params.description;
     descriptionContainer.appendChild(descriptionText);
 
-    if (this.params.feedbackMode === 'continuously') {
+    // Feedback
+    if (this.params.feedbackMode === 'whileTyping') {
       this.descriptionStatus = document.createElement('div');
       this.descriptionStatus.classList.add('h5p-structure-strip-text-strip-description-status');
       this.descriptionStatus.innerHTML = '';
       descriptionContainer.appendChild(this.descriptionStatus);
     }
 
+    // Text input field
     const input = document.createElement('div');
     input.classList.add('h5p-structure-strip-text-strip-input-container');
 
@@ -53,7 +57,8 @@ export default class StructureStripSegment {
     this.inputField.setAttribute('aria-label', this.buildAriaLabel([this.params.title]));
     this.inputField.value = this.params.text;
 
-    if (this.params.feedbackMode === 'continuously') {
+    // Add listeners if feedback should be given while typing
+    if (this.params.feedbackMode === 'whileTyping') {
       ['change', 'keyup', 'paste'].forEach(event => {
         this.inputField.addEventListener(event, this.params.callbackContentChanged);
       });

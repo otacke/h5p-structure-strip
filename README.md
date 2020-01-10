@@ -16,7 +16,7 @@ to install required modules. Afterwards, you can build the project using
 npm run build
 ```
 
-or, if you want to let everything be built continuously while you are making
+or, if you want to let everything be built whileTyping while you are making
 changes to the code, run
 ```bash
 npm run watch

@@ -8,12 +8,7 @@
           "description": "Optional media to display above the question."
         },
         {
-          "label": "Disable image zooming",
-          "showWhen": {
-            "rules": [
-              {}
-            ]
-          }
+          "label": "Disable image zooming"
         }
       ]
     },
@@ -45,13 +40,11 @@
           },
           {
             "label": "Background color",
-            "default": "#96ceb4",
-            "spectrum": {}
+            "default": "#96ceb4"
           },
           {
             "label": "Text color",
-            "default": "#1c1c1c",
-            "spectrum": {}
+            "default": "#1c1c1c"
           }
         ]
       }
@@ -112,7 +105,7 @@
           "default": "Show solution"
         },
         {
-          "label": "All segments good",
+          "label": "All sections good",
           "description": "Feedback text shown when all sections are of tolerable length.",
           "default": "Your sections' lengths are all fine."
         },

@@ -25,23 +25,23 @@ export default class StructureStrip extends H5P.Question {
     // Make sure all variables are set
     this.params = Util.extend({
       media: {},
-      segments: [],
+      sections: [],
       behaviour: {
         enableSolutionsButton: true,
         enableRetry: true,
         slack: 10,
         textLengthMin: 0,
         textLengthMax: Number.POSITIVE_INFINITY,
-        feedbackMode: 'continuously'
+        feedbackMode: 'whileTyping'
       },
       l10n: {
         checkAnswer: 'Check answer',
         copy: 'Copy',
         showSolution: 'Show solution',
         tryAgain: 'Retry',
-        allSegmentsGood: 'Your sections\' lenghts are all fine.',
-        segmentTooShort: 'Your @title is too short. You need at least @char more characters.',
-        segmentTooLong: 'Your @title is too long. Remove at least @chars characters.',
+        allSectionsGood: 'Your sections\' lenghts are all fine.',
+        sectionTooShort: 'Your @title is too short. You need at least @char more characters.',
+        sectionTooLong: 'Your @title is too long. Remove at least @chars characters.',
         tooShort: '@chars characters too short',
         tooLong: '@chars characters too long',
         copyToClipboardError: 'Your text could not be copied to the clipboard',
@@ -88,14 +88,14 @@ export default class StructureStrip extends H5P.Question {
         {
           feedbackMode: this.params.behaviour.feedbackMode,
           l10n: {
-            allSegmentsGood: this.params.l10n.allSegmentsGood,
-            segmentTooShort: this.params.l10n.segmentTooShort,
-            segmentTooLong: this.params.l10n.segmentTooLong,
+            allSectionsGood: this.params.l10n.allSectionsGood,
+            sectionTooShort: this.params.l10n.sectionTooShort,
+            sectionTooLong: this.params.l10n.sectionTooLong,
             tooShort: this.params.l10n.tooShort,
             tooLong: this.params.l10n.tooLong
           },
           previousState: this.previousState,
-          segments: this.params.segments,
+          sections: this.params.sections,
           slack: this.params.behaviour.slack,
           taskDescription: this.params.taskDescription,
           textLengthMax: this.params.behaviour.textLengthMax,
@@ -124,8 +124,8 @@ export default class StructureStrip extends H5P.Question {
         // TODO: Implement something useful to do on click
       }, false, {}, {});
 
+      // Check answer button
       if (this.params.behaviour.feedbackMode === 'onRequest') {
-        // Check answer button
         this.addButton('check-answer', this.params.l10n.checkAnswer, () => {
           const feedback = this.content.checkAnswer();
           this.setFeedback(
@@ -160,7 +160,9 @@ export default class StructureStrip extends H5P.Question {
         Util.copyTextToClipboard(text, (result) => {
           const button = document.querySelector('.h5p-question-copy');
           const message = (result === true) ? this.params.l10n.copyToClipboardSuccess : this.params.a11y.copyToClipboardError;
+
           this.read(message);
+
           H5P.attachToastTo(button, message, {position: {
             horizontal: 'after',
             noOverflowRight: true,
@@ -208,7 +210,7 @@ export default class StructureStrip extends H5P.Question {
      * @see contract at {@link https://h5p.org/documentation/developers/contracts#guides-header-5}
      */
     this.resetTask = () => {
-      this.content.enableSegments();
+      this.content.enableSections();
     };
 
     /**

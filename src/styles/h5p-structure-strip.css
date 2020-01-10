@@ -26,8 +26,7 @@
 .h5p-structure-strip-text-strip-description-container {
   display: flex;
   flex-direction: column;
-  flex: 1 1 300px;
-  min-width: 200px;
+  flex: 1 1 170px;
   padding: 0.5em 1em;
 }
 
@@ -46,8 +45,7 @@
 }
 
 .h5p-structure-strip-text-strip-input-container {
-  flex-grow: 10;
-  min-width: 400px;
+  flex: 6 1 344px;
 }
 
 .h5p-structure-strip-text-strip-input-field {

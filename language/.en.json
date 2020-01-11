@@ -112,12 +112,12 @@
         {
           "label": "Section too short",
           "description": "Feedback text shown for sections that are too short (@title will be replaced by the section title, @chars will be replaced by the number of characters missing).",
-          "default": "Your @title is too short. You need at least @char more characters."
+          "default": "Your section \"@title\" is too short. You need at least @chars more characters."
         },
         {
           "label": "Section too long",
           "description": "Feedback text shown for sections that are too long (@title will be replaced by the section title, @chars will be replaced by the number of characters needing removal).",
-          "default": "Your @title is too long. Remove at least @chars characters."
+          "default": "Your section \"@title\" is too long. Remove at least @chars characters."
         },
         {
           "label": "Section too short (when typing)",

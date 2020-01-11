@@ -112,12 +112,12 @@
         {
           "label": "Abschnitt zu kurz",
           "description": "Rückmeldungstext für Abschnitte, die zu kurz sind (@title wird durch den Abschnittstitel ersetzt, @chars wird durch die Anzahl zu ergänzender Zeichen ersetzt).",
-          "default": "Dein @title ist zu kurz. Füge mindestens @chars Zeichen hinzu."
+          "default": "Dein Abschnitt \"@title\" ist zu kurz. Füge mindestens @chars Zeichen hinzu."
         },
         {
           "label": "Abschnitt zu lang",
           "description": "Rückmeldungstext für Abschnitte, die zu lang sind (@title wird durch den Abschnittstitel ersetzt, @chars wird durch die Anzahl überschüssiger Zeichen ersetzt).",
-          "default": "Dein @title ist zu lang. Entferne mindestens @char Zeichen."
+          "default": "Dein Abschnitt \"@title\" ist zu lang. Entferne mindestens @chars Zeichen."
         },
         {
           "label": "Abschnitt zu kurz (bei Eingabe)",

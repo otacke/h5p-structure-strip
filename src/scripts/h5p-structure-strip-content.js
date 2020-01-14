@@ -40,7 +40,7 @@ export default class StructureStripContent {
         feedbackMode: this.params.feedbackMode,
         id: index,
         text: (this.params.previousState.texts) ? this.params.previousState.texts[index] : '',
-        title: section.title || '',
+        title: Util.htmlDecode(section.title) || '',
         weight: section.weight
       });
       this.sections.push(instanceSection);

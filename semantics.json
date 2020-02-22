@@ -214,7 +214,7 @@
             "value": "whileTyping"
           }
         ],
-        "default": "whileTyping"
+        "default": "onRequest"
       }
     ]
   },

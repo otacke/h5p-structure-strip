@@ -90,7 +90,7 @@
       "fields": [
         {
           "label": "Beschriftung des \"Kopieren\"-Buttons",
-          "default": "Copy"
+          "default": "Kopieren"
         },
         {
           "label": "Beschriftung des \"Überprüfen\"-Buttons",
@@ -107,7 +107,7 @@
         {
           "label": "Alle Abschnitte in Ordnung",
           "description": "Feedback text shown when all sections are of tolerable length.",
-          "default": "Your sections' lengths are all fine."
+          "default": "Alle deine Abschnitte haben eine gute Länge."
         },
         {
           "label": "Abschnitt zu kurz",

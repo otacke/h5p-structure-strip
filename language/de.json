@@ -36,7 +36,7 @@
           },
           {
             "label": "Gewichtung",
-            "description": "Gib hie die Gewichtung für den Abschnitt relativ zu den anderen ein."
+            "description": "Gib hier die Gewichtung für den Abschnitt relativ zu den anderen ein."
           },
           {
             "label": "Hintergrundfarbe",
@@ -65,11 +65,11 @@
         },
         {
           "label": "Minimale Textlänge",
-          "description": "Lege eine absolute Obergrenze für die Textlänge fest."
+          "description": "Lege eine absolute Untergrenze für die Textlänge fest."
         },
         {
           "label": "Maximale Textlänge",
-          "description": "Lege eine absolute Untergrenze für die Textlänge fest."
+          "description": "Lege eine absolute Obergrenze für die Textlänge fest."
         },
         {
           "label": "Modus der Rückmeldung",

@@ -106,6 +106,11 @@ export default class StructureStripContent {
       return;
     }
 
+    // Only show feedback if all sections have been filled
+    if (this.sections.some(section => section.getText().length === 0)) {
+      return;
+    }
+
     const feedbackTexts = this.buildFeedbackTexts({
       tooLong: this.params.l10n.tooLong,
       tooShort: this.params.l10n.tooShort

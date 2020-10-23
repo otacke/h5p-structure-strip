@@ -55,6 +55,9 @@ export default class StructureStrip extends H5P.Question {
     this.contentId = contentId;
     this.extras = extras;
 
+    const defaultLanguage = (this.extras && this.extras.metadata) ? this.extras.metadata.defaultLanguage || 'en' : 'en';
+    this.languageTag = Util.formatLanguageCode(defaultLanguage);
+
     // this.previousState now holds the saved content state of the previous session
     this.previousState = this.extras.previousState || {};
 
@@ -259,8 +262,10 @@ export default class StructureStrip extends H5P.Question {
      */
     this.getxAPIDefinition = () => {
       const definition = {};
-      definition.name = {'en-US': this.getTitle()};
-      definition.description = {'en-US': this.getDescription()};
+      definition.name = {};
+      definition.name[this.languageTag] = this.getTitle();
+      definition.description = {};
+      definition.description[this.languageTag] = this.getDescription();
 
       // TODO: Set IRI as required for your verb, cmp. http://xapi.vocab.pub/verbs/#
       definition.type = 'http://adlnet.gov/expapi/activities/cmi.interaction';

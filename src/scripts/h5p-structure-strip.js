@@ -45,7 +45,8 @@ export default class StructureStrip extends H5P.Question {
         tooShort: '@chars characters too short',
         tooLong: '@chars characters too long',
         copyToClipboardError: 'Your text could not be copied to the clipboard',
-        copyToClipboardSuccess: 'Your text was copied to the clipboard'
+        copyToClipboardSuccess: 'Your text was copied to the clipboard',
+        section: 'Section'
       },
       a11y: {
         copyToClipboard: 'Copy text to clipboard',
@@ -102,7 +103,8 @@ export default class StructureStrip extends H5P.Question {
             sectionTooShort: this.params.l10n.sectionTooShort,
             sectionTooLong: this.params.l10n.sectionTooLong,
             tooShort: this.params.l10n.tooShort,
-            tooLong: this.params.l10n.tooLong
+            tooLong: this.params.l10n.tooLong,
+            section: this.params.l10n.section
           },
           a11y: {
             closeWindow: this.params.a11y.closeWindow,

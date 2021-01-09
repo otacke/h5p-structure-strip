@@ -311,6 +311,13 @@
         "label": "Cannot copy to clipboard",
         "importance": "low",
         "default": "Your text could not be copied to the clipboard"
+      },
+      {
+        "name": "section",
+        "type": "text",
+        "label": "Section",
+        "importance": "low",
+        "default": "Section"
       }
     ]
   },

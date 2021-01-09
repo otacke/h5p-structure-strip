@@ -38,7 +38,7 @@ export default class StructureStripContent {
         hasDescription: section.description && section.description !== '',
         id: index,
         text: (this.params.previousState.texts) ? this.params.previousState.texts[index] : '',
-        title: Util.htmlDecode(section.title) || '',
+        title: Util.htmlDecode(section.title || `${this.params.l10n.section} ${index + 1}`),
         weight: section.weight,
         a11y: {
           showHints: this.params.a11y.showHints

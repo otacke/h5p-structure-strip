@@ -5,19 +5,23 @@ export default class StructureStripSection {
   /**
    * @constructor
    * @param {object} params Parameters.
+   * @param {object} callbacks Callbacks.
    */
-  constructor(params) {
-    this.params = Util.extend(
-      {
-        callbackContentChanged: () => {},
-        color: 'rgba(255, 255, 255, 0)',
-        title: '',
-        description: '',
-        text: '',
-        weight: 1
-      },
-      params
-    );
+  constructor(params, callbacks) {
+    this.params = Util.extend({
+      color: 'rgba(255, 255, 255, 0)',
+      title: '',
+      description: '',
+      text: '',
+      weight: 1,
+      a11y: {
+        showHints: 'showHints'
+      }
+    }, params);
+
+    this.callbacks = callbacks || {};
+    this.callbacks.onContentChanged = callbacks.onContentChanged || (() => {});
+    this.callbacks.onHintButtonOpened = callbacks.onHintButtonOpened || (() => {});
 
     this.content = document.createElement('div');
     this.content.classList.add('h5p-structure-strip-text-strip');
@@ -30,14 +34,27 @@ export default class StructureStripSection {
     // Title
     const descriptionTitle = document.createElement('div');
     descriptionTitle.classList.add('h5p-structure-strip-text-strip-description-title');
-    descriptionTitle.innerHTML = Util.htmlDecode(this.params.title);
     descriptionContainer.appendChild(descriptionTitle);
 
-    // Hints
-    const descriptionText = document.createElement('div');
-    descriptionText.classList.add('h5p-structure-strip-text-strip-description-text');
-    descriptionText.innerHTML = this.params.description;
-    descriptionContainer.appendChild(descriptionText);
+    // Title text
+    const descriptionTitleText = document.createElement('span');
+    descriptionTitleText.classList.add('h5p-structure-strip-text-strip-description-title-text');
+    descriptionTitleText.innerHTML = Util.htmlDecode(this.params.title);
+    descriptionTitle.appendChild(descriptionTitleText);
+
+    // Hint button
+    if (this.params.hasDescription) {
+      const buttonHint = document.createElement('button');
+      buttonHint.classList.add('h5p-structure-strip-text-strip-button-hint');
+      buttonHint.style.color = this.params.colorText;
+      buttonHint.setAttribute('aria-label', this.params.a11y.showHints);
+
+      buttonHint.addEventListener('click', () => {
+        this.callbacks.onHintButtonOpened(this.params.id);
+      });
+
+      descriptionTitle.appendChild(buttonHint);
+    }
 
     // Feedback
     if (this.params.feedbackMode === 'whileTyping') {
@@ -60,7 +77,7 @@ export default class StructureStripSection {
     // Add listeners if feedback should be given while typing
     if (this.params.feedbackMode === 'whileTyping') {
       ['change', 'keyup', 'paste'].forEach(event => {
-        this.inputField.addEventListener(event, this.params.callbackContentChanged);
+        this.inputField.addEventListener(event, this.callbacks.onContentChanged);
       });
 
       this.inputField.addEventListener('focus', () => {

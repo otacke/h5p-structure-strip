@@ -330,6 +330,20 @@
         "label": "Copy your text to the clipboard (text for readspeakers)",
         "importance": "low",
         "default": "Copy text to clipboard"
+      },
+      {
+        "name": "closeWindow",
+        "type": "text",
+        "label": "Close window (text for readspeakers)",
+        "importance": "low",
+        "default": "Close window"
+      },
+      {
+        "name": "showHints",
+        "type": "text",
+        "label": "Show hints (text for readspeakers)",
+        "importance": "low",
+        "default": "Show hints"
       }
     ]
   }

@@ -1,3 +1,4 @@
+import Overlay from './h5p-structure-strip-overlay';
 import StructureStripSection from './h5p-structure-strip-section';
 import Util from './h5p-structure-strip-util';
 
@@ -31,17 +32,30 @@ export default class StructureStripContent {
     // Build strips
     this.params.sections.forEach((section, index) => {
       const instanceSection = new StructureStripSection({
-        callbackContentChanged: () => {
-          this.updateSections();
-        },
         colorBackground: section.colorBackground,
         colorText: section.colorText,
-        description: section.description,
         feedbackMode: this.params.feedbackMode,
+        hasDescription: section.description && section.description !== '',
         id: index,
         text: (this.params.previousState.texts) ? this.params.previousState.texts[index] : '',
         title: Util.htmlDecode(section.title) || '',
-        weight: section.weight
+        weight: section.weight,
+        a11y: {
+          showHints: this.params.a11y.showHints
+        }
+      }, {
+        onContentChanged: () => {
+          this.updateSections();
+        },
+        onHintButtonOpened: (id) => {
+          // TODO: Put this into create overlay content function
+          const hintText = document.createElement('div');
+          hintText.innerHTML = this.params.sections[id].description;
+
+          this.overlay.setTitle(Util.htmlDecode(this.params.sections[id].title) || '');
+          this.overlay.setContent(hintText);
+          this.overlay.show();
+        }
       });
       this.sections.push(instanceSection);
       stripsContainer.appendChild(instanceSection.getDOM());
@@ -70,6 +84,21 @@ export default class StructureStripContent {
     if (this.params.feedbackMode === 'whileTyping') {
       this.updateSections();
     }
+
+    // Overlay
+    this.overlay = new Overlay(
+      {
+        a11y: {
+          closeWindow: this.params.a11y.closeWindow
+        }
+      },
+      {
+        onClose: () => {
+          this.overlay.hide();
+        }
+      }
+    );
+    this.content.appendChild(this.overlay.getDOM());
   }
 
   /**
@@ -87,6 +116,13 @@ export default class StructureStripContent {
   getText(concatenated = false) {
     const texts = this.sections.map(strip => strip.getText());
     return concatenated ? texts.filter(text => text !== '').join('\n') : texts;
+  }
+
+  /**
+   * Resize.
+   */
+  resize() {
+    this.overlay.resize();
   }
 
   /**

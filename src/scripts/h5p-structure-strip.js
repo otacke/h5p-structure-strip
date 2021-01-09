@@ -49,9 +49,16 @@ export default class StructureStrip extends H5P.Question {
       },
       a11y: {
         copyToClipboard: 'Copy text to clipboard',
-        feedback: 'Feedback'
+        feedback: 'Feedback',
+        closeWindow: 'Close window'
       }
     }, params);
+
+    // Decode a11y labels
+    for (let item in this.params.a11y) {
+      this.params.a11y[item] = Util.htmlDecode(this.params.a11y[item]);
+    }
+
     this.contentId = contentId;
     this.extras = extras;
 
@@ -97,6 +104,10 @@ export default class StructureStrip extends H5P.Question {
             tooShort: this.params.l10n.tooShort,
             tooLong: this.params.l10n.tooLong
           },
+          a11y: {
+            closeWindow: this.params.a11y.closeWindow,
+            showHints: this.params.a11y.showHints
+          },
           previousState: this.previousState,
           sections: this.params.sections,
           slack: this.params.behaviour.slack,
@@ -112,10 +123,9 @@ export default class StructureStrip extends H5P.Question {
       // Register Buttons
       this.addButtons();
 
-      /*
-       * H5P.Question also offers some more functions that could be used.
-       * Consult https://github.com/h5p/h5p-question for details
-       */
+      this.on('resize', () => {
+        this.content.resize();
+      });
     };
 
     /**

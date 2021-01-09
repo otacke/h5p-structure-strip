@@ -207,9 +207,15 @@ export default class StructureStripContent {
 
         // To short compared to reference
         const gap = Math.round((normedLengthMin - normedLength) * section.getWeight());
-        feedbackTexts.push(
-          textTemplates.tooShort.replace(/@title/g, section.getTitle()).replace(/@chars/g, gap)
-        );
+        if (gap === 0) {
+          // Compensate for tiny text lengths
+          feedbackTexts.push(null);
+        }
+        else {
+          feedbackTexts.push(
+            textTemplates.tooShort.replace(/@title/g, section.getTitle()).replace(/@chars/g, gap)
+          );
+        }
       }
       else {
 

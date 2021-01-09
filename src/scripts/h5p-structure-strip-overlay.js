@@ -44,14 +44,17 @@ export default class Overlay {
     this.outer.classList.add(`${this.params.styleBase}-outer`);
     this.overlay.appendChild(this.outer);
 
+    // Headline
     this.headline = document.createElement('div');
     this.headline.classList.add(`${this.params.styleBase}-headline`);
     this.outer.appendChild(this.headline);
 
+    // Title text
     this.title = document.createElement('div');
     this.title.classList.add(`${this.params.styleBase}-title`);
     this.headline.appendChild(this.title);
 
+    // Close button
     this.buttonClose = document.createElement('button');
     this.buttonClose.classList.add(`${this.params.styleBase}-button-close`);
     this.buttonClose.setAttribute('aria-label', this.params.a11y.closeWindow);
@@ -60,10 +63,12 @@ export default class Overlay {
     });
     this.headline.appendChild(this.buttonClose);
 
+    // Content wrapper (for overflow)
     this.contentWrapper = document.createElement('div');
     this.contentWrapper.classList.add(`${this.params.styleBase}-content-wrapper`);
     this.outer.appendChild(this.contentWrapper);
 
+    // Content
     this.content = document.createElement('div');
     this.content.classList.add(`${this.params.styleBase}-content`);
     this.content.appendChild(this.params.content);
@@ -77,41 +82,6 @@ export default class Overlay {
 
       this.trapFocus(event);
     }, true);
-
-    //
-    //
-    // this.overlay.classList.add(`${this.params.styleBase}-outer-wrapper`);
-    // this.overlay.classList.add('h5p-structure-strip-invisible');
-    // this.overlay.setAttribute('role', 'dialog');
-    // if (this.params.a11y.title) {
-    //   this.overlay.setAttribute('aria-label', this.params.a11y.title);
-    // }
-    // this.overlay.setAttribute('aria-modal', 'true');
-    //
-    // this.title = document.createElement('div');
-    // this.title.
-    //
-    // this.content = document.createElement('div');
-    // this.content.classList.add(`${this.params.styleBase}-content`);
-    // this.content.appendChild(this.params.content);
-    // this.overlay.appendChild(this.content);
-    //
-    // this.buttonClose = document.createElement('button');
-    // this.buttonClose.classList.add(`${this.params.styleBase}-button-close`);
-    // this.buttonClose.setAttribute('aria-label', this.params.a11y.closeWindow);
-    // this.buttonClose.addEventListener('click', () => {
-    //   this.callbacks.onClose();
-    // });
-    // this.overlay.appendChild(this.buttonClose);
-    //
-    // // Trap focus if overlay is visible
-    // document.addEventListener('focus', event => {
-    //   if (!this.isVisible || this.focusableElements.length === 0) {
-    //     return;
-    //   }
-    //
-    //   this.trapFocus(event);
-    // }, true);
 
     // Blocker
     this.blocker = document.createElement('div');

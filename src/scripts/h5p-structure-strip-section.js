@@ -31,21 +31,23 @@ export default class StructureStripSection {
     descriptionContainer.style.backgroundColor = this.params.colorBackground;
     descriptionContainer.style.color = this.params.colorText;
 
-    this.progressBarContainer = document.createElement('div');
-    this.progressBarContainer.classList.add('h5p-structure-strip-text-strip-progress-bar-container');
-    this.progressBarContainer.style.backgroundColor = Util.computeContrastColor(this.params.colorBackground, 0.1);
-    descriptionContainer.appendChild(this.progressBarContainer);
+    if (this.params.feedbackMode === 'whileTyping') {
+      this.progressBarContainer = document.createElement('div');
+      this.progressBarContainer.classList.add('h5p-structure-strip-text-strip-progress-bar-container');
+      this.progressBarContainer.style.backgroundColor = Util.computeContrastColor(this.params.colorBackground, 0.1);
+      descriptionContainer.appendChild(this.progressBarContainer);
 
-    this.progressBar = document.createElement('div');
-    this.progressBar.classList.add('h5p-structure-strip-text-strip-progress-bar');
-    const hsvValue = Util.computeHSVValue(this.params.colorBackground);
-    if (hsvValue > 0.5) {
-      this.progressBar.classList.add('h5p-structure-strip-text-strip-progress-bar-pattern-dark');
+      this.progressBar = document.createElement('div');
+      this.progressBar.classList.add('h5p-structure-strip-text-strip-progress-bar');
+      const hsvValue = Util.computeHSVValue(this.params.colorBackground);
+      if (hsvValue > 0.5) {
+        this.progressBar.classList.add('h5p-structure-strip-text-strip-progress-bar-pattern-dark');
+      }
+      else {
+        this.progressBar.classList.add('h5p-structure-strip-text-strip-progress-bar-pattern-light');
+      }
+      this.progressBarContainer.appendChild(this.progressBar);
     }
-    else {
-      this.progressBar.classList.add('h5p-structure-strip-text-strip-progress-bar-pattern-light');
-    }
-    this.progressBarContainer.appendChild(this.progressBar);
 
     const descriptionWrapper = document.createElement('div');
     descriptionWrapper.classList.add('h5p-structure-strip-text-strip-description-wrapper');
@@ -189,7 +191,7 @@ export default class StructureStripSection {
    * @param {number} [progress] 0-100 for regular status, > 100 for exceeded.
    */
   setProgressBar(progress) {
-    if (typeof progress !== 'number') {
+    if (typeof progress !== 'number' || !this.progressBar) {
       return;
     }
 

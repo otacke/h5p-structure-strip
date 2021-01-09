@@ -144,29 +144,38 @@ export default class StructureStripContent {
 
     // Only show feedback if all sections have been filled
     if (this.sections.some(section => section.getText().length === 0)) {
+      this.sections.forEach(section => {
+        section.setStatus('&nbsp;');
+        section.setProgressBar(0);
+      });
+
       return;
     }
 
+    // TODO: This handling may be improved ...
+    //       Merge buildFeedbackTexts, buildProgress and updating sections
+    //       Take care of checkAnswer using buildFeedbackTexts
+
+    // Feedback texts
     const feedbackTexts = this.buildFeedbackTexts({
       tooLong: this.params.l10n.tooLong,
       tooShort: this.params.l10n.tooShort
     });
 
-    feedbackTexts.forEach((text, index) => {
-      // Use &nbsp; for height
-      this.sections[index].setStatus(text || '&nbsp;');
+    // Progresses
+    const progresses = this.buildProgresses();
+
+    this.sections.forEach((section, index) => {
+      section.setStatus(feedbackTexts[index] || '&nbsp;');
+      section.setProgressBar(progresses[index]);
     });
   }
 
   /**
-   * Build feedback texts.
-   * @param {object} textTemplates Texts.
-   * @param {string} textTemplates.alright Text for good section length.
-   * @param {string} textTemplates.tooLong Text for section that is too long.
-   * @param {string} textTemplates.tooShort Text for section that is too short.
-   * @return {string[]} Feedback texts.
+   * Compute normed min and max length of text.
+   * @return {object} Min and max length of text.
    */
-  buildFeedbackTexts(textTemplates) {
+  computeNormedLengths() {
     let referenceLength = Math.max(this.referenceSection.getText().length, this.referenceSection.getWeight() / this.greatestCommonDivisor);
 
     // Don't use slack for absolute text length minimum/maximum
@@ -185,14 +194,30 @@ export default class StructureStripContent {
     const normedLengthMax = normedReferenceLength * (1 + slackPercentage);
     const normedLengthMin = normedReferenceLength * (1 - slackPercentage);
 
+    return {
+      min: normedLengthMin,
+      max: normedLengthMax
+    };
+  }
+
+  /**
+   * Build feedback texts.
+   * @param {object} textTemplates Texts.
+   * @param {string} textTemplates.alright Text for good section length.
+   * @param {string} textTemplates.tooLong Text for section that is too long.
+   * @param {string} textTemplates.tooShort Text for section that is too short.
+   * @return {string[]} Feedback texts.
+   */
+  buildFeedbackTexts(textTemplates) {
+    const normedLengths = this.computeNormedLengths();
     const feedbackTexts = [];
     this.sections.forEach(section => {
       const normedLength = section.getText().length / section.getWeight();
 
-      if (normedLength > normedLengthMax) {
+      if (normedLength > normedLengths.max) {
 
         // Too long compared to reference
-        const gap = Math.round((normedLength - normedLengthMax) * section.getWeight());
+        const gap = Math.round((normedLength - normedLengths.max) * section.getWeight());
         if (gap === 0) {
           // Compensate for tiny text lengths
           feedbackTexts.push(null);
@@ -203,10 +228,10 @@ export default class StructureStripContent {
           );
         }
       }
-      else if (normedLength < normedLengthMin) {
+      else if (normedLength < normedLengths.min) {
 
         // To short compared to reference
-        const gap = Math.round((normedLengthMin - normedLength) * section.getWeight());
+        const gap = Math.round((normedLengths.min - normedLength) * section.getWeight());
         if (gap === 0) {
           // Compensate for tiny text lengths
           feedbackTexts.push(null);
@@ -225,6 +250,39 @@ export default class StructureStripContent {
     });
 
     return feedbackTexts;
+  }
+
+  /**
+   * Build progress values.
+   * @return {number[]} Progress values.
+   */
+  buildProgresses() {
+    const normedLengths = this.computeNormedLengths();
+
+    return this.sections.map(section => {
+      const normedLength = section.getText().length / section.getWeight();
+
+      if (normedLength > normedLengths.max) {
+
+        const gap = Math.round((normedLength - normedLengths.max) * section.getWeight());
+        if (gap === 0) {
+          return 100;
+        }
+
+        return (normedLength / normedLengths.max) * 100;
+      }
+      else if (normedLength < normedLengths.min) {
+        const gap = Math.round((normedLengths.min - normedLength) * section.getWeight());
+        if (gap === 0) {
+          return 100;
+        }
+
+        return (normedLength / normedLengths.min) * 100;
+      }
+      else {
+        return 100;
+      }
+    });
   }
 
   /**

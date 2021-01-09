@@ -31,10 +31,30 @@ export default class StructureStripSection {
     descriptionContainer.style.backgroundColor = this.params.colorBackground;
     descriptionContainer.style.color = this.params.colorText;
 
+    this.progressBarContainer = document.createElement('div');
+    this.progressBarContainer.classList.add('h5p-structure-strip-text-strip-progress-bar-container');
+    this.progressBarContainer.style.backgroundColor = Util.computeContrastColor(this.params.colorBackground, 0.1);
+    descriptionContainer.appendChild(this.progressBarContainer);
+
+    this.progressBar = document.createElement('div');
+    this.progressBar.classList.add('h5p-structure-strip-text-strip-progress-bar');
+    const hsvValue = Util.computeHSVValue(this.params.colorBackground);
+    if (hsvValue > 0.5) {
+      this.progressBar.classList.add('h5p-structure-strip-text-strip-progress-bar-pattern-dark');
+    }
+    else {
+      this.progressBar.classList.add('h5p-structure-strip-text-strip-progress-bar-pattern-light');
+    }
+    this.progressBarContainer.appendChild(this.progressBar);
+
+    const descriptionWrapper = document.createElement('div');
+    descriptionWrapper.classList.add('h5p-structure-strip-text-strip-description-wrapper');
+    descriptionContainer.appendChild(descriptionWrapper);
+
     // Title
     const descriptionTitle = document.createElement('div');
     descriptionTitle.classList.add('h5p-structure-strip-text-strip-description-title');
-    descriptionContainer.appendChild(descriptionTitle);
+    descriptionWrapper.appendChild(descriptionTitle);
 
     // Title text
     const descriptionTitleText = document.createElement('span');
@@ -61,7 +81,7 @@ export default class StructureStripSection {
       this.descriptionStatus = document.createElement('div');
       this.descriptionStatus.classList.add('h5p-structure-strip-text-strip-description-status');
       this.descriptionStatus.innerHTML = '';
-      descriptionContainer.appendChild(this.descriptionStatus);
+      descriptionWrapper.appendChild(this.descriptionStatus);
     }
 
     // Text input field
@@ -162,6 +182,25 @@ export default class StructureStripSection {
       return;
     }
     this.descriptionStatus.innerHTML = text;
+  }
+
+  /**
+   * Set progress bar.
+   * @param {number} [progress] 0-100 for regular status, > 100 for exceeded.
+   */
+  setProgressBar(progress) {
+    if (typeof progress !== 'number') {
+      return;
+    }
+
+    if (progress > 100) {
+      this.progressBar.classList.add('h5p-structure-strip-text-strip-progress-bar-pattern-exceeded');
+    }
+    else {
+      this.progressBar.classList.remove('h5p-structure-strip-text-strip-progress-bar-pattern-exceeded');
+    }
+
+    this.progressBar.style.width = `${Math.min(Math.max(0, progress), 100)}%`;
   }
 
   /**

@@ -147,6 +147,97 @@ class Util {
 
     return languageCode;
   }
+
+  /**
+   * Compute HSV value.
+   * @param {string} colorCode RGB color code in 6 char hex: #rrggbb.
+   * @return {number} HSV value as [0-1];
+   */
+  static computeHSVValue(colorCode) {
+    if (typeof colorCode !== 'string' || !/#[0-9a-f]{6}/.test(colorCode)) {
+      return null;
+    }
+
+    colorCode = colorCode.substr(1);
+
+    // RGB as percentage
+    const rgb = [
+      parseInt(colorCode.substr(0, 2), 16),
+      parseInt(colorCode.substr(2, 2), 16),
+      parseInt(colorCode.substr(4, 2), 16)
+    ];
+
+    // HSV value
+    return Math.max(rgb[0], rgb[1], rgb[2]) / 255;
+  }
+
+  /**
+   * Compute contrast color to given color.
+   * @param {string} colorCode RGB color code in 6 char hex: #rrggbb.
+   * @param {number} [difference=0.5] Percentual difference: [0-1].
+   * @return {string} RGB contrast color code in 6 char hex: #rrggbb.
+   */
+  static computeContrastColor(colorCode, difference = 0.5) {
+    if (typeof colorCode !== 'string' || !/#[0-9a-f]{6}/.test(colorCode)) {
+      return null;
+    }
+
+    if (typeof difference !== 'number') {
+      difference = 0.5;
+    }
+
+    difference = Math.min(Math.max(0, difference), 1);
+
+    colorCode = colorCode.substr(1);
+
+    // RGB as percentage
+    const rgb = [
+      parseInt(colorCode.substr(0, 2), 16) / 255,
+      parseInt(colorCode.substr(2, 2), 16) / 255,
+      parseInt(colorCode.substr(4, 2), 16) / 255
+    ];
+
+    // HSV value
+    const cMax = Math.max(rgb[0], rgb[1], rgb[2]);
+
+    // Scale up/down depending on HSV value
+    const cNew = Math.min(Math.max(0, (cMax > 0.5) ? cMax - difference : cMax + difference), 1);
+    const factor = cNew / cMax;
+
+    const rgbNew = [
+      Util.dec2hex(rgb[0] * factor * 255, 2),
+      Util.dec2hex(rgb[1] * factor * 255, 2),
+      Util.dec2hex(rgb[2] * factor * 255, 2)
+    ];
+
+    return `#${rgbNew.join('')}`;
+  }
+
+  /**
+   * Convert decimals to hexadecimals.
+   * @param {number} decimal Decimal.
+   * @param {number} [padding=0] Padding.
+   * @return {string} Padded hexadecimal.
+   */
+  static dec2hex(decimal, padding = 0) {
+    if (typeof decimal !== 'number') {
+      return null;
+    }
+
+    if (typeof padding !== 'number' || padding < 0) {
+      padding = 0;
+    }
+
+    let hex = Math.abs(Math.round(decimal)).toString(16);
+    while (hex.length < padding) {
+      hex = `0${hex}`;
+    }
+    if (decimal < 0) {
+      hex = `-${hex}`;
+    }
+
+    return hex;
+  }
 }
 
 export default Util;

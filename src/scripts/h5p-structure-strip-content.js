@@ -52,7 +52,7 @@ export default class StructureStripContent {
           const hintText = document.createElement('div');
           hintText.innerHTML = this.params.sections[id].description;
 
-          this.overlay.setTitle(Util.htmlDecode(this.params.sections[id].title) || '');
+          this.overlay.setTitle(Util.htmlDecode(section.title || `${this.params.l10n.section} ${index + 1}`));
           this.overlay.setContent(hintText);
           this.overlay.show();
         }

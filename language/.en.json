@@ -136,6 +136,10 @@
         {
           "label": "Cannot copy to clipboard",
           "default": "Your text could not be copied to the clipboard"
+        },
+        {
+          "label": "Section",
+          "default": "Section"
         }
       ]
     },
@@ -147,8 +151,16 @@
           "default": "Feedback"
         },
         {
-          "label": "Copy text to clipboard (text for readspeakers)",
-          "default": "Copy text to clipboard."
+          "label": "Copy your text to the clipboard (text for readspeakers)",
+          "default": "Copy text to clipboard"
+        },
+        {
+          "label": "Close window (text for readspeakers)",
+          "default": "Close window"
+        },
+        {
+          "label": "Show hints (text for readspeakers)",
+          "default": "Show hints"
         }
       ]
     }

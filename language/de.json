@@ -136,6 +136,10 @@
         {
           "label": "Kann nicht in die Zwischenablage kopieren",
           "default": "Dein Text konnte nicht in die Zwischenablage kopiert werden"
+        },
+        {
+          "label": "Abschnitt",
+          "default": "Abschnitt"
         }
       ]
     },
@@ -149,6 +153,14 @@
         {
           "label": "Kopiere Text in die Zwischenablage (Text für Vorlesewerkzeuge)",
           "default": "Kopiere Text in die Zwischenablage"
+        },
+        {
+          "label": "Fenster schließen (Text für Vorlesewerkzeuge)",
+          "default": "Fenster schließen"
+        },
+        {
+          "label": "Hinweise anzeigen (Text für Vorlesewerkzeuge)",
+          "default": "Hinweise anzeigen"
         }
       ]
     }

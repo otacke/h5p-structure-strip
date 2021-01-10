@@ -98,3 +98,11 @@
 .h5p-structure-strip .h5p-structure-strip-overlay-blocker.h5p-structure-strip-overlay-display-none {
   display: none;
 }
+
+@media only screen and (max-width: 768px) {
+  .h5p-structure-strip .h5p-structure-strip-overlay-container {
+    border-radius: 0;
+    height: 100%;
+    width: 100%;
+  }
+}

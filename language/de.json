@@ -140,6 +140,10 @@
         {
           "label": "Abschnitt",
           "default": "Abschnitt"
+        },
+        {
+          "label": "Kein Abschnitt angegeben",
+          "default": "Es wurde kein Abschnitt für den Strukturstreifen angegeben."
         }
       ]
     },

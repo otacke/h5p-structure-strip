@@ -1,6 +1,10 @@
 .h5p-structure-strip {
 }
 
+.h5p-structure-strip .h5p-structure-strip-message {
+  text-align: center;
+}
+
 .h5p-structure-strip-content {
   display: flex;
   flex-direction: column;

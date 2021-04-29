@@ -46,7 +46,8 @@ export default class StructureStrip extends H5P.Question {
         tooLong: '@chars characters too long',
         copyToClipboardError: 'Your text could not be copied to the clipboard',
         copyToClipboardSuccess: 'Your text was copied to the clipboard',
-        section: 'Section'
+        section: 'Section',
+        messageNoSection: 'There was no section given for this structure strip.'
       },
       a11y: {
         copyToClipboard: 'Copy text to clipboard',
@@ -93,6 +94,14 @@ export default class StructureStrip extends H5P.Question {
             this.setVideo(media);
           }
         }
+      }
+
+      if (this.params.sections.length === 0) {
+        const message = document.createElement('div');
+        message.classList.add('h5p-structure-strip-message');
+        message.innerText = this.params.l10n.messageNoSection;
+        this.setContent(message);
+        return;
       }
 
       this.content = new StructureStripContent(

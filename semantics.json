@@ -119,10 +119,34 @@
             "showInitial": true,
             "showPalette": true,
             "palette": [
-              ["#96ceb4","#ffeead","#ff6f69","ffcc5c","#88d8b0"],
-              ["#845ec2", "#d65db1", "#ff6f91", "#ff9671", "#ffc75f"],
-              ["#a8e6cf","#dcedc1","#ffd3b6","#ffaaa5","#ff8b94"],
-              ["#009688", "#35a79c", "#54b2a9", "#65c3ba", "#83d0c9"]
+              [
+                "#96ceb4",
+                "#ffeead",
+                "#ff6f69",
+                "ffcc5c",
+                "#88d8b0"
+              ],
+              [
+                "#845ec2",
+                "#d65db1",
+                "#ff6f91",
+                "#ff9671",
+                "#ffc75f"
+              ],
+              [
+                "#a8e6cf",
+                "#dcedc1",
+                "#ffd3b6",
+                "#ffaaa5",
+                "#ff8b94"
+              ],
+              [
+                "#009688",
+                "#35a79c",
+                "#54b2a9",
+                "#65c3ba",
+                "#83d0c9"
+              ]
             ]
           }
         },
@@ -138,12 +162,48 @@
             "showInput": true,
             "showPalette": true,
             "palette": [
-              ["#154c37","#74682e","#680000","#6f4c00","#005434"],
-              ["#ffe4ff", "#4a0034", "#6a001d", "#6c1400", "#6e4700"],
-              ["#25604e","#586741","#745139","#712b2c","#6d001f"],
-              ["#002115", "#002a25", "#00332f", "#00423d", "#004d49"],
-              ["#000000", "#1c1c1c", "#393939", "#555555", "#717171"],
-              ["#8e8e8e", "#aaaaaa", "#c6c6c6", "#e3e3e3", "#ffffff"]
+              [
+                "#154c37",
+                "#74682e",
+                "#680000",
+                "#6f4c00",
+                "#005434"
+              ],
+              [
+                "#ffe4ff",
+                "#4a0034",
+                "#6a001d",
+                "#6c1400",
+                "#6e4700"
+              ],
+              [
+                "#25604e",
+                "#586741",
+                "#745139",
+                "#712b2c",
+                "#6d001f"
+              ],
+              [
+                "#002115",
+                "#002a25",
+                "#00332f",
+                "#00423d",
+                "#004d49"
+              ],
+              [
+                "#000000",
+                "#1c1c1c",
+                "#393939",
+                "#555555",
+                "#717171"
+              ],
+              [
+                "#8e8e8e",
+                "#aaaaaa",
+                "#c6c6c6",
+                "#e3e3e3",
+                "#ffffff"
+              ]
             ]
           }
         }
@@ -318,6 +378,13 @@
         "label": "Section",
         "importance": "low",
         "default": "Section"
+      },
+      {
+        "name": "messageNoSection",
+        "label": "Text for \"No section\" message",
+        "type": "text",
+        "importance": "low",
+        "default": "There was no section given for this structure strip."
       }
     ]
   },

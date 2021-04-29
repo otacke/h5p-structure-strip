@@ -140,6 +140,10 @@
         {
           "label": "Section",
           "default": "Section"
+        },
+        {
+          "label": "Text for \"No section\" message",
+          "default": "There was no section given for this structure strip."
         }
       ]
     },

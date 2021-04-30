@@ -42,7 +42,7 @@ class Util {
       return null; // missing or invalid value
     }
 
-    if (!node.parentNode || node.tagName.toLowerCase() === 'body') {
+    if (!node.parentNode || node.tagName.toLowerCase() === 'html') {
       return null; // no parent left
     }
 

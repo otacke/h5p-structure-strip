@@ -1,4 +1,4 @@
-import "../styles/h5p-structure-strip-overlay.css";
+import "../styles/h5p-structure-strip-overlay.scss";
 import Util from './h5p-structure-strip-util';
 
 /** Class representing the content */

@@ -25,13 +25,30 @@ export default class Overlay {
       }
     }, params);
 
-    this.callbacks = callbacks;
-    this.callbacks.onClose = callbacks.onClose || (() => {});
+    this.callbacks = Util.extend({
+      onClose: () => {}
+    }, callbacks);
 
     this.isVisible = false;
     this.focusableElements = [];
 
     // DOM
+    this.addDOM();
+
+    // Trap focus if overlay is visible
+    document.addEventListener('focus', event => {
+      if (!this.isVisible || this.focusableElements.length === 0) {
+        return;
+      }
+
+      this.trapFocus(event);
+    }, true);
+
+    // Extra classes
+    this.modifierClasses = [];
+  }
+
+  addDOM() {
     this.overlay = document.createElement('div');
     this.overlay.classList.add(`${this.params.styleBase}-container`);
     this.overlay.classList.add(`${this.params.styleBase}-invisible`);
@@ -74,15 +91,6 @@ export default class Overlay {
     this.content.appendChild(this.params.content);
     this.contentWrapper.appendChild(this.content);
 
-    // Trap focus if overlay is visible
-    document.addEventListener('focus', event => {
-      if (!this.isVisible || this.focusableElements.length === 0) {
-        return;
-      }
-
-      this.trapFocus(event);
-    }, true);
-
     // Blocker
     this.blocker = document.createElement('div');
     this.blocker.classList.add(`${this.params.styleBase}-blocker`);
@@ -90,9 +98,6 @@ export default class Overlay {
     this.blocker.addEventListener('click', () => {
       this.callbacks.onClose();
     });
-
-    // Extra classes
-    this.modifierClasses = [];
   }
 
   /**

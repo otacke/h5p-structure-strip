@@ -32,6 +32,42 @@ class Util {
   }
 
   /**
+   * Get closest parent node by selector.
+   * @param {HTMLElement} node Node.
+   * @param {string} selector CSS classname, id or tagname.
+   * @return {HTMLElement|null} Closest parent node by selector or null.
+   */
+  static closestParent(node, selector) {
+    if (typeof node !== 'object' || typeof selector !== 'string') {
+      return null; // missing or invalid value
+    }
+
+    if (!node.parentNode || node.tagName.toLowerCase() === 'body') {
+      return null; // no parent left
+    }
+
+    if (selector.substr(0, 1) === '.') { // classnames
+      const selectors = selector.split('.').filter(selector => selector !== '');
+      if (selectors.every(selector => node.parentNode.classList.contains(selector))) {
+        return node.parentNode;
+      }
+    }
+    else if (selector.substr(0, 1) === '#') { // id
+      if (
+        typeof node.parentNode.getAttribute === 'function' &&
+        node.parentNode.getAttribute('id') === selector.substr(1)
+      ) {
+        return node.parentNode;
+      }
+    }
+    else if (node.parentNode.tagName.toLowerCase() === selector.toLowerCase()) { // tagname
+      return node.parentNode;
+    }
+
+    return this.closestParent(node.parentNode, selector);
+  }
+
+  /**
    * Compute greatest common divisor.
    * @param {number} [a=1] First number.
    * @param {number} [b=1] Second number.

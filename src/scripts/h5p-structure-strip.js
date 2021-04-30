@@ -182,7 +182,7 @@ export default class StructureStrip extends H5P.Question {
       this.addButton('copy', this.params.l10n.copy, () => {
         const text = this.content.getText(true);
         Util.copyTextToClipboard(text, (result) => {
-          const button = document.querySelector('.h5p-question-copy');
+          const button = this.buttonCopy;
           const message = (result === true) ? this.params.l10n.copyToClipboardSuccess : this.params.a11y.copyToClipboardError;
 
           this.read(message);
@@ -196,6 +196,22 @@ export default class StructureStrip extends H5P.Question {
           }});
         });
       }, true, {'aria-label': this.params.l10n.copyToClipboard}, {});
+
+      // Wait for content DOM to be completed to handle DOM initialization
+      if (document.readyState === 'complete') {
+        window.requestAnimationFrame(() => {
+          this.handleDOMInitialized();
+        });
+      }
+      else {
+        document.addEventListener('readystatechange', () => {
+          if (document.readyState === 'complete') {
+            window.requestAnimationFrame(() => {
+              this.handleDOMInitialized();
+            });
+          }
+        });
+      }
     };
 
     /**
@@ -339,6 +355,14 @@ export default class StructureStrip extends H5P.Question {
         texts: this.content.getText()
       };
     };
+  }
+
+  /**
+   * Handle DOM initialized.
+   */
+  handleDOMInitialized() {
+    this.container = Util.closestParent(this.content.getDOM(), '.h5p-question.h5p-structure-strip');
+    this.buttonCopy = this.container.querySelector('.h5p-question-copy');
   }
 }
 

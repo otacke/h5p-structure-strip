@@ -29,6 +29,7 @@ export default class Overlay {
       onClose: () => {}
     }, callbacks);
 
+    this.container = null;
     this.isVisible = false;
     this.focusableElements = [];
 
@@ -128,6 +129,14 @@ export default class Overlay {
   }
 
   /**
+   * Set container.
+   * @param {HTMLElement} container Container to set.
+   */
+  setContainer(container) {
+    this.container = container;
+  }
+
+  /**
    * Set an extra class that can be used for CSS styling.
    * @param {string} className Class name.
    * @param {boolean} [clear=true] If false, will not erase all other extra classes.
@@ -199,8 +208,7 @@ export default class Overlay {
    * Show overlay.
    */
   show() {
-    if (!this.blockerAppended) {
-      this.container = document.body.querySelector('.h5p-container');
+    if (!this.blockerAppended && this.container) {
       this.container.appendChild(this.blocker);
     }
     this.blockerAppended = true;

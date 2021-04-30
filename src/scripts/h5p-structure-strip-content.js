@@ -88,6 +88,7 @@ export default class StructureStripContent {
     // Overlay
     this.overlay = new Overlay(
       {
+        container: this.params.container,
         a11y: {
           closeWindow: this.params.a11y.closeWindow
         }
@@ -107,6 +108,14 @@ export default class StructureStripContent {
    */
   getDOM() {
     return this.content;
+  }
+
+  /**
+   * Set container.
+   * @param {HTMLElement} container Container to set.
+   */
+  setContainer(container) {
+    this.overlay.setContainer(container);
   }
 
   /**

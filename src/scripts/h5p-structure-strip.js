@@ -376,6 +376,8 @@ export default class StructureStrip extends H5P.Question {
   handleDOMInitialized() {
     this.container = Util.closestParent(this.content.getDOM(), '.h5p-question.h5p-structure-strip');
     this.buttonCopy = this.container.querySelector('.h5p-question-copy');
+
+    this.content.setContainer(this.container);
   }
 }
 

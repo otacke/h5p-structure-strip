@@ -127,6 +127,11 @@ export default class StructureStrip extends H5P.Question {
         taskDescription: this.params.taskDescription,
         textLengthMax: this.params.behaviour.textLengthMax,
         textLengthMin: this.params.behaviour.textLengthMin
+      },
+      {
+        onInteracted: () => {
+          this.handleInteracted();
+        }
       }
     );
 
@@ -378,6 +383,13 @@ export default class StructureStrip extends H5P.Question {
     this.buttonCopy = this.container.querySelector('.h5p-question-copy');
 
     this.content.setContainer(this.container);
+  }
+
+  /**
+   * Handle user interacted.
+   */
+  handleInteracted() {
+    this.triggerXAPI('interacted');
   }
 }
 

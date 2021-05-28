@@ -7,9 +7,14 @@ export default class StructureStripContent {
   /**
    * @constructor
    * @param {object} params Parameters.
+   * @param {object} [callbacks={}] Callbacks.
    */
-  constructor(params) {
+  constructor(params = {}, callbacks = {}) {
     this.params = params;
+
+    this.callbacks = Util.extend({
+      onInteracted: () => {}
+    }, callbacks);
 
     this.sections = [];
 
@@ -55,6 +60,9 @@ export default class StructureStripContent {
           this.overlay.setTitle(Util.htmlDecode(section.title || `${this.params.l10n.section} ${index + 1}`));
           this.overlay.setContent(hintText);
           this.overlay.show();
+        },
+        onInteracted: () => {
+          this.callbacks.onInteracted();
         }
       });
       this.sections.push(instanceSection);

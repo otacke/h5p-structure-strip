@@ -21,7 +21,8 @@ export default class StructureStripSection {
 
     this.callbacks = Util.extend({
       onContentChanged: () => {},
-      onHintButtonOpened: () => {}
+      onHintButtonOpened: () => {},
+      onInteracted: () => {}
     }, callbacks);
 
     // Create content DOM
@@ -206,6 +207,15 @@ export default class StructureStripSection {
     this.inputField.setAttribute('rows', 5);
     this.inputField.setAttribute('aria-label', this.buildAriaLabel([this.params.title]));
     this.inputField.value = this.params.text;
+    this.lastValue = this.params.text;
+
+    // Trigger xAPI 'interacted'
+    this.inputField.addEventListener('blur', () => {
+      if (this.inputField.value !== this.lastValue) {
+        this.callbacks.onInteracted();
+      }
+      this.lastValue = this.inputField.value;
+    });
 
     // Add listeners if feedback should be given while typing
     if (this.params.feedbackMode === 'whileTyping') {

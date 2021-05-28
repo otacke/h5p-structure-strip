@@ -77,6 +77,3 @@ module.exports = {
   },
   devtool: (isProd) ? undefined : 'eval-cheap-module-source-map'
 };
-
-
-loader: 'file-loader?name=audios/[name].[ext]'

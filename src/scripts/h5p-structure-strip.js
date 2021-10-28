@@ -95,6 +95,12 @@ export default class StructureStrip extends H5P.Question {
           this.setVideo(media);
         }
       }
+      // Audio
+      else if (type === 'H5P.Audio') {
+        if (media.params.files) {
+          this.setAudio(media);
+        }
+      }
     }
 
     // No section set in editor

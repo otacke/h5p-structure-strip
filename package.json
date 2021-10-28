@@ -1,6 +1,6 @@
 {
   "name": "h5p-structure-strip",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Let your students write texts while giving them some structural guidance",
   "private": true,
   "scripts": {

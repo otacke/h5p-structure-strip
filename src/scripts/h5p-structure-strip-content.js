@@ -21,14 +21,6 @@ export default class StructureStripContent {
     this.content = document.createElement('div');
     this.content.classList.add('h5p-structure-strip-content');
 
-    // Main task description
-    if (this.params.taskDescription) {
-      const taskDescription = document.createElement('div');
-      taskDescription.classList.add('h5p-structure-strip-task-description');
-      taskDescription.innerHTML = this.params.taskDescription;
-      this.content.appendChild(taskDescription);
-    }
-
     // Strips container
     const stripsContainer = document.createElement('div');
     stripsContainer.classList.add('h5p-structure-strip-text-strips-container');

@@ -112,6 +112,14 @@ export default class StructureStrip extends H5P.Question {
       return;
     }
 
+    // Register task introduction text
+    if (this.params.taskDescription) {
+      const introduction = document.createElement('div');
+      introduction.classList.add('h5p-structure-strip-task-description');
+      introduction.innerHTML = this.params.taskDescription;
+      this.setIntroduction(introduction);
+    }
+
     this.content = new StructureStripContent(
       {
         feedbackMode: this.params.behaviour.feedbackMode,

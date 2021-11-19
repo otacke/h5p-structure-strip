@@ -1,56 +1,55 @@
 {
   "semantics": [
     {
-      "label": "Medien",
       "fields": [
         {
-          "label": "Typ",
-          "description": "Medien, die wahlweise oberhalb der Aufgabe angezeigt werden."
+          "description": "Medien, die wahlweise oberhalb der Aufgabe angezeigt werden.",
+          "label": "Typ"
         },
         {
           "label": "Bildzoom deaktivieren"
         }
-      ]
-    },
-    {
-      "label": "Aufgabenbeschreibung",
-      "description": "Beschreibe hier die Aufgabe für die Lernenden."
-    },
-    {
-      "label": "Abschnitte",
-      "entity": "Abschnitt",
-      "widgets": [
-        {
-          "label": "Voreinstellung"
-        }
       ],
+      "label": "Medien"
+    },
+    {
+      "description": "Beschreibe hier die Aufgabe für die Lernenden.",
+      "label": "Aufgabenbeschreibung"
+    },
+    {
+      "entity": "Abschnitt",
       "field": {
-        "label": "Einstellungen für den Abschnitt",
         "fields": [
           {
             "label": "Titel"
           },
           {
-            "label": "Hinweise",
-            "description": "Füge hier wahlweise Hinweise oder besondere Anweisungen für den Abschnitt ein."
+            "description": "Füge hier wahlweise Hinweise oder besondere Anweisungen für den Abschnitt ein.",
+            "label": "Hinweise"
           },
           {
-            "label": "Gewichtung",
-            "description": "Gib hier die Gewichtung für den Abschnitt relativ zu den anderen ein."
+            "description": "Gib hier die Gewichtung für den Abschnitt relativ zu den anderen ein.",
+            "label": "Gewichtung"
           },
           {
-            "label": "Hintergrundfarbe",
-            "default": "#96ceb4"
+            "default": "#96ceb4",
+            "label": "Hintergrundfarbe"
           },
           {
-            "label": "Textfarbe",
-            "default": "#1c1c1c"
+            "default": "#1c1c1c",
+            "label": "Textfarbe"
           }
-        ]
-      }
+        ],
+        "label": "Einstellungen für den Abschnitt"
+      },
+      "label": "Abschnitte",
+      "widgets": [
+        {
+          "label": "Voreinstellung"
+        }
+      ]
     },
     {
-      "label": "Verhaltenseinstellungen",
       "description": "Diese Optionen legen fest, wie die Aufgabe im Detail funktioniert.",
       "fields": [
         {
@@ -60,20 +59,20 @@
           "label": "\"Lösung anzeigen\" ermöglichen"
         },
         {
-          "label": "Spielraum",
-          "description": "Prozentualer Spielraum, der noch akzeptabel für die Länge eines Abschnitts ist."
+          "description": "Prozentualer Spielraum, der noch akzeptabel für die Länge eines Abschnitts ist.",
+          "label": "Spielraum"
         },
         {
-          "label": "Minimale Textlänge",
-          "description": "Lege eine absolute Untergrenze für die Textlänge fest."
+          "description": "Lege eine absolute Untergrenze für die Textlänge fest.",
+          "label": "Minimale Textlänge"
         },
         {
-          "label": "Maximale Textlänge",
-          "description": "Lege eine absolute Obergrenze für die Textlänge fest."
+          "description": "Lege eine absolute Obergrenze für die Textlänge fest.",
+          "label": "Maximale Textlänge"
         },
         {
-          "label": "Modus der Rückmeldung",
           "description": "Entscheide, ob es direkt bei der Eingabe Rückmeldung geben soll oder erst auf Wunsch.",
+          "label": "Modus der Rückmeldung",
           "options": [
             {
               "label": "Auf Wunsch"
@@ -83,90 +82,91 @@
             }
           ]
         }
-      ]
+      ],
+      "label": "Verhaltenseinstellungen"
     },
     {
-      "label": "Bedienoberfläche",
       "fields": [
         {
-          "label": "Beschriftung des \"Kopieren\"-Buttons",
-          "default": "Kopieren"
+          "default": "Kopieren",
+          "label": "Beschriftung des \"Kopieren\"-Buttons"
         },
         {
-          "label": "Beschriftung des \"Überprüfen\"-Buttons",
-          "default": "Überprüfen"
+          "default": "Überprüfen",
+          "label": "Beschriftung des \"Überprüfen\"-Buttons"
         },
         {
-          "label": "Beschriftung des \"Wiederholen\"-Buttons",
-          "default": "Wiederholen"
+          "default": "Wiederholen",
+          "label": "Beschriftung des \"Wiederholen\"-Buttons"
         },
         {
-          "label": "Beschriftung \"Lösung anzeigen\"-Buttons",
-          "default": "Lösung anzeigen"
+          "default": "Lösung anzeigen",
+          "label": "Beschriftung des\"Lösung anzeigen\"-Buttons"
         },
         {
-          "label": "Alle Abschnitte in Ordnung",
-          "description": "Feedback text shown when all sections are of tolerable length.",
-          "default": "Alle deine Abschnitte haben eine gute Länge."
+          "default": "Alle deine Abschnitte haben eine gute Länge.",
+          "description": "Rückmeldungstext, der angezeigt wird, wenn alle Abschnitte eine passende Länge haben.",
+          "label": "Alle Abschnitte in Ordnung"
         },
         {
-          "label": "Abschnitt zu kurz",
+          "default": "Dein Abschnitt \"@title\" ist zu kurz. Füge mindestens @chars Zeichen hinzu.",
           "description": "Rückmeldungstext für Abschnitte, die zu kurz sind (@title wird durch den Abschnittstitel ersetzt, @chars wird durch die Anzahl zu ergänzender Zeichen ersetzt).",
-          "default": "Dein Abschnitt \"@title\" ist zu kurz. Füge mindestens @chars Zeichen hinzu."
+          "label": "Abschnitt zu kurz"
         },
         {
-          "label": "Abschnitt zu lang",
+          "default": "Dein Abschnitt \"@title\" ist zu lang. Entferne mindestens @chars Zeichen.",
           "description": "Rückmeldungstext für Abschnitte, die zu lang sind (@title wird durch den Abschnittstitel ersetzt, @chars wird durch die Anzahl überschüssiger Zeichen ersetzt).",
-          "default": "Dein Abschnitt \"@title\" ist zu lang. Entferne mindestens @chars Zeichen."
+          "label": "Abschnitt zu lang"
         },
         {
-          "label": "Abschnitt zu kurz (bei Eingabe)",
+          "default": "@chars Zeichen zu kurz",
           "description": "Status bei Eingabe für Abschnitte, die zu kurz sind (@chars wird durch die Anzahl zu ergänzender Zeichen ersetzt).",
-          "default": "@chars Zeichen zu kurz"
+          "label": "Abschnitt zu kurz (bei Eingabe)"
         },
         {
-          "label": "Abschnitt zu lang (bei Eingabe)",
+          "default": "@chars Zeichen zu lang",
           "description": "Status bei Eingabe für Abschnitte, die zu lang sind (@chars wird durch die Anzahl überschüssiger Zeichen ersetzt).",
-          "default": "@chars Zeichen zu lang"
+          "label": "Abschnitt zu lang (bei Eingabe)"
         },
         {
-          "label": "Text in die Zwischenablage kopiert",
-          "default": "Dein Text wurde in die Zwischenablage kopiert"
+          "default": "Dein Text wurde in die Zwischenablage kopiert",
+          "label": "Text in die Zwischenablage kopiert"
         },
         {
-          "label": "Kann nicht in die Zwischenablage kopieren",
-          "default": "Dein Text konnte nicht in die Zwischenablage kopiert werden"
+          "default": "Dein Text konnte nicht in die Zwischenablage kopiert werden",
+          "label": "Kann nicht in die Zwischenablage kopieren"
         },
         {
-          "label": "Abschnitt",
-          "default": "Abschnitt"
+          "default": "Abschnitt",
+          "label": "Abschnitt"
         },
         {
-          "label": "Kein Abschnitt angegeben",
-          "default": "Es wurde kein Abschnitt für den Strukturstreifen angegeben."
+          "default": "Es wurde kein Abschnitt für den Strukturstreifen angegeben.",
+          "label": "Kein Abschnitt angegeben"
         }
-      ]
+      ],
+      "label": "Bedienoberfläche"
     },
     {
-      "label": "Vorlesewerkzeug (Barrierefreiheit)",
       "fields": [
         {
-          "label": "Rückmeldung (Text für Vorlesewerkzeuge)",
-          "default": "Rückmeldung"
+          "default": "Rückmeldung",
+          "label": "Rückmeldung (Text für Vorlesewerkzeuge)"
         },
         {
-          "label": "Kopiere Text in die Zwischenablage (Text für Vorlesewerkzeuge)",
-          "default": "Kopiere Text in die Zwischenablage"
+          "default": "Kopiere Text in die Zwischenablage",
+          "label": "Kopiere Text in die Zwischenablage (Text für Vorlesewerkzeuge)"
         },
         {
-          "label": "Fenster schließen (Text für Vorlesewerkzeuge)",
-          "default": "Fenster schließen"
+          "default": "Fenster schließen",
+          "label": "Fenster schließen (Text für Vorlesewerkzeuge)"
         },
         {
-          "label": "Hinweise anzeigen (Text für Vorlesewerkzeuge)",
-          "default": "Hinweise anzeigen"
+          "default": "Hinweise anzeigen",
+          "label": "Hinweise anzeigen (Text für Vorlesewerkzeuge)"
         }
-      ]
+      ],
+      "label": "Vorlesewerkzeug (Barrierefreiheit)"
     }
   ]
 }

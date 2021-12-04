@@ -13,7 +13,7 @@
       "label": "Media"
     },
     {
-      "description": "Beschrijf hier de opgave voor de studenten.",
+      "description": "Beschrijf aan je studenten wat er van hen wordt verwacht.",
       "label": "Taakomschrijving"
     },
     {
@@ -40,7 +40,7 @@
             "label": "Tekstkleur"
           }
         ],
-        "label": "Paragraaf instellingen"
+        "label": "Paragraafinstellingen"
       },
       "label": "Paragrafen",
       "widgets": [
@@ -68,7 +68,7 @@
         },
         {
           "description": "Bepaal een absolute maximale tekstlengte.",
-          "label": "Maximum tekstlengte"
+          "label": "Maximale tekstlengte"
         },
         {
           "description": "Beslis of je feedback wilt weergeven tijdens het typen of wanneer de student er om vraagt.",
@@ -89,14 +89,14 @@
       "fields": [
         {
           "default": "Kopiëren",
-          "label": "Tekst voor de \"Kopieer\"-knop"
+          "label": "Tekst voor \"Kopieer\"-knop"
         },
         {
           "default": "Controleer",
-          "label": "Tekst voor de \"Controleer\"-knop"
+          "label": "Tekst voor \"Controleer\"-knop"
         },
         {
-          "default": "Opnieuw proberen",
+          "default": "Opnieuw",
           "label": "Tekst voor \"Opnieuw\"-knop"
         },
         {
@@ -142,7 +142,7 @@
         },
         {
           "default": "Er is geen paragraaf opgegeven voor deze structuurstrip.",
-          "label": "Tekst voor \"Geen paragraaf\"-bericht"
+          "label": "Tekst van \"Geen paragraaf\"-bericht"
         }
       ],
       "label": "Gebruikersinterface"

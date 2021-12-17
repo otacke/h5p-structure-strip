@@ -151,22 +151,22 @@
       "fields": [
         {
           "default": "Feedback",
-          "label": "Feedback (tekst voor voorlezers)"
+          "label": "Feedback (tekst voor schermlezers)"
         },
         {
           "default": "Kopieer tekst naar klembord",
-          "label": "Kopieer je tekst naar het klembord (tekst voor voorlezers)"
+          "label": "Kopieer je tekst naar het klembord (tekst voor schermlezers)"
         },
         {
           "default": "Scherm sluiten",
-          "label": "Scherm sluiten (tekst voor voorlezers)"
+          "label": "Scherm sluiten (tekst voor schermlezers)"
         },
         {
           "default": "Toon hints",
-          "label": "Toon hints (tekst voor voorlezers)"
+          "label": "Toon hints (tekst voor schermlezers)"
         }
       ],
-      "label": "Voorlezer"
+      "label": "Schermlezer"
     }
   ]
 }

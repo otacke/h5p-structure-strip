@@ -3,11 +3,11 @@
     {
       "fields": [
         {
-          "description": "Medien, die wahlweise oberhalb der Aufgabe angezeigt werden.",
+          "description": "Medium, das wahlweise oberhalb der Aufgabe angezeigt wird.",
           "label": "Typ"
         },
         {
-          "label": "Bildzoom deaktivieren"
+          "label": "Bild-Zoom deaktivieren"
         }
       ],
       "label": "Medien"

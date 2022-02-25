@@ -50,7 +50,7 @@
       ]
     },
     {
-      "description": "Šie iestatījumi ļaus jums kontrolēt uzdevuma uzvedību.",
+      "description": "These options will let you control how the task behaves.",
       "fields": [
         {
           "label": "Atļaut pogu \"Mēģināt vēlreiz\""
@@ -83,7 +83,7 @@
           ]
         }
       ],
-      "label": "Uzvedības iestatījumi"
+      "label": "Behavioural settings"
     },
     {
       "fields": [

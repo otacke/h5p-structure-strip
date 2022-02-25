@@ -14,7 +14,7 @@
     },
     {
       "description": "Beschreibe hier die Aufgabe für die Lernenden.",
-      "label": "Aufgabenbeschreibung"
+      "label": "Task description"
     },
     {
       "entity": "Abschnitt",
@@ -50,7 +50,7 @@
       ]
     },
     {
-      "description": "These options will let you control how the task behaves.",
+      "description": "Diese Optionen kontrollieren, wie sich die Aufgabe verhält.",
       "fields": [
         {
           "label": "\"Wiederholen\" aktivieren"
@@ -83,7 +83,7 @@
           ]
         }
       ],
-      "label": "Behavioural settings"
+      "label": "Verhaltenseinstellungen"
     },
     {
       "fields": [

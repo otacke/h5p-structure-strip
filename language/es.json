@@ -50,7 +50,7 @@
       ]
     },
     {
-      "description": "These options will let you control how the task behaves.",
+      "description": "Estas opciones le permitirán controlar como se comporta el trabajo.",
       "fields": [
         {
           "label": "Habilitar \"Reintentar\""

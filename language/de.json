@@ -14,7 +14,7 @@
     },
     {
       "description": "Beschreibe hier die Aufgabe für die Lernenden.",
-      "label": "Task description"
+      "label": "Aufgabenbeschreibung"
     },
     {
       "entity": "Abschnitt",

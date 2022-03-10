@@ -220,7 +220,7 @@ export default class StructureStrip extends H5P.Question {
       const text = this.content.getText(true);
       Util.copyTextToClipboard(text, (result) => {
         const button = this.buttonCopy;
-        const message = (result === true) ? this.params.l10n.copyToClipboardSuccess : this.params.a11y.copyToClipboardError;
+        const message = (result === true) ? this.params.l10n.copyToClipboardSuccess : this.params.l10n.copyToClipboardError;
 
         this.read(message);
 

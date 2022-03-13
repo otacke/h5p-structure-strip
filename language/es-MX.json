@@ -109,7 +109,7 @@
           "label": "Todas las secciones bien"
         },
         {
-          "default": "Su sección \"@title\" es demasiado corta. USted necesita al menos @chars caracteres más.",
+          "default": "Su sección \"@title\" es demasiado corta. Usted necesita al menos @chars caracteres más.",
           "description": "Texto de retroalimentación mostrado para secciones que son demasiado cortas (@title será remplazado por el título de la sección, @chars será remplazado por el número de caracteres faltantes).",
           "label": "Sección demasiado corta"
         },
@@ -120,7 +120,7 @@
         },
         {
           "default": "@chars caracteres demasiado corta",
-          "description": "Estado mostrado al escribir para secciones que son demasiado cortas (@chars será remplazado por elnúmero de caracteres faltantes).",
+          "description": "Estado mostrado al escribir para secciones que son demasiado cortas (@chars será remplazado por el número de caracteres faltantes).",
           "label": "Sección demasiado corta (al escribir)"
         },
         {

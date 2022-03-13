@@ -120,7 +120,7 @@
         },
         {
           "default": "@chars caracteres demasiado corta",
-          "description": "Estado mostrado al escribir para secciones que son demasiado cortas (@chars será remplazado por elnúmero de caracteres faltantes).",
+          "description": "Estado mostrado al escribir para secciones que son demasiado cortas (@chars será remplazado por el número de caracteres faltantes).",
           "label": "Sección demasiado corta (al escribir)"
         },
         {

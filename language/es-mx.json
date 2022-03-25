@@ -28,7 +28,7 @@
             "label": "Pistas"
           },
           {
-            "description": "Escriba la ponderación de esta sección relativa a otras secciones.",
+            "description": "Escriba la ponderación de esta sección relativa a otras secciones. The weight determines how long a section is expected compared to other sections.",
             "label": "Ponderación"
           },
           {

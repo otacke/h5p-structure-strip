@@ -103,7 +103,7 @@
           "name": "weight",
           "type": "number",
           "label": "Weight",
-          "description": "Enter the weight of this section relative to other sections.",
+          "description": "Enter the weight of this section relative to other sections. The relative weight determines how long a section is expected compared to other sections.",
           "min": 1,
           "default": 1
         },

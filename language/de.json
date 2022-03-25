@@ -28,7 +28,7 @@
             "label": "Hinweise"
           },
           {
-            "description": "Gib hier die Gewichtung für den Abschnitt relativ zu den anderen ein.",
+            "description": "Gib hier die Gewichtung für den Abschnitt relativ zu den anderen ein. The weight determines how long a section is expected compared to other sections.",
             "label": "Gewichtung"
           },
           {

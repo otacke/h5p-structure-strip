@@ -28,7 +28,7 @@
             "label": "Pistak"
           },
           {
-            "description": "Zehaztu atal honen beste atalekiko pisua.",
+            "description": "Zehaztu atal honen beste atalekiko pisua. The weight determines how long a section is expected compared to other sections.",
             "label": "Pisua"
           },
           {

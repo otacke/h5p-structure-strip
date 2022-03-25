@@ -28,7 +28,7 @@
             "label": "Padomi"
           },
           {
-            "description": "Ievadiet šī paragrāfa svaru attiecībā pret citiem paragrāfiem.",
+            "description": "Ievadiet šī paragrāfa svaru attiecībā pret citiem paragrāfiem. The weight determines how long a section is expected compared to other sections.",
             "label": "Svars"
           },
           {

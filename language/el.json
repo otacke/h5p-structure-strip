@@ -65,11 +65,11 @@
         },
         {
           "label": "Ελάχιστο μήκος κειμένου",
-          "description": "Ορισμός ελάχιστου συνολικού μήκους κειμένου."
+          "description": "Ορισμός ελάχιστου συνολικού μήκους κειμένου. Please note that a section's weight compared to other sections is the main driver for the feedback message, not this minimum value."
         },
         {
           "label": "Μέγιστο μήκος κειμένου",
-          "description": "Ορισμός μέγιστου συνολικού μήκους κειμένου."
+          "description": "Ορισμός μέγιστου συνολικού μήκους κειμένου. Please note that a section's weight compared to other sections is the main driver for the feedback message, not this maximum value."
         },
         {
           "label": "Λειτουργία ανατροφοδότησης",

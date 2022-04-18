@@ -24,20 +24,20 @@
             "label": "Título"
           },
           {
-            "description": "Optionally add hints or particular instructions for this section.",
+            "description": "Opcionalmente, adicione dicas ou instruções específicas para esta seção.",
             "label": "Dicas"
           },
           {
-            "description": "Enter the weight of this section relative to other sections. The weight determines how long a section is expected compared to other sections.",
-            "label": "Weight"
+            "description": "Insira o peso desta seção em relação a outras seções. O peso determina quanto tempo uma seção é esperada em comparação com outras seções.",
+            "label": "Peso"
           },
           {
             "default": "#96ceb4",
-            "label": "Background color"
+            "label": "Cor de fundo"
           },
           {
             "default": "#1c1c1c",
-            "label": "Text color"
+            "label": "Cor do texto"
           }
         ],
         "label": "Parâmetros de seção"
@@ -50,68 +50,68 @@
       ]
     },
     {
-      "description": "These options will let you control how the task behaves.",
+      "description": "Estas opções permitem controlar como a tarefa se comporta.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Ativar \"Tentar Novamente\""
         },
         {
-          "label": "Enable \"Solution\""
+          "label": "Ativar \"Solução\""
         },
         {
-          "description": "Percentage of slack that's acceptable for a section's length.",
-          "label": "Slack"
+          "description": "Porcentagem de folga aceitável para o comprimento de uma seção.",
+          "label": "Folga"
         },
         {
-          "description": "Define an absolute minimum total text length. Please note that a section's weight compared to other sections is the main driver for the feedback message, not this minimum value.",
-          "label": "Minimum text length"
+          "description": "Defina um comprimento total mínimo absoluto de texto.",
+          "label": "Comprimento mínimo do texto"
         },
         {
-          "description": "Define an absolute maximum total text length. Please note that a section's weight compared to other sections is the main driver for the feedback message, not this maximum value.",
-          "label": "Maximum text length"
+          "description": "Definir um comprimento total de texto máximo absoluto.",
+          "label": "Comprimento máximo do texto"
         },
         {
-          "description": "Decide whether you want to display feedback while typing or only when the student requests it.",
-          "label": "Feedback mode",
+          "description": "Decidir se deseja exibir comentários enquanto digita ou apenas quando o aluno solicita.",
+          "label": "Modo de Feedback",
           "options": [
             {
-              "label": "On request"
+              "label": "A pedido"
             },
             {
-              "label": "While typing"
+              "label": "Ao digitar"
             }
           ]
         }
       ],
-      "label": "Configurações comportamentais"
+      "label": "Behavioural settings"
     },
     {
       "fields": [
         {
-          "default": "Copy",
-          "label": "Text for \"Copy\" button"
+          "default": "Copiar",
+          "label": "Texto para o botão \"Copiar\""
         },
         {
-          "default": "Check",
-          "label": "Text for \"Check\" button"
+          "default": "Verificar",
+          "label": "Texto para o botão \"Verificar\""
         },
         {
-          "default": "Retry",
-          "label": "Text for \"Retry\" button"
+          "default": "Tentar Novamente",
+          "label": "Texto para o botão \"Tentar Novamente\""
         },
         {
-          "default": "Show solution",
-          "label": "Text for \"Show solution\" button"
+          "default": "Mostrar solução",
+          "label": "Texto para o botão \"Mostrar solução\""
         },
         {
-          "default": "Your sections' lengths are all fine.",
-          "description": "Feedback text shown when all sections are of tolerable length.",
-          "label": "All sections good"
+          "default": "Os comprimentos de suas seções estão de acordo.",
+          "description": "Texto de feedback exibido quando todas as seções têm comprimento aceitável.",
+          "label": "Todas as seções estão boas"
         },
         {
           "default": "Your section \"@title\" is too short. You need at least @chars more characters.",
           "description": "Feedback text shown for sections that are too short (@title will be replaced by the section title, @chars will be replaced by the number of characters missing).",
-          "label": "Section too short"
+          "label": "Seção muito curta"
         },
         {
           "default": "Your section \"@title\" is too long. Remove at least @chars characters.",
@@ -145,7 +145,7 @@
           "label": "Text for \"No section\" message"
         }
       ],
-      "label": "User interface"
+      "label": "Interface de usuário"
     },
     {
       "fields": [

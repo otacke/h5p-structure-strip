@@ -63,11 +63,11 @@
           "label": "Folga"
         },
         {
-          "description": "Defina um comprimento total mínimo absoluto de texto.",
+          "description": "Defina um comprimento total mínimo absoluto de texto. Observe que o peso de uma seção em comparação com outras seções é o principal fator para a mensagem de feedback, não esse valor mínimo.",
           "label": "Comprimento mínimo do texto"
         },
         {
-          "description": "Definir um comprimento total de texto máximo absoluto.",
+          "description": "Defina um comprimento total de texto máximo absoluto. Observe que o peso de uma seção em comparação com outras seções é o principal fator para a mensagem de feedback, não esse valor máximo.",
           "label": "Comprimento máximo do texto"
         },
         {
@@ -83,7 +83,7 @@
           ]
         }
       ],
-      "label": "Behavioural settings"
+      "label": "Configurações comportamentais"
     },
     {
       "fields": [
@@ -109,40 +109,40 @@
           "label": "Todas as seções estão boas"
         },
         {
-          "default": "Your section \"@title\" is too short. You need at least @chars more characters.",
-          "description": "Feedback text shown for sections that are too short (@title will be replaced by the section title, @chars will be replaced by the number of characters missing).",
+          "default": "Sua seção \"@title\" é muito curta. Você precisa de pelo menos @chars mais caracteres.",
+          "description": "Texto de feedback mostrado para seções muito curtas (@title será substituído pelo título da seção, @chars será substituído pelo número de caracteres ausentes).",
           "label": "Seção muito curta"
         },
         {
-          "default": "Your section \"@title\" is too long. Remove at least @chars characters.",
-          "description": "Feedback text shown for sections that are too long (@title will be replaced by the section title, @chars will be replaced by the number of characters needing removal).",
-          "label": "Section too long"
+          "default": "Sua seção \"@title\" é muito longa. Remova pelo menos @chars caracteres.",
+          "description": "Texto de feedback mostrado para seções muito longas (@title será substituído pelo título da seção, @chars será substituído pelo número de caracteres que precisam ser removidos).",
+          "label": "Seção muito longa"
         },
         {
-          "default": "@chars characters too short",
-          "description": "Status shown when typing for sections that are too short (@chars will be replaced by the number of characters missing).",
-          "label": "Section too short (when typing)"
+          "default": "@chars é uma quantidade pequena de caracteres",
+          "description": "Status mostrado ao digitar seções muito curtas (@chars será substituído pelo número de caracteres ausentes).",
+          "label": "Seção muito curta (ao digitar)"
         },
         {
-          "default": "@chars characters too long",
-          "description": "Status shown when typing for sections that are too long (@chars will be replaced by the number of characters needing removal).",
-          "label": "Section too long (when typing)"
+          "default": "@chars são muitos caracteres",
+          "description": "Status mostrado ao digitar seções muito longas (@chars será substituído pelo número de caracteres que precisam ser removidos).",
+          "label": "Seção muito longa (ao digitar)"
         },
         {
-          "default": "Your text was copied to the clipboard",
-          "label": "Text copied to clipboard"
+          "default": "Seu texto foi copiado para a área de transferência",
+          "label": "Texto copiado para a área de transferência"
         },
         {
-          "default": "Your text could not be copied to the clipboard",
-          "label": "Cannot copy to clipboard"
+          "default": "Seu texto não pôde ser copiado para a área de transferência",
+          "label": "Não é possível copiar para a área de transferência"
         },
         {
-          "default": "Section",
-          "label": "Section"
+          "default": "Seção",
+          "label": "Seção"
         },
         {
-          "default": "There was no section given for this structure strip.",
-          "label": "Text for \"No section\" message"
+          "default": "Não foi dada nenhuma seção para esta faixa de estrutura.",
+          "label": "Texto para a mensagem \"Nenhuma seção\""
         }
       ],
       "label": "Interface de usuário"
@@ -151,22 +151,22 @@
       "fields": [
         {
           "default": "Feedback",
-          "label": "Feedback (text for readspeakers)"
+          "label": "Feedback (texto para leitores de tela)"
         },
         {
-          "default": "Copy text to clipboard",
-          "label": "Copy your text to the clipboard (text for readspeakers)"
+          "default": "Copiar texto para a área de transferência",
+          "label": "Copie seu texto para a área de transferência (texto para leitores de tela)"
         },
         {
-          "default": "Close window",
-          "label": "Close window (text for readspeakers)"
+          "default": "Fechar janela",
+          "label": "Fechar janela (texto para leitores de tela)"
         },
         {
-          "default": "Show hints",
-          "label": "Show hints (text for readspeakers)"
+          "default": "Mostrar dicas",
+          "label": "Mostrar dicas (texto para leitores de tela)"
         }
       ],
-      "label": "Readspeaker"
+      "label": "Leitor de Tela"
     }
   ]
 }

@@ -28,7 +28,7 @@
             "label": "Padomi"
           },
           {
-            "description": "Ievadiet šī paragrāfa svaru attiecībā pret citiem paragrāfiem. The weight determines how long a section is expected compared to other sections.",
+            "description": "Ievadiet šī paragrāfa svaru attiecībā pret citiem paragrāfiem. Svars nosaka, cik garam paragrāfam jābūt attiecībā pret citiem paragrāfiem.",
             "label": "Svars"
           },
           {
@@ -63,11 +63,11 @@
           "label": "Bezdarbība"
         },
         {
-          "description": "Norādiet absolūto minimālo kopējo teksta garumu. Please note that a section's weight compared to other sections is the main driver for the feedback message, not this minimum value.",
+          "description": "Norādiet absolūto minimālo kopējo teksta garumu. Lūdzu, ņemiet vērā, atgriezeniskās saites ziņojuma virzītājspēks ir nevis šī minimālā vērtība, bet paragrāfa svars salīdzinājumā ar citiem paragrāfiem.",
           "label": "Minimālais teksta garums"
         },
         {
-          "description": "Norādiet absolūto maksimālo kopējo teksta garumu. Please note that a section's weight compared to other sections is the main driver for the feedback message, not this maximum value.",
+          "description": "Norādiet absolūto maksimālo kopējo teksta garumu. Lūdzu, ņemiet vērā, atgriezeniskās saites ziņojuma virzītājspēks ir nevis šī maksimālā vērtība, bet paragrāfa svars salīdzinājumā ar citiem paragrāfiem.",
           "label": "Maksimālais teksta garums"
         },
         {

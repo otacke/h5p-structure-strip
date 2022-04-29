@@ -28,7 +28,7 @@
             "label": "Pistak"
           },
           {
-            "description": "Zehaztu atal honen beste atalekiko pisua. The weight determines how long a section is expected compared to other sections.",
+            "description": "Zehaztu atal honen beste atalekiko pisua. Pisuak atal batek beste atalekin konparatuz duen tamaina zehazten du.",
             "label": "Pisua"
           },
           {
@@ -50,7 +50,7 @@
       ]
     },
     {
-      "description": "Aukera hauek atazaren portaera kontrolatzea ahalbidetzen dizute.",
+      "description": "Aukera hauek lanaren portaera kontrolatzea ahalbidetzen dizute.",
       "fields": [
         {
           "label": "Gaitu \"Berriz saiatu\""
@@ -83,7 +83,7 @@
           ]
         }
       ],
-      "label": "Portaeren ezarpenak"
+      "label": "Portaeraren ezarpenak"
     },
     {
       "fields": [

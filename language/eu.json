@@ -83,7 +83,7 @@
           ]
         }
       ],
-      "label": "Behavioural settings"
+      "label": "Portaeren ezarpenak"
     },
     {
       "fields": [
@@ -166,7 +166,7 @@
           "label": "Erakutsi pistak (irakurtzen duen bozgorailua)"
         }
       ],
-      "label": "Readspeaker"
+      "label": "Pantaila-irakurlea"
     }
   ]
 }

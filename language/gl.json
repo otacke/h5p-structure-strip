@@ -7,14 +7,14 @@
           "label": "Tipo"
         },
         {
-          "label": "Desactivar zoom de imaxes"
+          "label": "Desactivar zoom da imaxe"
         }
       ],
       "label": "Medios"
     },
     {
       "description": "Explícalle aos teus alumnos o que teñen que facer.",
-      "label": "Descrición da tarefa"
+      "label": "Task description"
     },
     {
       "entity": "sección",

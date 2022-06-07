@@ -3,14 +3,14 @@
     {
       "fields": [
         {
-          "description": "Medios opcionais amosados enriba da pregunta.",
-          "label": "Tipo"
+          "description": "Optional media to display above the question.",
+          "label": "Type"
         },
         {
-          "label": "Desactivar zoom da imaxe"
+          "label": "Disable image zooming"
         }
       ],
-      "label": "Medios"
+      "label": "Media"
     },
     {
       "description": "Explícalle aos teus alumnos o que teñen que facer.",

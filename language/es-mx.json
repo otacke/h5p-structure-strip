@@ -3,14 +3,14 @@
     {
       "fields": [
         {
-          "description": "Medio opcional a mostrar arriba de la pregunta.",
+          "description": "Medios opcionales mostrados encima de la pregunta.",
           "label": "Tipo"
         },
         {
           "label": "Deshabilitar acercamiento de imagen"
         }
       ],
-      "label": "Medio"
+      "label": "Medios"
     },
     {
       "description": "Explique a sus estudiantes lo que se espera de ellos.",

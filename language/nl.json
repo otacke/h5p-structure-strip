@@ -28,7 +28,7 @@
             "label": "Hints"
           },
           {
-            "description": "Voer het gewicht van deze paragraaf ten opzichte van andere paragrafen in. The weight determines how long a section is expected compared to other sections.",
+            "description": "Voer het gewicht van deze paragraaf ten opzichte van andere paragrafen in. Het gewicht bepaalt hoe lang een sectie moet zijn vergeleken met andere secties.",
             "label": "Gewicht"
           },
           {

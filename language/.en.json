@@ -36,7 +36,7 @@
           },
           {
             "label": "Weight",
-            "description": "Enter the weight of this section relative to other sections. The weight determines how long a section is expected to be compared to other sections."
+            "description": "Determine how long each section is expected to be in relation to the other sections. Example: Section 1 = 1; Section 2 = 3 (triple the length of 1); Section 3 = 1 (same length as section 1)."
           },
           {
             "label": "Background color",
@@ -61,7 +61,7 @@
         },
         {
           "label": "Slack",
-          "description": "Percentage of slack that's acceptable for a section's length."
+          "description": "Slack is built-in flexibility of a section's length, calculated in percentage."
         },
         {
           "label": "Minimum text length",

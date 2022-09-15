@@ -28,7 +28,7 @@
             "label": "Pistas"
           },
           {
-            "description": "Escribe la ponderación de esta sección relativa a otras secciones. La ponderación determina durante cuanto se espera que una sección se compare con otras.",
+            "description": "Determine que tan larga se espera que sea cada sección con relación a las otras secciones. Ejemplo: Sección 1 = 1; Sección 2 = 3 (el triple de largo de 1); Sección 3 = 1 (mismo largo que sección 1).",
             "label": "Ponderación"
           },
           {
@@ -59,8 +59,8 @@
           "label": "Habilitar \"Solución\""
         },
         {
-          "description": "Porcentaje de margen que es aceptable para la longitud de una sección.",
-          "label": "Margen"
+          "description": "La holgura es flexibilidad incorporada de una sección, calculada en porcentaje.",
+          "label": "Holgura"
         },
         {
           "description": "Define una longitud absoluta mínima total del texto. Por favor, ten en cuenta que la ponderación de una sección comparada con otras secciones es la principal causa del mensaje de retroalimentación, no este valor mínimo.",
@@ -83,7 +83,7 @@
           ]
         }
       ],
-      "label": "Configuración del comportamiento"
+      "label": "Configuraciones del comportamiento"
     },
     {
       "fields": [
@@ -145,7 +145,7 @@
           "label": "Texto para mensaje \"No hay sección\""
         }
       ],
-      "label": "Interfaz de usuario"
+      "label": "Interfaz del usuario"
     },
     {
       "fields": [

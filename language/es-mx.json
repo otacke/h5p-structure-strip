@@ -28,7 +28,7 @@
             "label": "Pistas"
           },
           {
-            "description": "Escriba la ponderación de esta sección relativa a otras secciones. La ponderación determina por cuanto tiempo se espera que una sección sea comparada con otras secciones.",
+            "description": "Determine que tan larga se espera que sea cada sección con relación a las otras secciones. Ejemplo: Sección 1 = 1; Sección 2 = 3 (el triple de largo de 1); Sección 3 = 1 (mismo largo que sección 1).",
             "label": "Ponderación"
           },
           {
@@ -59,7 +59,7 @@
           "label": "Habilitar \"Solución\""
         },
         {
-          "description": "Porcentaje de holgura que es aceptable para la longitud de una sección.",
+          "description": "La holgura es flexibilidad incorporada de una sección, calculada en porcentaje.",
           "label": "Holgura"
         },
         {

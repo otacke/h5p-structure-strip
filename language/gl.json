@@ -28,7 +28,7 @@
             "label": "Pistas"
           },
           {
-            "description": "Indica un peso para esta sección relativo ás outras. O peso determina durante canto tempo espérase que se compare unha sección con outras.",
+            "description": "Indica a lonxitude para cada sección en relación coas outras. Exemplo: Sección 1 = 1; Sección 2 = 3 (triplo da lonxitude de 1); Sección 3 = 1 (mesma lonxitude que 1).",
             "label": "Peso"
           },
           {
@@ -59,7 +59,7 @@
           "label": "Activar \"Solución\""
         },
         {
-          "description": "Porcentaxe de folgura aceptable para a lonxitude dunha sección.",
+          "description": "Slack é a flexibilidade integrada da lonxitude dunha sección, calculada en porcentaxe.",
           "label": "Folgura"
         },
         {

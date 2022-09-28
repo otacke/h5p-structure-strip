@@ -28,7 +28,7 @@
             "label": "Padomi"
           },
           {
-            "description": "Ievadiet šī paragrāfa svaru attiecībā pret citiem paragrāfiem. Svars nosaka, cik garam paragrāfam jābūt attiecībā pret citiem paragrāfiem.",
+            "description": "Ievadiet šī paragrāfa garumu attiecībā pret citiem paragrāfiem. Piemēram: Paragrāfs 1 = 1; Paragrāfs 2 = 3 (trīs reizes garāks nekā 1); Paragrāfs 3 = 1 (tikpat garš kā 1. paragrāfs).",
             "label": "Svars"
           },
           {
@@ -59,7 +59,7 @@
           "label": "Iespējot \"Risinājums\""
         },
         {
-          "description": "Bezdarbības procentuālā daļa, kas ir pieņemama sadaļas garumā.",
+          "description": "Vaļīgums ir iebūvēta sadaļas garuma elastība, kas aprēķināta procentos.",
           "label": "Bezdarbība"
         },
         {

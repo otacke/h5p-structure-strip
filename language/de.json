@@ -28,7 +28,7 @@
             "label": "Hinweise"
           },
           {
-            "description": "Gib hier die Gewichtung für den Abschnitt relativ zu den anderen ein. The weight determines how long a section is expected compared to other sections.",
+            "description": "Lege fest, wie lang ein Abschnitt im Verhältnis zu den anderen Abschnitten sein soll. Beispiel: Abschnitt 1 = 1; Abschnitt 2 = 3 (dreifache Länge von 1); Abschnitt 3 = 1 (dieselbe Länge wie 1).",
             "label": "Gewichtung"
           },
           {
@@ -59,7 +59,7 @@
           "label": "\"Lösung anzeigen\" ermöglichen"
         },
         {
-          "description": "Prozentualer Spielraum, der noch akzeptabel für die Länge eines Abschnitts ist.",
+          "description": "Der Spielraum definiert eine gewisse Flexibilität bei der Länge eines Abschnitts und wird in Prozent berechnet.",
           "label": "Spielraum"
         },
         {

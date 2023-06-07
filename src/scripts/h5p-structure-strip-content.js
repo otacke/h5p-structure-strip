@@ -1,13 +1,13 @@
-import Overlay from './h5p-structure-strip-overlay';
-import StructureStripSection from './h5p-structure-strip-section';
-import Util from './h5p-structure-strip-util';
+import Overlay from '@scripts/h5p-structure-strip-overlay';
+import StructureStripSection from '@scripts/h5p-structure-strip-section';
+import Util from '@services/util';
 
 /** Class representing the content */
 export default class StructureStripContent {
   /**
-   * @constructor
+   * @class
    * @param {object} params Parameters.
-   * @param {object} [callbacks={}] Callbacks.
+   * @param {object} [callbacks] Callbacks.
    */
   constructor(params = {}, callbacks = {}) {
     this.params = params;
@@ -79,7 +79,7 @@ export default class StructureStripContent {
     }
 
     // Greatest common divisor of section weights.
-    this.greatestCommonDivisor = Util.greatestCommonDivisorArray(this.sections.map(section => section.getWeight()));
+    this.greatestCommonDivisor = Util.greatestCommonDivisorArray(this.sections.map((section) => section.getWeight()));
 
     if (this.params.feedbackMode === 'whileTyping') {
       this.updateSections();
@@ -104,7 +104,7 @@ export default class StructureStripContent {
 
   /**
    * Return the DOM for this class.
-   * @return {HTMLElement} DOM for this class.
+   * @returns {HTMLElement} DOM for this class.
    */
   getDOM() {
     return this.content;
@@ -120,11 +120,12 @@ export default class StructureStripContent {
 
   /**
    * Return the text of all strips.
-   * @return {object[]} Texts of all strips.
+   * @param {boolean} [concatenated] If true return text concatenated as string.
+   * @returns {string|object[]} Texts of all strips.
    */
   getText(concatenated = false) {
-    const texts = this.sections.map(strip => strip.getText());
-    return concatenated ? texts.filter(text => text !== '').join('\n') : texts;
+    const texts = this.sections.map((strip) => strip.getText());
+    return concatenated ? texts.filter((text) => text !== '').join('\n') : texts;
   }
 
   /**
@@ -138,7 +139,7 @@ export default class StructureStripContent {
    * Enable sections.
    */
   enableSections() {
-    this.sections.forEach(section => {
+    this.sections.forEach((section) => {
       section.enable();
     });
   }
@@ -152,8 +153,8 @@ export default class StructureStripContent {
     }
 
     // Only show feedback if all sections have been filled
-    if (this.sections.some(section => section.getText().length === 0)) {
-      this.sections.forEach(section => {
+    if (this.sections.some((section) => section.getText().length === 0)) {
+      this.sections.forEach((section) => {
         section.setStatus('&nbsp;');
         section.setProgressBar(0);
       });
@@ -182,7 +183,7 @@ export default class StructureStripContent {
 
   /**
    * Compute normed min and max length of text.
-   * @return {object} Min and max length of text.
+   * @returns {object} Min and max length of text.
    */
   computeNormedLengths() {
     let referenceLength = Math.max(this.referenceSection.getText().length, this.referenceSection.getWeight() / this.greatestCommonDivisor);
@@ -215,12 +216,12 @@ export default class StructureStripContent {
    * @param {string} textTemplates.alright Text for good section length.
    * @param {string} textTemplates.tooLong Text for section that is too long.
    * @param {string} textTemplates.tooShort Text for section that is too short.
-   * @return {string[]} Feedback texts.
+   * @returns {string[]} Feedback texts.
    */
   buildFeedbackTexts(textTemplates) {
     const normedLengths = this.computeNormedLengths();
     const feedbackTexts = [];
-    this.sections.forEach(section => {
+    this.sections.forEach((section) => {
       const normedLength = section.getText().length / section.getWeight();
 
       if (normedLength > normedLengths.max) {
@@ -263,12 +264,12 @@ export default class StructureStripContent {
 
   /**
    * Build progress values.
-   * @return {number[]} Progress values.
+   * @returns {number[]} Progress values.
    */
   buildProgresses() {
     const normedLengths = this.computeNormedLengths();
 
-    return this.sections.map(section => {
+    return this.sections.map((section) => {
       const normedLength = section.getText().length / section.getWeight();
 
       if (normedLength > normedLengths.max) {
@@ -296,14 +297,14 @@ export default class StructureStripContent {
 
   /**
    * Check answer.
-   * @param {string[]} HTMl feedback.
+   * @returns {string|undefined} HTMl feedback.
    */
   checkAnswer() {
     if (this.params.feedbackMode !== 'onRequest') {
       return;
     }
 
-    this.sections.forEach(section => {
+    this.sections.forEach((section) => {
       section.disable();
     });
 
@@ -314,7 +315,7 @@ export default class StructureStripContent {
     });
 
     // Remove empty feedback
-    feedbackTexts = feedbackTexts.filter(text => text !== null);
+    feedbackTexts = feedbackTexts.filter((text) => text !== null);
     if (feedbackTexts.length === 0) {
       feedbackTexts = [this.params.l10n.allSectionsGood];
     }

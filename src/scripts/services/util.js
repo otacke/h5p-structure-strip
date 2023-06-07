@@ -2,8 +2,7 @@
 class Util {
   /**
    * Extend an array just like JQuery's extend.
-   * @param {object} arguments Objects to be merged.
-   * @return {object} Merged objects.
+   * @returns {object} Merged objects.
    */
   static extend() {
     for (let i = 1; i < arguments.length; i++) {
@@ -24,7 +23,7 @@ class Util {
   /**
    * Retrieve true string from HTML encoded string.
    * @param {string} input Input string.
-   * @return {string} Output string.
+   * @returns {string} Output string.
    */
   static htmlDecode(input) {
     var dparser = new DOMParser().parseFromString(input, 'text/html');
@@ -35,7 +34,7 @@ class Util {
    * Get closest parent node by selector.
    * @param {HTMLElement} node Node.
    * @param {string} selector CSS classname, id or tagname.
-   * @return {HTMLElement|null} Closest parent node by selector or null.
+   * @returns {HTMLElement|null} Closest parent node by selector or null.
    */
   static closestParent(node, selector) {
     if (typeof node !== 'object' || typeof selector !== 'string') {
@@ -47,8 +46,8 @@ class Util {
     }
 
     if (selector.substr(0, 1) === '.') { // classnames
-      const selectors = selector.split('.').filter(selector => selector !== '');
-      if (selectors.every(selector => node.parentNode.classList.contains(selector))) {
+      const selectors = selector.split('.').filter((selector) => selector !== '');
+      if (selectors.every((selector) => node.parentNode.classList.contains(selector))) {
         return node.parentNode;
       }
     }
@@ -69,9 +68,9 @@ class Util {
 
   /**
    * Compute greatest common divisor.
-   * @param {number} [a=1] First number.
-   * @param {number} [b=1] Second number.
-   * @return {number} Greatest common divisor.
+   * @param {number} [a] First number.
+   * @param {number} [b] Second number.
+   * @returns {number} Greatest common divisor.
    */
   static greatestCommonDivisor(a = 1, b = 1) {
     return (!b) ? a : Util.greatestCommonDivisor(b, a % b);
@@ -80,7 +79,7 @@ class Util {
   /**
    * Compute greatest common divisor.
    * @param {number[]} numbers Numbers.
-   * @return {number} Greatest common divisor.
+   * @returns {number} Greatest common divisor.
    */
   static greatestCommonDivisorArray(numbers) {
     return numbers.reduce((previous, current) => {
@@ -106,7 +105,7 @@ class Util {
 
     navigator.clipboard.writeText(text).then(() => {
       callback(true);
-    }, error => {
+    }, (error) => {
       console.error('Cannot copy to clipboard: ', error);
       callback(false);
     });
@@ -162,8 +161,8 @@ class Util {
   /**
    * Format language tag (RFC 5646). Assuming "language-coutry". No validation.
    * Cmp. https://tools.ietf.org/html/rfc5646
-   * @param {string} languageTag Language tag.
-   * @return {string} Formatted language tag.
+   * @param {string} languageCode Language tag.
+   * @returns {string} Formatted language tag.
    */
   static formatLanguageCode(languageCode) {
     if (typeof languageCode !== 'string') {
@@ -187,7 +186,7 @@ class Util {
   /**
    * Compute HSV value.
    * @param {string} colorCode RGB color code in 6 char hex: #rrggbb.
-   * @return {number} HSV value as [0-1];
+   * @returns {number} HSV value as [0-1];
    */
   static computeHSVValue(colorCode) {
     if (typeof colorCode !== 'string' || !/#[0-9a-f]{6}/.test(colorCode)) {
@@ -210,8 +209,8 @@ class Util {
   /**
    * Compute contrast color to given color.
    * @param {string} colorCode RGB color code in 6 char hex: #rrggbb.
-   * @param {number} [difference=0.5] Percentual difference: [0-1].
-   * @return {string} RGB contrast color code in 6 char hex: #rrggbb.
+   * @param {number} [difference] Percentual difference: [0-1].
+   * @returns {string} RGB contrast color code in 6 char hex: #rrggbb.
    */
   static computeContrastColor(colorCode, difference = 0.5) {
     if (typeof colorCode !== 'string' || !/#[0-9a-f]{6}/.test(colorCode)) {
@@ -252,8 +251,8 @@ class Util {
   /**
    * Convert decimals to hexadecimals.
    * @param {number} decimal Decimal.
-   * @param {number} [padding=0] Padding.
-   * @return {string} Padded hexadecimal.
+   * @param {number} [padding] Padding.
+   * @returns {string} Padded hexadecimal.
    */
   static dec2hex(decimal, padding = 0) {
     if (typeof decimal !== 'number') {

@@ -1,10 +1,4 @@
-.h5p-content:not(.using-mouse) .h5p-structure-strip .h5p-structure-strip-overlay-button-close:focus {
-  border-color: rgba(0, 0, 0, .4);
-  outline: none;
-}
-
 .h5p-structure-strip {
-
   .h5p-structure-strip-overlay-container {
     background-color: #ffffff;
     border: 0;
@@ -111,4 +105,9 @@
     height: 100%;
     width: 100%;
   }
+}
+
+.h5p-content:not(.using-mouse) .h5p-structure-strip .h5p-structure-strip-overlay-button-close:focus {
+  border-color: rgba(0, 0, 0, .4);
+  outline: none;
 }

@@ -1,9 +1,3 @@
-.h5p-content:not(.using-mouse) .h5p-structure-strip .h5p-structure-strip-text-strip-button-hint:focus {
-  border-color: rgba(0, 0, 0, .4);
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
-  outline: none;
-}
-
 .h5p-structure-strip {
 
   .h5p-structure-strip-message {
@@ -108,7 +102,7 @@
 
     &::after {
       content: "\e8fd";
-      font-family: 'Material Icons';
+      font-family: 'Material Icons', sans-serif;
       font-size: 1.5em;
       position: absolute;
       left: -0.09em;
@@ -155,4 +149,10 @@
     width: calc(100% - 1.5em);
   }
 
+}
+
+.h5p-content:not(.using-mouse) .h5p-structure-strip .h5p-structure-strip-text-strip-button-hint:focus {
+  border-color: rgba(0, 0, 0, .4);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+  outline: none;
 }

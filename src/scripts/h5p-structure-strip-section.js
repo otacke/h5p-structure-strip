@@ -1,9 +1,9 @@
-import Util from './h5p-structure-strip-util';
+import Util from '@services/util';
 
 /** Class representing the content */
 export default class StructureStripSection {
   /**
-   * @constructor
+   * @class
    * @param {object} params Parameters.
    * @param {object} callbacks Callbacks.
    */
@@ -50,7 +50,7 @@ export default class StructureStripSection {
 
   /**
    * Return the DOM for this class.
-   * @return {HTMLElement} DOM for this class.
+   * @returns {HTMLElement} DOM for this class.
    */
   getDOM() {
     return this.content;
@@ -72,7 +72,7 @@ export default class StructureStripSection {
 
   /**
    * Get id.
-   * @return {number} Id.
+   * @returns {number} Id.
    */
   getId() {
     return this.params.id;
@@ -80,7 +80,7 @@ export default class StructureStripSection {
 
   /**
    * Get text.
-   * @return {string} Text.
+   * @returns {string} Text.
    */
   getText() {
     return this.inputField.value || '';
@@ -88,7 +88,7 @@ export default class StructureStripSection {
 
   /**
    * Get title.
-   * @return {string} Title.
+   * @returns {string} Title.
    */
   getTitle() {
     return this.params.title;
@@ -96,15 +96,15 @@ export default class StructureStripSection {
 
   /**
    * Get text length.
-   * @return {number} Text length.
+   * @returns {number} Text length.
    */
   getLength() {
-    this.getText().length;
+    return this.getText().length;
   }
 
   /**
    * Get weight.
-   * @return {number} Weight.
+   * @returns {number} Weight.
    */
   getWeight() {
     return this.params.weight;
@@ -112,7 +112,7 @@ export default class StructureStripSection {
 
   /**
    * Set status text.
-   * @param {string} [text=''] Status text to set.
+   * @param {string} [text] Status text to set.
    */
   setStatus(text = '') {
     if (!this.descriptionStatus) {
@@ -219,7 +219,7 @@ export default class StructureStripSection {
 
     // Add listeners if feedback should be given while typing
     if (this.params.feedbackMode === 'whileTyping') {
-      ['change', 'keyup', 'paste'].forEach(event => {
+      ['change', 'keyup', 'paste'].forEach((event) => {
         this.inputField.addEventListener(event, this.callbacks.onContentChanged);
       });
 
@@ -254,12 +254,12 @@ export default class StructureStripSection {
 
   /**
    * Build aria label.
-   * @param {string[]} [texts=[]] Texts.
-   * @return {string} Aria label.
+   * @param {string[]} [texts] Texts.
+   * @returns {string} Aria label.
    */
   buildAriaLabel(texts = []) {
     return texts
-      .map(text => {
+      .map((text) => {
         text = Util.htmlDecode(text);
         return (text.slice(-1) === '.') ? text.slice(0, -1) : text;
       }).join('. ');

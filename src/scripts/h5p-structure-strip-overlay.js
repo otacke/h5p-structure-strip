@@ -1,14 +1,13 @@
-import "../styles/h5p-structure-strip-overlay.scss";
-import Util from './h5p-structure-strip-util';
+import '@styles/h5p-structure-strip-overlay.scss';
+import Util from '@services/util';
 
 /** Class representing the content */
 export default class Overlay {
   /**
-   * @constructor
-   *
+   * @class
    * @param {object} params Parameters.
    * @param {HTMLElement} params.content Content to set.
-   * @param {object} callbacks, Callbacks.
+   * @param {object} callbacks Callbacks.
    */
   constructor(params, callbacks = {}) {
     this.params = Util.extend({
@@ -37,7 +36,7 @@ export default class Overlay {
     this.addDOM();
 
     // Trap focus if overlay is visible
-    document.addEventListener('focus', event => {
+    document.addEventListener('focus', (event) => {
       if (!this.isVisible || this.focusableElements.length === 0) {
         return;
       }
@@ -103,7 +102,7 @@ export default class Overlay {
 
   /**
    * Return the DOM for this class.
-   * @return {HTMLElement} DOM for this class.
+   * @returns {HTMLElement} DOM for this class.
    */
   getDOM() {
     return this.overlay;
@@ -111,7 +110,7 @@ export default class Overlay {
 
   /**
    * Set overlay title.
-   * @param {string} [title=''] Title to set.
+   * @param {string} [title] Title to set.
    */
   setTitle(title = '') {
     this.title.innerHTML = Util.htmlDecode(title);
@@ -139,11 +138,11 @@ export default class Overlay {
   /**
    * Set an extra class that can be used for CSS styling.
    * @param {string} className Class name.
-   * @param {boolean} [clear=true] If false, will not erase all other extra classes.
+   * @param {boolean} [clear] If false, will not erase all other extra classes.
    */
   setModifierClass(className, clear = true) {
     if (clear) {
-      this.modifierClasses.forEach(oldClassName => {
+      this.modifierClasses.forEach((oldClassName) => {
         this.overlay.classList.remove(oldClassName);
       });
       this.modifierClasses = [];
@@ -178,8 +177,8 @@ export default class Overlay {
 
   /**
    * Check whether an HTML element is a child of the overlay.
-   * @param {HTMLElement} element.
-   * @return {boolean} True, if element is a child.
+   * @param {HTMLElement} element HTML element.
+   * @returns {boolean} True, if element is a child.
    */
   isChild(element) {
     const parent = element.parentNode;
@@ -201,7 +200,7 @@ export default class Overlay {
   updateFocusableElements() {
     this.focusableElements = []
       .slice.call(this.overlay.querySelectorAll('video, audio, button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'))
-      .filter(element => element.getAttribute('disabled') !== 'true' && element.getAttribute('disabled') !== true);
+      .filter((element) => element.getAttribute('disabled') !== 'true' && element.getAttribute('disabled') !== true);
   }
 
   /**
@@ -257,6 +256,7 @@ export default class Overlay {
 
   /**
    * Compute max heigth CSS. Can't know because of relative height of overlay.
+   * @returns {string} CSS value for max height.
    */
   computeMaxHeightCSS() {
     const h5pContainer = document.querySelector('.h5p-container');

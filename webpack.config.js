@@ -33,7 +33,7 @@ module.exports = {
     })
   ],
   entry: {
-    dist: './src/entries/h5p-structure-strip.js'
+    dist: './src/entries/dist.js'
   },
   output: {
     filename: `${libraryName}.js`,

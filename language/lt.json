@@ -100,8 +100,8 @@
           "label": "Tekstas mygtukui „Bandyti dar kartą“"
         },
         {
-          "default": "Show solution",
-          "label": "Text for \"Show solution\" button"
+          "default": "Rodyti sprendimą",
+          "label": "Mygtuko „Rodyti sprendimą“ tekstas"
         },
         {
           "default": "Your sections' lengths are all fine.",
@@ -111,34 +111,34 @@
         {
           "default": "Your section \"@title\" is too short. You need at least @chars more characters.",
           "description": "Feedback text shown for sections that are too short (@title will be replaced by the section title, @chars will be replaced by the number of characters missing).",
-          "label": "Section too short"
+          "label": "Sekcija per trumpa"
         },
         {
           "default": "Your section \"@title\" is too long. Remove at least @chars characters.",
           "description": "Feedback text shown for sections that are too long (@title will be replaced by the section title, @chars will be replaced by the number of characters needing removal).",
-          "label": "Section too long"
+          "label": "Sekcija per ilga"
         },
         {
           "default": "@chars characters too short",
           "description": "Status shown when typing for sections that are too short (@chars will be replaced by the number of characters missing).",
-          "label": "Section too short (when typing)"
+          "label": "Sekcija per trumpa (kai rašoma)"
         },
         {
           "default": "@chars characters too long",
           "description": "Status shown when typing for sections that are too long (@chars will be replaced by the number of characters needing removal).",
-          "label": "Section too long (when typing)"
+          "label": "Sekcija per ilga (kai rašoma)"
         },
         {
-          "default": "Your text was copied to the clipboard",
-          "label": "Text copied to clipboard"
+          "default": "Jūsų tekstas nukopijuotas į iškarpinę",
+          "label": "Tekstas nukopijuotas į iškarpinę"
         },
         {
-          "default": "Your text could not be copied to the clipboard",
-          "label": "Cannot copy to clipboard"
+          "default": "Jūsų teksto nebuvo galima nukopijuoti į iškarpinę",
+          "label": "Negalima nukopijuoti į iškarpinę"
         },
         {
-          "default": "Section",
-          "label": "Section"
+          "default": "Sekcija",
+          "label": "Sekcija"
         },
         {
           "default": "There was no section given for this structure strip.",
@@ -150,15 +150,15 @@
     {
       "fields": [
         {
-          "default": "Feedback",
+          "default": "Atsiliepimas",
           "label": "Feedback (text for readspeakers)"
         },
         {
-          "default": "Copy text to clipboard",
+          "default": "Nukopijuoti tekstą į iškarpinę",
           "label": "Copy your text to the clipboard (text for readspeakers)"
         },
         {
-          "default": "Close window",
+          "default": "Uždaryti langą",
           "label": "Close window (text for readspeakers)"
         },
         {
@@ -166,7 +166,7 @@
           "label": "Show hints (text for readspeakers)"
         }
       ],
-      "label": "Readspeaker"
+      "label": "Skaitytuvas"
     }
   ]
 }

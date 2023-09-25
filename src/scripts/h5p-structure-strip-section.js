@@ -87,6 +87,13 @@ export default class StructureStripSection {
   }
 
   /**
+   * Reset the section to its initial state.
+   */
+  reset() {
+    this.inputField.value = '';
+  }
+
+  /**
    * Get title.
    * @returns {string} Title.
    */

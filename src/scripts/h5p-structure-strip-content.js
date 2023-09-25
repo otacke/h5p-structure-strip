@@ -145,6 +145,15 @@ export default class StructureStripContent {
   }
 
   /**
+   * Enable sections.
+   */
+  resetSections() {
+    this.sections.forEach((section) => {
+      section.reset();
+    });
+  }
+
+  /**
    * Update sections' status.
    */
   updateSections() {

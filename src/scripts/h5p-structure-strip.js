@@ -208,13 +208,7 @@ export default class StructureStrip extends H5P.Question {
 
     // Retry button
     this.addButton('try-again', this.params.l10n.tryAgain, () => {
-      this.removeFeedback();
-      this.showButton('check-answer');
-      this.hideButton('try-again');
-
-      this.resetTask();
-
-      this.trigger('resize');
+      this.retry();
     }, false, {}, {});
 
     // Copy to clipboard button
@@ -275,11 +269,26 @@ export default class StructureStrip extends H5P.Question {
   }
 
   /**
+   * Retry task.
+   * Enable the input fields so the user can modify their content.
+   */
+  retry() {
+    this.removeFeedback();
+    this.showButton('check-answer');
+    this.hideButton('try-again');
+
+    this.content.enableSections();
+
+    this.trigger('resize');
+  }
+
+  /**
    * Reset task.
    * @see contract at {@link https://h5p.org/documentation/developers/contracts#guides-header-5}
    */
   resetTask() {
-    this.content.enableSections();
+    this.content.resetSections();
+    this.retry();
   }
 
   /**

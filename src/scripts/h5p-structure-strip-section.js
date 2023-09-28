@@ -91,6 +91,8 @@ export default class StructureStripSection {
    */
   reset() {
     this.inputField.value = '';
+    this.setStatus('');
+    this.setProgressBar(0);
   }
 
   /**

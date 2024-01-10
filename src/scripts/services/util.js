@@ -45,16 +45,16 @@ class Util {
       return null; // no parent left
     }
 
-    if (selector.substr(0, 1) === '.') { // classnames
+    if (selector.substring(0, 1) === '.') { // classnames
       const selectors = selector.split('.').filter((selector) => selector !== '');
       if (selectors.every((selector) => node.parentNode.classList.contains(selector))) {
         return node.parentNode;
       }
     }
-    else if (selector.substr(0, 1) === '#') { // id
+    else if (selector.substring(0, 1) === '#') { // id
       if (
         typeof node.parentNode.getAttribute === 'function' &&
-        node.parentNode.getAttribute('id') === selector.substr(1)
+        node.parentNode.getAttribute('id') === selector.substring(1)
       ) {
         return node.parentNode;
       }
@@ -148,13 +148,13 @@ class Util {
       return null;
     }
 
-    colorCode = colorCode.substr(1);
+    colorCode = colorCode.substring(1);
 
     // RGB as percentage
     const rgb = [
-      parseInt(colorCode.substr(0, 2), 16),
-      parseInt(colorCode.substr(2, 2), 16),
-      parseInt(colorCode.substr(4, 2), 16)
+      parseInt(colorCode.substring(0, 2), 16),
+      parseInt(colorCode.substring(2, 4), 16),
+      parseInt(colorCode.substring(4, 6), 16)
     ];
 
     // HSV value
@@ -178,13 +178,13 @@ class Util {
 
     difference = Math.min(Math.max(0, difference), 1);
 
-    colorCode = colorCode.substr(1);
+    colorCode = colorCode.substring(1);
 
     // RGB as percentage
     const rgb = [
-      parseInt(colorCode.substr(0, 2), 16) / 255,
-      parseInt(colorCode.substr(2, 2), 16) / 255,
-      parseInt(colorCode.substr(4, 2), 16) / 255
+      parseInt(colorCode.substring(0, 2), 16) / 255,
+      parseInt(colorCode.substring(2, 4), 16) / 255,
+      parseInt(colorCode.substring(4, 6), 16) / 255
     ];
 
     // HSV value

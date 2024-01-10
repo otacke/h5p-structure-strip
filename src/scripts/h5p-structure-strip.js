@@ -235,7 +235,7 @@ export default class StructureStrip extends H5P.Question {
               } });
             });
           }, true, { 'aria-label': this.params.l10n.copyToClipboard }, {});
-        };
+        }
       });
   }
 

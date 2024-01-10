@@ -211,24 +211,32 @@ export default class StructureStrip extends H5P.Question {
       this.retry();
     }, false, {}, {});
 
-    // Copy to clipboard button
-    this.addButton('copy', this.params.l10n.copy, () => {
-      const text = this.content.getText(true);
-      Util.copyTextToClipboard(text, (result) => {
-        const button = this.buttonCopy;
-        const message = (result === true) ? this.params.l10n.copyToClipboardSuccess : this.params.l10n.copyToClipboardError;
+    // Only add copy button if browser supports it
+    navigator.permissions.query({ name: 'clipboard-write' })
+      .then((canWriteToClipboard) => {
+        if (canWriteToClipboard) {
+          // Copy to clipboard button
+          this.addButton('copy', this.params.l10n.copy, () => {
+            const text = this.content.getText(true);
+            Util.copyTextToClipboard(text, (result) => {
+              const button = this.buttonCopy;
+              const message = (result === true) ?
+                this.params.l10n.copyToClipboardSuccess :
+                this.params.l10n.copyToClipboardError;
 
-        this.read(message);
+              this.read(message);
 
-        H5P.attachToastTo(button, message, { position: {
-          horizontal: 'after',
-          noOverflowRight: true,
-          offsetHorizontal: 10,
-          offsetVertical: -5,
-          vertical: 'centered'
-        } });
+              H5P.attachToastTo(button, message, { position: {
+                horizontal: 'after',
+                noOverflowRight: true,
+                offsetHorizontal: 10,
+                offsetVertical: -5,
+                vertical: 'centered'
+              } });
+            });
+          }, true, { 'aria-label': this.params.l10n.copyToClipboard }, {});
+        };
       });
-    }, true, { 'aria-label': this.params.l10n.copyToClipboard }, {});
   }
 
   /**

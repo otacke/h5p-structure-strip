@@ -1,6 +1,6 @@
 // Import required classes
-import StructureStripContent from '@scripts/h5p-structure-strip-content';
-import Util from '@services/util';
+import StructureStripContent from '@scripts/h5p-structure-strip-content.js';
+import Util from '@services/util.js';
 
 /**
  * Class holding structure strip.

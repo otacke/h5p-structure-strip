@@ -1,4 +1,4 @@
-import Util from '@services/util';
+import Util from '@services/util.js';
 
 /** Class representing the content */
 export default class StructureStripSection {

@@ -1,5 +1,5 @@
 import '@styles/h5p-structure-strip-overlay.scss';
-import Util from '@services/util';
+import Util from '@services/util.js';
 
 /** Class representing the content */
 export default class Overlay {

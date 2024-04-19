@@ -1,172 +1,172 @@
 {
   "semantics": [
     {
-      "label": "Media",
       "fields": [
         {
-          "label": "Type",
-          "description": "Optional media to display above the question."
+          "description": "在问题上方显示的可选媒体。",
+          "label": "类型"
         },
         {
-          "label": "Disable image zooming"
+          "label": "禁用图像缩放"
+        }
+      ],
+      "label": "媒体"
+    },
+    {
+      "description": "向你的学生解释你对他们的期望。",
+      "label": "任务描述"
+    },
+    {
+      "entity": "章节",
+      "field": {
+        "fields": [
+          {
+            "label": "标题"
+          },
+          {
+            "description": "可选地为本节添加提示或特定说明。",
+            "label": "提示"
+          },
+          {
+            "description": "确定每个部分相对于其他部分的预期长度。示例:Section 1 = 1;Section 2 = 3 (Section 1长度的三倍);Section 3 = 1(与Section 1长度相同)。",
+            "label": "权重"
+          },
+          {
+            "default": "#96ceb4",
+            "label": "背景颜色"
+          },
+          {
+            "default": "#1c1c1c",
+            "label": "文本颜色"
+          }
+        ],
+        "label": "章节参数"
+      },
+      "label": "章节",
+      "widgets": [
+        {
+          "label": "默认"
         }
       ]
     },
     {
-      "label": "Task description",
-      "description": "Explain to your students what's expected of them."
-    },
-    {
-      "label": "Sections",
-      "entity": "section",
-      "widgets": [
-        {
-          "label": "Default"
-        }
-      ],
-      "field": {
-        "label": "Section parameters",
-        "fields": [
-          {
-            "label": "Title"
-          },
-          {
-            "label": "Hints",
-            "description": "Optionally add hints or particular instructions for this section."
-          },
-          {
-            "label": "Weight",
-            "description": "Determine how long each section is expected to be in relation to the other sections. Example: Section 1 = 1; Section 2 = 3 (triple the length of 1); Section 3 = 1 (same length as section 1)."
-          },
-          {
-            "label": "Background color",
-            "default": "#96ceb4"
-          },
-          {
-            "label": "Text color",
-            "default": "#1c1c1c"
-          }
-        ]
-      }
-    },
-    {
-      "label": "Behavioural settings",
-      "description": "These options will let you control how the task behaves.",
+      "description": "这些选项将允许您控制任务的行为。",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "启用“重试”"
         },
         {
-          "label": "Enable \"Solution\""
+          "label": "启用“答案”"
         },
         {
-          "label": "Slack",
-          "description": "Slack is built-in flexibility of a section's length, calculated in percentage."
+          "description": "延迟是一段长度的内置灵活性，以百分比计算。",
+          "label": "延迟"
         },
         {
-          "label": "Minimum text length",
-          "description": "Define an absolute minimum total text length. Please note that a section's weight compared to other sections is the main driver for the feedback message, not this minimum value."
+          "description": "定义绝对最小总文本长度。请注意，与其他部分相比，部分的权重是反馈信息的主要驱动因素，而不是这个最小值。",
+          "label": "最小文本长度"
         },
         {
-          "label": "Maximum text length",
-          "description": "Define an absolute maximum total text length. Please note that a section's weight compared to other sections is the main driver for the feedback message, not this maximum value."
+          "description": "定义绝对最大总文本长度。请注意，与其他部分相比，部分的权重是反馈信息的主要驱动因素，而不是这个最大值。",
+          "label": "最大文本长度"
         },
         {
-          "label": "Feedback mode",
-          "description": "Decide whether you want to display feedback while typing or only when the student requests it.",
+          "description": "决定是在打字时显示反馈，还是只在学生要求时显示反馈。",
+          "label": "反馈模式",
           "options": [
             {
-              "label": "On request"
+              "label": "按要求"
             },
             {
-              "label": "While typing"
+              "label": "在打字的同时"
             }
           ]
         }
-      ]
+      ],
+      "label": "行为设置"
     },
     {
-      "label": "User interface",
       "fields": [
         {
-          "label": "Text for \"Copy\" button",
-          "default": "Copy"
+          "default": "复制",
+          "label": "“复制”按钮的文本"
         },
         {
-          "label": "Text for \"Check\" button",
-          "default": "Check"
+          "default": "检查",
+          "label": "“检查”按钮的文本"
         },
         {
-          "label": "Text for \"Retry\" button",
-          "default": "Retry"
+          "default": "重试",
+          "label": "“重试”按钮的文本"
         },
         {
-          "label": "Text for \"Show solution\" button",
-          "default": "Show solution"
+          "default": "显示答案",
+          "label": "“显示答案”按钮的文本"
         },
         {
-          "label": "All sections good",
-          "description": "Feedback text shown when all sections are of tolerable length.",
-          "default": "Your sections' lengths are all fine."
+          "default": "你的章节长度都合适。",
+          "description": "当所有章节的长度都可以接受时，会显示反馈文本。",
+          "label": "所有章节准备好"
         },
         {
-          "label": "Section too short",
-          "description": "Feedback text shown for sections that are too short (@title will be replaced by the section title, @chars will be replaced by the number of characters missing).",
-          "default": "Your section \"@title\" is too short. You need at least @chars more characters."
+          "default": "你的章节“@主题”太短了。你至少需要@chars更多的字符。",
+          "description": "对于太短的章节显示的反馈文本(@title将被部分标题替换，@chars将被缺失的字符数替换)。",
+          "label": "章节太短"
         },
         {
-          "label": "Section too long",
-          "description": "Feedback text shown for sections that are too long (@title will be replaced by the section title, @chars will be replaced by the number of characters needing removal).",
-          "default": "Your section \"@title\" is too long. Remove at least @chars characters."
+          "default": "你的section“@title”太长了。删除至少@字符。",
+          "description": "对于太长的章节显示的反馈文本(@title将被章节标题替换，@chars将被需要删除的字符数量替换)。",
+          "label": "部分过长"
         },
         {
-          "label": "Section too short (when typing)",
-          "description": "Status shown when typing for sections that are too short (@chars will be replaced by the number of characters missing).",
-          "default": "@chars characters too short"
+          "default": "@chars字符太短",
+          "description": "键入太短的章节时显示的状态(@chars将被缺少的字符数替换)。",
+          "label": "章节太短(打字时)"
         },
         {
-          "label": "Section too long (when typing)",
-          "description": "Status shown when typing for sections that are too long (@chars will be replaced by the number of characters needing removal).",
-          "default": "@chars characters too long"
+          "default": "@chars字符太长",
+          "description": "键入太长的章节时显示的状态(@chars将被需要删除的字符数量所替换)。",
+          "label": "节太长(打字时)"
         },
         {
-          "label": "Text copied to clipboard",
-          "default": "Your text was copied to the clipboard"
+          "default": "您的文本被复制到剪贴板",
+          "label": "文本复制到剪贴板"
         },
         {
-          "label": "Cannot copy to clipboard",
-          "default": "Your text could not be copied to the clipboard"
+          "default": "无法将文本复制到剪贴板",
+          "label": "无法复制到剪贴板"
         },
         {
-          "label": "Section",
-          "default": "Section"
+          "default": "章节",
+          "label": "章节"
         },
         {
-          "label": "Text for \"No section\" message",
-          "default": "There was no section given for this structure strip."
+          "default": "没有给出这个结构条的章节。",
+          "label": "“无章节”消息的文本"
         }
-      ]
+      ],
+      "label": "用户界面"
     },
     {
-      "label": "Readspeaker",
       "fields": [
         {
-          "label": "Feedback (text for readspeakers)",
-          "default": "Feedback"
+          "default": "反馈意见",
+          "label": "反馈(供读者阅读的文本)"
         },
         {
-          "label": "Copy your text to the clipboard (text for readspeakers)",
-          "default": "Copy text to clipboard"
+          "default": "复制文本到剪贴板",
+          "label": "将您的文本复制到剪贴板上(用于朗读器的文本)"
         },
         {
-          "label": "Close window (text for readspeakers)",
-          "default": "Close window"
+          "default": "关闭窗口",
+          "label": "关闭窗口(用于朗读器的文本)"
         },
         {
-          "label": "Show hints (text for readspeakers)",
-          "default": "Show hints"
+          "default": "显示提示",
+          "label": "显示提示(供朗读者使用的文本)"
         }
-      ]
+      ],
+      "label": "朗读器"
     }
   ]
 }

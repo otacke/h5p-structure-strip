@@ -181,7 +181,7 @@ export default class StructureStrip extends H5P.Question {
   /**
    * Add all the buttons that shall be passed to H5P.Question.
    */
-  addButtons() {
+  async addButtons() {
     // Show solution button
     this.addButton('show-solution', this.params.l10n.showSolution, () => {
       // TODO: Implement something useful to do on click
@@ -211,32 +211,45 @@ export default class StructureStrip extends H5P.Question {
       this.retry();
     }, false, {}, {});
 
-    // Only add copy button if browser supports it
-    navigator.permissions.query({ name: 'clipboard-write' })
-      .then((canWriteToClipboard) => {
-        if (canWriteToClipboard) {
-          // Copy to clipboard button
-          this.addButton('copy', this.params.l10n.copy, () => {
-            const text = this.content.getText(true);
-            Util.copyTextToClipboard(text, (result) => {
-              const button = this.buttonCopy;
-              const message = (result === true) ?
-                this.params.l10n.copyToClipboardSuccess :
-                this.params.l10n.copyToClipboardError;
+    /*
+     * Only add copy button if browser supports it
+     * Firefox doesn't support querying clipboard-write, but it supports
+     * clipboard writing in general. The result may not be accurate though.
+     */
 
-              this.read(message);
+    let canWriteToClipboard = false;
+    try {
+      canWriteToClipboard =
+        await navigator.permissions.query({ name: 'clipboard-write' });
+    }
+    catch (error) {
+      if (typeof InstallTrigger !== 'undefined') {
+        canWriteToClipboard = true;
+      }
+    }
 
-              H5P.attachToastTo(button, message, { position: {
-                horizontal: 'after',
-                noOverflowRight: true,
-                offsetHorizontal: 10,
-                offsetVertical: -5,
-                vertical: 'centered'
-              } });
-            });
-          }, true, { 'aria-label': this.params.l10n.copyToClipboard }, {});
-        }
-      });
+    if (canWriteToClipboard) {
+      // Copy to clipboard button
+      this.addButton('copy', this.params.l10n.copy, () => {
+        const text = this.content.getText(true);
+        Util.copyTextToClipboard(text, (result) => {
+          const button = this.buttonCopy;
+          const message = (result === true) ?
+            this.params.l10n.copyToClipboardSuccess :
+            this.params.l10n.copyToClipboardError;
+
+          this.read(message);
+
+          H5P.attachToastTo(button, message, { position: {
+            horizontal: 'after',
+            noOverflowRight: true,
+            offsetHorizontal: 10,
+            offsetVertical: -5,
+            vertical: 'centered'
+          } });
+        });
+      }, true, { 'aria-label': this.params.l10n.copyToClipboard }, {});
+    }
   }
 
   /**

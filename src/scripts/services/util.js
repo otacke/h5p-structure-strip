@@ -204,6 +204,31 @@ class Util {
   }
 
   /**
+   * Compute focus color to given color.
+   * @param {string} colorCode Color code in 6 char hex: #rrggbb.
+   * @returns {string} RGB focus color code in 6 char hex: #rrggbb.
+   */
+  static computeFocusColor(colorCode) {
+    if (typeof colorCode !== 'string' || !/#[0-9a-f]{6}/.test(colorCode)) {
+      return null;
+    }
+
+    colorCode = colorCode.substring(1);
+
+    // RGB as percentage
+    const rgb = [
+      parseInt(colorCode.substring(0, 2), 16),
+      parseInt(colorCode.substring(2, 4), 16),
+      parseInt(colorCode.substring(4, 6), 16)
+    ];
+
+    // Calculate the luminance
+    const luminance = (0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2]) / 255;
+
+    return luminance < 0.5 ? '#ffffff' : '#000000';
+  }
+
+  /**
    * Convert decimals to hexadecimals.
    * @param {number} decimal Decimal.
    * @param {number} [padding] Padding.

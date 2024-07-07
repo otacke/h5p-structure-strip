@@ -82,10 +82,11 @@
 
   .h5p-structure-strip-text-strip-button-hint {
     background-color: transparent;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     border-radius: 50%;
     cursor: pointer;
     height: 1.4em;
+    line-height: 1.4em;
     padding: 0;
     position: relative;
     top: -0.5em;
@@ -93,20 +94,17 @@
     width: 1.4em;
 
     &:hover {
-      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4), inset 0 0 3px rgba(0, 0, 0, 0.4);
-    }
-
-    &:focus {
-      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4), inset 0 0 3px rgba(0, 0, 0, 0.4);
+      outline: 2px solid var(--focus-contrast-color);
     }
 
     &::after {
       content: "\e8fd";
       font-family: 'Material Icons', sans-serif;
       font-size: 1.5em;
+      left: 50%;
       position: absolute;
-      left: -0.09em;
-      top: -0.075em;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 
@@ -152,7 +150,5 @@
 }
 
 .h5p-content:not(.using-mouse) .h5p-structure-strip .h5p-structure-strip-text-strip-button-hint:focus {
-  border-color: rgba(0, 0, 0, .4);
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
-  outline: none;
+  outline: 2px solid var(--focus-contrast-color);
 }

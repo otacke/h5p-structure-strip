@@ -194,6 +194,10 @@ export default class StructureStripSection {
       const buttonHint = document.createElement('button');
       buttonHint.classList.add('h5p-structure-strip-text-strip-button-hint');
       buttonHint.style.color = this.params.colorText;
+      buttonHint.style.setProperty(
+        '--focus-contrast-color',
+        Util.computeFocusColor(this.params.colorBackground)
+      );
       buttonHint.setAttribute('aria-label', this.params.a11y.showHints);
 
       buttonHint.addEventListener('click', () => {

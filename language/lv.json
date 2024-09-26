@@ -32,11 +32,9 @@
             "label": "Svars"
           },
           {
-            "default": "#96ceb4",
             "label": "Fona krāsa"
           },
           {
-            "default": "#1c1c1c",
             "label": "Teksta krāsa"
           }
         ],

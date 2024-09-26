@@ -32,11 +32,9 @@
             "label": "Peso"
           },
           {
-            "default": "#96ceb4",
             "label": "Cor de fundo"
           },
           {
-            "default": "#1c1c1c",
             "label": "Cor do texto"
           }
         ],

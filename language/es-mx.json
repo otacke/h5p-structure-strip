@@ -32,11 +32,9 @@
             "label": "Ponderación"
           },
           {
-            "default": "#96ceb4",
             "label": "Color del fondo"
           },
           {
-            "default": "#1c1c1c",
             "label": "Color del texto"
           }
         ],

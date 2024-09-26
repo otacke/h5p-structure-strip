@@ -39,12 +39,10 @@
             "description": "Vrednot uteži pomeni dolžino odstavka v primerjavi z drugimi odstavki. Na primer odstavek z utežjo 3 mora obsegati 3 dolžine odstavka z utežjo 1. Odstavka lahko imata tudi enako utež, če morata biti enako dolga."
           },
           {
-            "label": "Barva ozadja",
-            "default": "#ebebeb"
+            "label": "Barva ozadja"
           },
           {
-            "label": "Barva besedila",
-            "default": "#1c1c1c"
+            "label": "Barva besedila"
           }
         ]
       }

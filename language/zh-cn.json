@@ -32,11 +32,9 @@
             "label": "权重"
           },
           {
-            "default": "#96ceb4",
             "label": "背景颜色"
           },
           {
-            "default": "#1c1c1c",
             "label": "文本颜色"
           }
         ],

@@ -32,11 +32,9 @@
             "label": "Pisua"
           },
           {
-            "default": "#96ceb4",
             "label": "Atzeko planoko kolorea"
           },
           {
-            "default": "#1c1c1c",
             "label": "Testuaren kolorea"
           }
         ],

@@ -1,0 +1,170 @@
+{
+  "semantics": [
+    {
+      "label": "Media",
+      "fields": [
+        {
+          "label": "Tip",
+          "description": "Media opțională de afișat deasupra întrebării."
+        },
+        {
+          "label": "Dezactivează mărirea imaginii"
+        }
+      ]
+    },
+    {
+      "label": "Descrierea sarcinii",
+      "description": "Explicați-le studenților ce se așteaptă de la ei."
+    },
+    {
+      "label": "Secțiuni",
+      "entity": "secțiune",
+      "widgets": [
+        {
+          "label": "Implicit"
+        }
+      ],
+      "field": {
+        "label": "Parametri secțiune",
+        "fields": [
+          {
+            "label": "Titlu"
+          },
+          {
+            "label": "Indicii",
+            "description": "Opțional, adăugați indicii sau instrucțiuni speciale pentru această secțiune."
+          },
+          {
+            "label": "Pondere",
+            "description": "Determinați cât de lungă se așteaptă să fie fiecare secțiune în raport cu celelalte. Exemplu: Secțiunea 1 = 1; Secțiunea 2 = 3 (de trei ori lungimea secțiunii 1); Secțiunea 3 = 1 (aceeași lungime ca secțiunea 1)."
+          },
+          {
+            "label": "Culoare de fundal"
+          },
+          {
+            "label": "Culoare text"
+          }
+        ]
+      }
+    },
+    {
+      "label": "Setări de comportament",
+      "description": "Aceste opțiuni vă vor permite să controlați cum se comportă sarcina.",
+      "fields": [
+        {
+          "label": "Activează „Reîncercare”"
+        },
+        {
+          "label": "Activează „Soluție”"
+        },
+        {
+          "label": "Marjă de toleranță",
+          "description": "Marja de toleranță este flexibilitatea încorporată a lungimii unei secțiuni, calculată în procente."
+        },
+        {
+          "label": "Lungimea minimă a textului",
+          "description": "Definiți o lungime totală minimă absolută a textului. Rețineți că ponderea unei secțiuni în comparație cu alte secțiuni este principalul factor pentru mesajul de feedback, nu această valoare minimă."
+        },
+        {
+          "label": "Lungimea maximă a textului",
+          "description": "Definiți o lungime totală maximă absolută a textului. Rețineți că ponderea unei secțiuni în comparație cu alte secțiuni este principalul factor pentru mesajul de feedback, nu această valoare maximă."
+        },
+        {
+          "label": "Mod feedback",
+          "description": "Decideți dacă doriți să afișați feedback în timpul tastării sau doar când studentul îl solicită.",
+          "options": [
+            {
+              "label": "La cerere"
+            },
+            {
+              "label": "În timpul tastării"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Interfață utilizator",
+      "fields": [
+        {
+          "label": "Text pentru butonul „Copiază”",
+          "default": "Copiază"
+        },
+        {
+          "label": "Text pentru butonul „Verifică”",
+          "default": "Verifică"
+        },
+        {
+          "label": "Text pentru butonul „Reîncearcă”",
+          "default": "Reîncearcă"
+        },
+        {
+          "label": "Text pentru butonul „Arată soluția”",
+          "default": "Arată soluția"
+        },
+        {
+          "label": "Toate secțiunile sunt bune",
+          "description": "Text de feedback afișat când toate secțiunile au o lungime tolerabilă.",
+          "default": "Lungimile secțiunilor tale sunt toate în regulă."
+        },
+        {
+          "label": "Secțiune prea scurtă",
+          "description": "Text de feedback afișat pentru secțiunile prea scurte (@title va fi înlocuit cu titlul secțiunii, @chars va fi înlocuit cu numărul de caractere lipsă).",
+          "default": "Secțiunea ta \"@title\" este prea scurtă. Mai ai nevoie de cel puțin @chars caractere."
+        },
+        {
+          "label": "Secțiune prea lungă",
+          "description": "Text de feedback afișat pentru secțiunile prea lungi (@title va fi înlocuit cu titlul secțiunii, @chars va fi înlocuit cu numărul de caractere care trebuie eliminate).",
+          "default": "Secțiunea ta \"@title\" este prea lungă. Elimină cel puțin @chars caractere."
+        },
+        {
+          "label": "Secțiune prea scurtă (în timpul tastării)",
+          "description": "Stare afișată în timpul tastării pentru secțiunile prea scurte (@chars va fi înlocuit cu numărul de caractere lipsă).",
+          "default": "@chars caractere prea scurt"
+        },
+        {
+          "label": "Secțiune prea lungă (în timpul tastării)",
+          "description": "Stare afișată în timpul tastării pentru secțiunile prea lungi (@chars va fi înlocuit cu numărul de caractere care trebuie eliminate).",
+          "default": "@chars caractere prea lung"
+        },
+        {
+          "label": "Text copiat în clipboard",
+          "default": "Textul tău a fost copiat în clipboard"
+        },
+        {
+          "label": "Nu se poate copia în clipboard",
+          "default": "Textul tău nu a putut fi copiat în clipboard"
+        },
+        {
+          "label": "Secțiune",
+          "default": "Secțiune"
+        },
+        {
+          "label": "Text pentru mesajul „Nicio secțiune”",
+          "default": "Nu a fost dată nicio secțiune pentru această bandă de structură."
+        }
+      ]
+    },
+    {
+      "label": "Cititor de ecran",
+      "fields": [
+        {
+          "label": "Feedback (text pentru cititoarele de ecran)",
+          "default": "Feedback"
+        },
+        {
+          "label": "Copiază textul în clipboard (text pentru cititoarele de ecran)",
+          "default": "Copiază textul în clipboard"
+        },
+        {
+          "label": "Închide fereastra (text pentru cititoarele de ecran)",
+          "default": "Închide fereastra"
+        },
+        {
+          "label": "Arată indicii (text pentru cititoarele de ecran)",
+          "default": "Arată indicii"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,14 @@
 import Util from '@services/util.js';
 
+/** @constant {number} CONTRAST_COMPUTATION_STEP Step to increase contrast by. */
+const CONTRAST_COMPUTATION_STEP = 0.1;
+
+/** @constant {number} HSV_THRESHOLD Threshold for HSV color space. */
+const HSV_THRESHOLD = 0.5;
+
+/** @constant {number} NUMBER_OF_TEXT_FIELD_ROWS Default number of rows for text field. */
+const NUMBER_OF_TEXT_FIELD_ROWS = 5;
+
 /** Class representing the content */
 export default class StructureStripSection {
   /**
@@ -15,14 +24,14 @@ export default class StructureStripSection {
       text: '',
       weight: 1,
       a11y: {
-        showHints: 'showHints'
-      }
+        showHints: 'showHints',
+      },
     }, params);
 
     this.callbacks = Util.extend({
       onContentChanged: () => {},
       onHintButtonOpened: () => {},
-      onInteracted: () => {}
+      onInteracted: () => {},
     }, callbacks);
 
     // Create content DOM
@@ -137,13 +146,14 @@ export default class StructureStripSection {
   addProgressBar(descriptionContainer) {
     this.progressBarContainer = document.createElement('div');
     this.progressBarContainer.classList.add('h5p-structure-strip-text-strip-progress-bar-container');
-    this.progressBarContainer.style.backgroundColor = Util.computeContrastColor(this.params.colorBackground, 0.1);
+    this.progressBarContainer.style.backgroundColor =
+      Util.computeContrastColor(this.params.colorBackground, CONTRAST_COMPUTATION_STEP);
     descriptionContainer.appendChild(this.progressBarContainer);
 
     this.progressBar = document.createElement('div');
     this.progressBar.classList.add('h5p-structure-strip-text-strip-progress-bar');
     const hsvValue = Util.computeHSVValue(this.params.colorBackground);
-    if (hsvValue > 0.5) {
+    if (hsvValue > HSV_THRESHOLD) {
       this.progressBar.classList.add('h5p-structure-strip-text-strip-progress-bar-pattern-dark');
     }
     else {
@@ -196,7 +206,7 @@ export default class StructureStripSection {
       buttonHint.style.color = this.params.colorText;
       buttonHint.style.setProperty(
         '--focus-contrast-color',
-        Util.computeFocusColor(this.params.colorBackground)
+        Util.computeFocusColor(this.params.colorBackground),
       );
       buttonHint.setAttribute('aria-label', this.params.a11y.showHints);
 
@@ -217,7 +227,7 @@ export default class StructureStripSection {
 
     this.inputField = document.createElement('textarea');
     this.inputField.classList.add('h5p-structure-strip-text-strip-input-field');
-    this.inputField.setAttribute('rows', 5);
+    this.inputField.setAttribute('rows', NUMBER_OF_TEXT_FIELD_ROWS);
     this.inputField.setAttribute('aria-label', this.buildAriaLabel([this.params.title]));
     this.inputField.value = this.params.text;
     this.lastValue = this.params.text;
@@ -237,7 +247,10 @@ export default class StructureStripSection {
       });
 
       this.inputField.addEventListener('focus', () => {
-        this.inputField.setAttribute('aria-label', this.buildAriaLabel([this.params.title, this.descriptionStatus.innerHTML]));
+        this.inputField.setAttribute(
+          'aria-label',
+          this.buildAriaLabel([this.params.title, this.descriptionStatus.innerHTML]),
+        );
       });
     }
 

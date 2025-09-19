@@ -13,7 +13,7 @@ export default class StructureStripContent {
     this.params = params;
 
     this.callbacks = Util.extend({
-      onInteracted: () => {}
+      onInteracted: () => {},
     }, callbacks);
 
     this.sections = [];
@@ -38,8 +38,8 @@ export default class StructureStripContent {
         title: Util.htmlDecode(section.title || `${this.params.l10n.section} ${index + 1}`),
         weight: section.weight,
         a11y: {
-          showHints: this.params.a11y.showHints
-        }
+          showHints: this.params.a11y.showHints,
+        },
       }, {
         onContentChanged: () => {
           this.updateSections();
@@ -55,7 +55,7 @@ export default class StructureStripContent {
         },
         onInteracted: () => {
           this.callbacks.onInteracted();
-        }
+        },
       });
       this.sections.push(instanceSection);
       stripsContainer.appendChild(instanceSection.getDOM());
@@ -90,14 +90,14 @@ export default class StructureStripContent {
       {
         container: this.params.container,
         a11y: {
-          closeWindow: this.params.a11y.closeWindow
-        }
+          closeWindow: this.params.a11y.closeWindow,
+        },
       },
       {
         onClose: () => {
           this.overlay.hide();
-        }
-      }
+        },
+      },
     );
     this.content.appendChild(this.overlay.getDOM());
   }
@@ -178,7 +178,7 @@ export default class StructureStripContent {
     // Feedback texts
     const feedbackTexts = this.buildFeedbackTexts({
       tooLong: this.params.l10n.tooLong,
-      tooShort: this.params.l10n.tooShort
+      tooShort: this.params.l10n.tooShort,
     });
 
     // Progresses
@@ -195,7 +195,8 @@ export default class StructureStripContent {
    * @returns {object} Min and max length of text.
    */
   computeNormedLengths() {
-    let referenceLength = Math.max(this.referenceSection.getText().length, this.referenceSection.getWeight() / this.greatestCommonDivisor);
+    let referenceLength =
+      Math.max(this.referenceSection.getText().length, this.referenceSection.getWeight() / this.greatestCommonDivisor);
 
     // Don't use slack for absolute text length minimum/maximum
     let slackPercentage = this.params.slack / 100;
@@ -215,7 +216,7 @@ export default class StructureStripContent {
 
     return {
       min: normedLengthMin,
-      max: normedLengthMax
+      max: normedLengthMax,
     };
   }
 
@@ -243,7 +244,7 @@ export default class StructureStripContent {
         }
         else {
           feedbackTexts.push(
-            textTemplates.tooLong.replace(/@title/g, section.getTitle()).replace(/@chars/g, gap)
+            textTemplates.tooLong.replace(/@title/g, section.getTitle()).replace(/@chars/g, gap),
           );
         }
       }
@@ -257,7 +258,7 @@ export default class StructureStripContent {
         }
         else {
           feedbackTexts.push(
-            textTemplates.tooShort.replace(/@title/g, section.getTitle()).replace(/@chars/g, gap)
+            textTemplates.tooShort.replace(/@title/g, section.getTitle()).replace(/@chars/g, gap),
           );
         }
       }
@@ -320,7 +321,7 @@ export default class StructureStripContent {
     let feedbackTexts = this.buildFeedbackTexts({
       alright: null,
       tooLong: this.params.l10n.sectionTooLong,
-      tooShort: this.params.l10n.sectionTooShort
+      tooShort: this.params.l10n.sectionTooShort,
     });
 
     // Remove empty feedback

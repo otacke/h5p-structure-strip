@@ -32,7 +32,7 @@ export default class StructureStrip extends H5P.Question {
         slack: 10,
         textLengthMin: 0,
         textLengthMax: Number.POSITIVE_INFINITY,
-        feedbackMode: 'whileTyping'
+        feedbackMode: 'whileTyping',
       },
       l10n: {
         checkAnswer: 'Check answer',
@@ -47,13 +47,13 @@ export default class StructureStrip extends H5P.Question {
         copyToClipboardError: 'Your text could not be copied to the clipboard',
         copyToClipboardSuccess: 'Your text was copied to the clipboard',
         section: 'Section',
-        messageNoSection: 'There was no section given for this structure strip.'
+        messageNoSection: 'There was no section given for this structure strip.',
       },
       a11y: {
         copyToClipboard: 'Copy text to clipboard',
         feedback: 'Feedback',
-        closeWindow: 'Close window'
-      }
+        closeWindow: 'Close window',
+      },
     }, params);
 
     // Decode a11y labels
@@ -87,7 +87,7 @@ export default class StructureStrip extends H5P.Question {
             alt: media.params.alt,
             title: media.params.title,
             expandImage: media.params.expandImage,
-            minimizeImage: media.params.minimizeImage
+            minimizeImage: media.params.minimizeImage,
           });
         }
       }
@@ -131,24 +131,24 @@ export default class StructureStrip extends H5P.Question {
           sectionTooLong: this.params.l10n.sectionTooLong,
           tooShort: this.params.l10n.tooShort,
           tooLong: this.params.l10n.tooLong,
-          section: this.params.l10n.section
+          section: this.params.l10n.section,
         },
         a11y: {
           closeWindow: this.params.a11y.closeWindow,
-          showHints: this.params.a11y.showHints
+          showHints: this.params.a11y.showHints,
         },
         previousState: this.previousState,
         sections: this.params.sections,
         slack: this.params.behaviour.slack,
         taskDescription: this.params.taskDescription,
         textLengthMax: this.params.behaviour.textLengthMax,
-        textLengthMin: this.params.behaviour.textLengthMin
+        textLengthMin: this.params.behaviour.textLengthMin,
       },
       {
         onInteracted: () => {
           this.handleInteracted();
-        }
-      }
+        },
+      },
     );
 
     // Register content with H5P.Question
@@ -195,7 +195,7 @@ export default class StructureStrip extends H5P.Question {
           feedback,
           null,
           null,
-          this.params.a11y.feedback
+          this.params.a11y.feedback,
         );
 
         this.hideButton('check-answer');
@@ -245,7 +245,7 @@ export default class StructureStrip extends H5P.Question {
             noOverflowRight: true,
             offsetHorizontal: 10,
             offsetVertical: -5,
-            vertical: 'centered'
+            vertical: 'centered',
           } });
         });
       }, true, { 'aria-label': this.params.l10n.copyToClipboard }, {});
@@ -319,7 +319,7 @@ export default class StructureStrip extends H5P.Question {
    */
   getXAPIData() {
     return {
-      statement: this.getXAPIAnswerEvent().data.statement
+      statement: this.getXAPIAnswerEvent().data.statement,
     };
   }
 
@@ -417,7 +417,7 @@ export default class StructureStrip extends H5P.Question {
   getCurrentState() {
     // TODO: Don't let minor changes by author reset the task
     return {
-      texts: this.content.getText()
+      texts: this.content.getText(),
     };
   }
 

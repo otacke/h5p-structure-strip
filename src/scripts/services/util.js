@@ -1,3 +1,13 @@
+/** @constant {number} HEX Hexadecimal radix. */
+const HEX = 16;
+
+const LUMINANCE_FACTOR_RED = 0.299;
+const LUMINANCE_FACTOR_GREEN = 0.587;
+const LUMINANCE_FACTOR_BLUE = 0.114;
+
+/** @constant {number} LUMINANCE_THRESHOLD Threshold for luminance to decide light/dark color. */
+const LUMINANCE_THRESHOLD = 0.5;
+
 /** Class for utility functions */
 class Util {
   /**
@@ -100,7 +110,7 @@ class Util {
   static copyTextToClipboard(text, callback = () => {}) {
     if (!navigator.clipboard) {
       console.error(
-        'Cannot copy to clipboard: navigator.clipboard not supported'
+        'Cannot copy to clipboard: navigator.clipboard not supported',
       );
       callback(false);
     }
@@ -152,12 +162,16 @@ class Util {
 
     // RGB as percentage
     const rgb = [
-      parseInt(colorCode.substring(0, 2), 16),
-      parseInt(colorCode.substring(2, 4), 16),
-      parseInt(colorCode.substring(4, 6), 16)
+      // eslint-disable-next-line no-magic-numbers
+      parseInt(colorCode.substring(0, 2), HEX),
+      // eslint-disable-next-line no-magic-numbers
+      parseInt(colorCode.substring(2, 4), HEX),
+      // eslint-disable-next-line no-magic-numbers
+      parseInt(colorCode.substring(4, 6), HEX),
     ];
 
     // HSV value
+    // eslint-disable-next-line no-magic-numbers
     return Math.max(rgb[0], rgb[1], rgb[2]) / 255;
   }
 
@@ -173,7 +187,7 @@ class Util {
     }
 
     if (typeof difference !== 'number') {
-      difference = 0.5;
+      difference = LUMINANCE_THRESHOLD;
     }
 
     difference = Math.min(Math.max(0, difference), 1);
@@ -182,22 +196,28 @@ class Util {
 
     // RGB as percentage
     const rgb = [
-      parseInt(colorCode.substring(0, 2), 16) / 255,
-      parseInt(colorCode.substring(2, 4), 16) / 255,
-      parseInt(colorCode.substring(4, 6), 16) / 255
+      // eslint-disable-next-line no-magic-numbers
+      parseInt(colorCode.substring(0, 2), HEX) / 255,
+      // eslint-disable-next-line no-magic-numbers
+      parseInt(colorCode.substring(2, 4), HEX) / 255,
+      // eslint-disable-next-line no-magic-numbers
+      parseInt(colorCode.substring(4, 6), HEX) / 255,
     ];
 
     // HSV value
     const cMax = Math.max(rgb[0], rgb[1], rgb[2]);
 
     // Scale up/down depending on HSV value
-    const cNew = Math.min(Math.max(0, (cMax > 0.5) ? cMax - difference : cMax + difference), 1);
+    const cNew = Math.min(Math.max(0, (cMax > LUMINANCE_THRESHOLD) ? cMax - difference : cMax + difference), 1);
     const factor = cNew / cMax;
 
     const rgbNew = [
+      // eslint-disable-next-line no-magic-numbers
       Util.dec2hex(rgb[0] * factor * 255, 2),
+      // eslint-disable-next-line no-magic-numbers
       Util.dec2hex(rgb[1] * factor * 255, 2),
-      Util.dec2hex(rgb[2] * factor * 255, 2)
+      // eslint-disable-next-line no-magic-numbers
+      Util.dec2hex(rgb[2] * factor * 255, 2),
     ];
 
     return `#${rgbNew.join('')}`;
@@ -217,15 +237,20 @@ class Util {
 
     // RGB as percentage
     const rgb = [
-      parseInt(colorCode.substring(0, 2), 16),
-      parseInt(colorCode.substring(2, 4), 16),
-      parseInt(colorCode.substring(4, 6), 16)
+      // eslint-disable-next-line no-magic-numbers
+      parseInt(colorCode.substring(0, 2), HEX),
+      // eslint-disable-next-line no-magic-numbers
+      parseInt(colorCode.substring(2, 4), HEX),
+      // eslint-disable-next-line no-magic-numbers
+      parseInt(colorCode.substring(4, 6), HEX),
     ];
 
     // Calculate the luminance
-    const luminance = (0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2]) / 255;
+    const luminance =
+      // eslint-disable-next-line no-magic-numbers
+      (LUMINANCE_FACTOR_RED * rgb[0] + LUMINANCE_FACTOR_GREEN * rgb[1] + LUMINANCE_FACTOR_BLUE * rgb[2]) / 255;
 
-    return luminance < 0.5 ? '#ffffff' : '#000000';
+    return luminance < LUMINANCE_THRESHOLD ? '#ffffff' : '#000000';
   }
 
   /**
@@ -243,7 +268,7 @@ class Util {
       padding = 0;
     }
 
-    let hex = Math.abs(Math.round(decimal)).toString(16);
+    let hex = Math.abs(Math.round(decimal)).toString(HEX);
     while (hex.length < padding) {
       hex = `0${hex}`;
     }

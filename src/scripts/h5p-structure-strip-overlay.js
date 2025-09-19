@@ -17,15 +17,15 @@ export default class Overlay {
       title: '',
       position: {
         offsetHorizontal : 0,
-        offsetVertical : 0
+        offsetVertical : 0,
       },
       a11y: {
-        closeWindow: 'Close'
-      }
+        closeWindow: 'Close',
+      },
     }, params);
 
     this.callbacks = Util.extend({
-      onClose: () => {}
+      onClose: () => {},
     }, callbacks);
 
     this.container = null;
@@ -199,7 +199,9 @@ export default class Overlay {
    */
   updateFocusableElements() {
     this.focusableElements = []
-      .slice.call(this.overlay.querySelectorAll('video, audio, button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'))
+      .slice.call(this.overlay.querySelectorAll(
+        'video, audio, button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      ))
       .filter((element) => element.getAttribute('disabled') !== 'true' && element.getAttribute('disabled') !== true);
   }
 
@@ -267,6 +269,7 @@ export default class Overlay {
 
     this.outerStyle = this.outerStyle || window.getComputedStyle(this.outer);
 
+    // eslint-disable-next-line @stylistic/js/max-len
     return (`calc(${h5pContainer.offsetHeight}px - ${this.outerStyle.getPropertyValue('margin-top')} - ${this.outerStyle.getPropertyValue('margin-bottom')})`);
   }
 }

@@ -1,53 +1,56 @@
 {
   "semantics": [
     {
+      "label": "Medija",
       "fields": [
         {
-          "description": "Pasirenkama medija, rodoma virš klausimo.",
-          "label": "Tipas"
+          "label": "Tipas",
+          "description": "Pasirenkama medija, rodoma virš klausimo."
         },
         {
           "label": "Išjungti paveikslėlio mastelio keitimą"
         }
-      ],
-      "label": "Medija"
+      ]
     },
     {
-      "description": "Paaiškinkite savo besimokantiesiems, ko iš jų tikimasi.",
-      "label": "Užduoties aprašymas"
+      "label": "Užduoties aprašymas",
+      "description": "Paaiškinkite savo besimokantiesiems, ko iš jų tikimasi."
     },
     {
+      "label": "Skyriai",
       "entity": "skyrius",
+      "widgets": [
+        {
+          "label": "Numatytasis"
+        }
+      ],
       "field": {
+        "label": "Skyriaus parametrai",
         "fields": [
           {
             "label": "Pavadinimas"
           },
           {
-            "description": "Pasirinktinai pridėkite užuominų ar konkrečių instrukcijų šiam skyriui.",
-            "label": "Užuominos"
+            "label": "Užuominos",
+            "description": "Pasirinktinai pridėkite užuominų ar konkrečių instrukcijų šiam skyriui."
           },
           {
-            "description": "Nustatykite, kokio ilgio turėtų būti kiekvienas skyrius kitų skyrių atžvilgiu. Pavyzdys: 1 skyrius = 1; 2 skyrius = 3 (trigubas 1 ilgis); 3 skyrius = 1 (toks pat ilgis kaip ir 1 dalis).",
-            "label": "Svoris"
+            "label": "Svoris",
+            "description": "Nustatykite, kokio ilgio turėtų būti kiekvienas skyrius kitų skyrių atžvilgiu. Pavyzdys: 1 skyrius = 1; 2 skyrius = 3 (trigubas 1 ilgis); 3 skyrius = 1 (toks pat ilgis kaip ir 1 dalis)."
           },
           {
-            "label": "Fono spalva"
+            "label": "Fono spalva",
+            "default": "#96ceb4"
           },
           {
-            "label": "Teksto spalva"
+            "label": "Teksto spalva",
+            "default": "#1c1c1c"
           }
-        ],
-        "label": "Skyriaus parametrai"
-      },
-      "label": "Skyriai",
-      "widgets": [
-        {
-          "label": "Numatytasis"
-        }
-      ]
+        ]
+      }
     },
     {
+      "label": "Veikimo nustatymai",
       "description": "Šios parinktys leis jums valdyti, kaip veikia užduotis.",
       "fields": [
         {
@@ -57,20 +60,20 @@
           "label": "Įjungti „Sprendimas“"
         },
         {
-          "description": "Slack is built-in flexibility of a section's length, calculated in percentage.",
-          "label": "Slack"
+          "label": "Slack",
+          "description": "Slack is built-in flexibility of a section's length, calculated in percentage."
         },
         {
-          "description": "Define an absolute minimum total text length. Please note that a section's weight compared to other sections is the main driver for the feedback message, not this minimum value.",
-          "label": "Minimalus teksto ilgis"
+          "label": "Minimalus teksto ilgis",
+          "description": "Define an absolute minimum total text length. Please note that a section's weight compared to other sections is the main driver for the feedback message, not this minimum value."
         },
         {
-          "description": "Define an absolute maximum total text length. Please note that a section's weight compared to other sections is the main driver for the feedback message, not this maximum value.",
-          "label": "Maksimalus teksto ilgis"
+          "label": "Maksimalus teksto ilgis",
+          "description": "Define an absolute maximum total text length. Please note that a section's weight compared to other sections is the main driver for the feedback message, not this maximum value."
         },
         {
-          "description": "Decide whether you want to display feedback while typing or only when the student requests it.",
           "label": "Grįžtamojo ryšio režimas",
+          "description": "Decide whether you want to display feedback while typing or only when the student requests it.",
           "options": [
             {
               "label": "On request"
@@ -80,91 +83,102 @@
             }
           ]
         }
-      ],
-      "label": "Veikimo nustatymai"
+      ]
     },
     {
+      "label": "Naudotojo sąsaja",
       "fields": [
         {
-          "default": "Kopijuoti",
-          "label": "Tekstas mygtukui „Kopijuoti“."
+          "label": "Tekstas mygtukui „Kopijuoti“.",
+          "default": "Kopijuoti"
         },
         {
-          "default": "Tikrinti",
-          "label": "Tekstas mygtukui „Tikrinti“."
+          "label": "Tekstas mygtukui „Tikrinti“.",
+          "default": "Tikrinti"
         },
         {
-          "default": "Bandyti dar kartą",
-          "label": "Tekstas mygtukui „Bandyti dar kartą“"
+          "label": "Tekstas mygtukui „Bandyti dar kartą“",
+          "default": "Bandyti dar kartą"
         },
         {
-          "default": "Rodyti sprendimą",
-          "label": "Mygtuko „Rodyti sprendimą“ tekstas"
+          "label": "Mygtuko „Rodyti sprendimą“ tekstas",
+          "default": "Rodyti sprendimą"
         },
         {
-          "default": "Your sections' lengths are all fine.",
+          "label": "All sections good",
           "description": "Feedback text shown when all sections are of tolerable length.",
-          "label": "All sections good"
+          "default": "Your sections' lengths are all fine."
         },
         {
-          "default": "Your section \"@title\" is too short. You need at least @chars more characters.",
+          "label": "Sekcija per trumpa",
           "description": "Feedback text shown for sections that are too short (@title will be replaced by the section title, @chars will be replaced by the number of characters missing).",
-          "label": "Sekcija per trumpa"
+          "default": "Your section \"@title\" is too short. You need at least @chars more characters."
         },
         {
-          "default": "Your section \"@title\" is too long. Remove at least @chars characters.",
+          "label": "Sekcija per ilga",
           "description": "Feedback text shown for sections that are too long (@title will be replaced by the section title, @chars will be replaced by the number of characters needing removal).",
-          "label": "Sekcija per ilga"
+          "default": "Your section \"@title\" is too long. Remove at least @chars characters."
         },
         {
-          "default": "@chars characters too short",
+          "label": "Sekcija per trumpa (kai rašoma)",
           "description": "Status shown when typing for sections that are too short (@chars will be replaced by the number of characters missing).",
-          "label": "Sekcija per trumpa (kai rašoma)"
+          "default": "@chars characters too short"
         },
         {
-          "default": "@chars characters too long",
+          "label": "Sekcija per ilga (kai rašoma)",
           "description": "Status shown when typing for sections that are too long (@chars will be replaced by the number of characters needing removal).",
-          "label": "Sekcija per ilga (kai rašoma)"
+          "default": "@chars characters too long"
         },
         {
-          "default": "Jūsų tekstas nukopijuotas į iškarpinę",
-          "label": "Tekstas nukopijuotas į iškarpinę"
+          "label": "Tekstas nukopijuotas į iškarpinę",
+          "default": "Jūsų tekstas nukopijuotas į iškarpinę"
         },
         {
-          "default": "Jūsų teksto nebuvo galima nukopijuoti į iškarpinę",
-          "label": "Negalima nukopijuoti į iškarpinę"
+          "label": "Negalima nukopijuoti į iškarpinę",
+          "default": "Jūsų teksto nebuvo galima nukopijuoti į iškarpinę"
         },
         {
-          "default": "Sekcija",
-          "label": "Sekcija"
+          "label": "Sekcija",
+          "default": "Sekcija"
         },
         {
-          "default": "There was no section given for this structure strip.",
-          "label": "Text for \"No section\" message"
+          "label": "Text for \"No section\" message",
+          "default": "There was no section given for this structure strip."
+        },
+        {
+          "label": "Text for \"Submit\" button",
+          "default": "Submit"
         }
-      ],
-      "label": "Naudotojo sąsaja"
+      ]
     },
     {
+      "label": "Skaitytuvas",
       "fields": [
         {
-          "default": "Atsiliepimas",
-          "label": "Feedback (text for readspeakers)"
+          "label": "Assistive technology description for \"Check\" button",
+          "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
         },
         {
-          "default": "Nukopijuoti tekstą į iškarpinę",
-          "label": "Copy your text to the clipboard (text for readspeakers)"
+          "label": "Assistive technology description for \"Retry\" button",
+          "default": "Retry the task. Reset all responses and start the task over again."
         },
         {
-          "default": "Uždaryti langą",
-          "label": "Close window (text for readspeakers)"
+          "label": "Feedback (text for readspeakers)",
+          "default": "Atsiliepimas"
         },
         {
-          "default": "Show hints",
-          "label": "Show hints (text for readspeakers)"
+          "label": "Copy your text to the clipboard (text for readspeakers)",
+          "default": "Nukopijuoti tekstą į iškarpinę"
+        },
+        {
+          "label": "Close window (text for readspeakers)",
+          "default": "Uždaryti langą"
+        },
+        {
+          "label": "Show hints (text for readspeakers)",
+          "default": "Show hints"
         }
-      ],
-      "label": "Skaitytuvas"
+      ]
     }
   ]
 }

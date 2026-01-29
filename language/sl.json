@@ -39,10 +39,12 @@
             "description": "Vrednot uteži pomeni dolžino odstavka v primerjavi z drugimi odstavki. Na primer odstavek z utežjo 3 mora obsegati 3 dolžine odstavka z utežjo 1. Odstavka lahko imata tudi enako utež, če morata biti enako dolga."
           },
           {
-            "label": "Barva ozadja"
+            "label": "Barva ozadja",
+            "default": "#96ceb4"
           },
           {
-            "label": "Barva besedila"
+            "label": "Barva besedila",
+            "default": "#1c1c1c"
           }
         ]
       }
@@ -142,12 +144,24 @@
         {
           "label": "Besedilo sporočila \"Manjkajoči odstavki\"",
           "default": "Ta aktivnost nima določenih odstavkov."
+        },
+        {
+          "label": "Besedilo za gumb \"Oddaj\"",
+          "default": "Oddaj"
         }
       ]
     },
     {
       "label": "Bralnik zaslona",
       "fields": [
+        {
+          "label": "Opis gumba \"Preveri\" za bralnike zaslona",
+          "default": "Preveri pravilnost. Odgovori bodo označeni kot pravilni, napačni ali brez odgovorov."
+        },
+        {
+          "label": "Opis gumba \"Poskusi ponovno\" za bralnike zaslona",
+          "default": "Omogoči ponoven poskus. Ponastavi vse odzive in znova zažene nalogo."
+        },
         {
           "label": "Obvestilo za bralnike zaslona o povratni informaciji",
           "default": "Povratna informacija"

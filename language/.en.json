@@ -39,10 +39,12 @@
             "description": "Determine how long each section is expected to be in relation to the other sections. Example: Section 1 = 1; Section 2 = 3 (triple the length of 1); Section 3 = 1 (same length as section 1)."
           },
           {
-            "label": "Background color"
+            "label": "Background color",
+            "default": "#96ceb4"
           },
           {
-            "label": "Text color"
+            "label": "Text color",
+            "default": "#1c1c1c"
           }
         ]
       }
@@ -142,12 +144,24 @@
         {
           "label": "Text for \"No section\" message",
           "default": "There was no section given for this structure strip."
+        },
+        {
+          "label": "Text for \"Submit\" button",
+          "default": "Submit"
         }
       ]
     },
     {
       "label": "Readspeaker",
       "fields": [
+        {
+          "label": "Assistive technology description for \"Check\" button",
+          "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+        },
+        {
+          "label": "Assistive technology description for \"Retry\" button",
+          "default": "Retry the task. Reset all responses and start the task over again."
+        },
         {
           "label": "Feedback (text for readspeakers)",
           "default": "Feedback"

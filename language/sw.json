@@ -1,53 +1,56 @@
 {
   "semantics": [
     {
+      "label": "Vyombo vya habari",
       "fields": [
         {
-          "description": "Vyombo vya habari vya hiari vya kuonyesha juu ya swali.",
-          "label": "Aina"
+          "label": "Aina",
+          "description": "Vyombo vya habari vya hiari vya kuonyesha juu ya swali."
         },
         {
           "label": "Zima ukuzaji wa picha"
         }
-      ],
-      "label": "Vyombo vya habari"
+      ]
     },
     {
-      "description": "Waeleze wanafunzi wako kile kinachotarajiwa kutoka kwao.",
-      "label": "Maelezo ya kazi"
+      "label": "Maelezo ya kazi",
+      "description": "Waeleze wanafunzi wako kile kinachotarajiwa kutoka kwao."
     },
     {
+      "label": "Sehemu",
       "entity": "sehemu",
+      "widgets": [
+        {
+          "label": "Chaguo-msingi"
+        }
+      ],
       "field": {
+        "label": "Vigezo vya sehemu",
         "fields": [
           {
             "label": "Mada"
           },
           {
-            "description": "Ongeza vidokezo au maagizo maalum ya sehemu hii kwa hiari.",
-            "label": "Vidokezo"
+            "label": "Vidokezo",
+            "description": "Ongeza vidokezo au maagizo maalum ya sehemu hii kwa hiari."
           },
           {
-            "description": "Ingiza uzito wa sehemu hii kuhusiana na sehemu zingine. Uzito huamua ni muda gani sehemu inatarajiwa kulinganishwa na sehemu zingine.",
-            "label": "Uzito"
+            "label": "Uzito",
+            "description": "Ingiza uzito wa sehemu hii kuhusiana na sehemu zingine. Uzito huamua ni muda gani sehemu inatarajiwa kulinganishwa na sehemu zingine."
           },
           {
-            "label": "Rangi ya Mandharinyuma"
+            "label": "Rangi ya Mandharinyuma",
+            "default": "#96ceb4"
           },
           {
-            "label": "Rangi ya maandishi"
+            "label": "Rangi ya maandishi",
+            "default": "#1c1c1c"
           }
-        ],
-        "label": "Vigezo vya sehemu"
-      },
-      "label": "Sehemu",
-      "widgets": [
-        {
-          "label": "Chaguo-msingi"
-        }
-      ]
+        ]
+      }
     },
     {
+      "label": "Mipangilio ya tabia",
       "description": "Chaguzi hizi zitakuwezesha kudhibiti jinsi kazi inavyofanya.",
       "fields": [
         {
@@ -57,20 +60,20 @@
           "label": "Washa kitufe cha \"Suluhisho\""
         },
         {
-          "description": "Asilimia ya ulegevu ambayo inakubalika kwa urefu wa sehemu.",
-          "label": "Ulegevu"
+          "label": "Ulegevu",
+          "description": "Asilimia ya ulegevu ambayo inakubalika kwa urefu wa sehemu."
         },
         {
-          "description": "Bainisha urefu wa maandishi kamili wa kima cha chini kabisa. Tafadhali kumbuka kuwa uzito wa sehemu ikilinganishwa na sehemu zingine ndiyo kiendeshi kikuu cha ujumbe wa maoni, siyo thamani hii ya chini.",
-          "label": "Urefu wa chini wa maandishi"
+          "label": "Urefu wa chini wa maandishi",
+          "description": "Bainisha urefu wa maandishi kamili wa kima cha chini kabisa. Tafadhali kumbuka kuwa uzito wa sehemu ikilinganishwa na sehemu zingine ndiyo kiendeshi kikuu cha ujumbe wa maoni, siyo thamani hii ya chini."
         },
         {
-          "description": "Bainisha urefu wa maandishi kamili wa kima cha juu kabisa. Tafadhali kumbuka kuwa uzito wa sehemu ikilinganishwa na sehemu zingine ndiyo kiendeshi kikuu cha ujumbe wa maoni, siyo thamani hii ya juu.",
-          "label": "Urefu wa juu wa maandishi"
+          "label": "Urefu wa juu wa maandishi",
+          "description": "Bainisha urefu wa maandishi kamili wa kima cha juu kabisa. Tafadhali kumbuka kuwa uzito wa sehemu ikilinganishwa na sehemu zingine ndiyo kiendeshi kikuu cha ujumbe wa maoni, siyo thamani hii ya juu."
         },
         {
-          "description": "Amua ikiwa ungependa kuonyesha maoni unapoandika au mwanafunzi anapoomba tu.",
           "label": "Njia ya maoni",
+          "description": "Amua ikiwa ungependa kuonyesha maoni unapoandika au mwanafunzi anapoomba tu.",
           "options": [
             {
               "label": "Kwa ombi"
@@ -80,91 +83,102 @@
             }
           ]
         }
-      ],
-      "label": "Mipangilio ya tabia"
+      ]
     },
     {
+      "label": "Kiolesura cha mtumiaji",
       "fields": [
         {
-          "default": "Nakili",
-          "label": "Kitufe cha maandishi ya \"nakili\""
+          "label": "Kitufe cha maandishi ya \"nakili\"",
+          "default": "Nakili"
         },
         {
-          "default": "Weka alama",
-          "label": "Maandishi ya kitufe cha \"Weka alama\""
+          "label": "Maandishi ya kitufe cha \"Weka alama\"",
+          "default": "Weka alama"
         },
         {
-          "default": "Jaribu tena",
-          "label": "Maandishi kwa kitufe cha \"Jaribu tena\""
+          "label": "Maandishi kwa kitufe cha \"Jaribu tena\"",
+          "default": "Jaribu tena"
         },
         {
-          "default": "Onyesha suluhisho",
-          "label": "Maandishi kwa kitufe cha \"Onyesha suluhisho\""
+          "label": "Maandishi kwa kitufe cha \"Onyesha suluhisho\"",
+          "default": "Onyesha suluhisho"
         },
         {
-          "default": "Urefu wa sehemu zako zote ni sawa.",
+          "label": "Sehemu zote ni nzuri",
           "description": "Maandishi ya maoni yanaonyeshwa wakati sehemu zote ni za urefu unaoweza kuvumiliwa.",
-          "label": "Sehemu zote ni nzuri"
+          "default": "Urefu wa sehemu zako zote ni sawa."
         },
         {
-          "default": "Sehemu yako \"@title\" ni fupi mno. Unahitaji angalau @charsherufi zaidi.",
+          "label": "Sehemu ni fupi mno",
           "description": "Maandishi ya maoni yanayoonyeshwa kwa sehemu ambazo ni fupi mno (@title nafasi yake itachukuliwa na kichwa cha sehemu, @charsnafasi yake itachukuliwa na idadi ya herufi zinazokosekana).",
-          "label": "Sehemu ni fupi mno"
+          "default": "Sehemu yako \"@title\" ni fupi mno. Unahitaji angalau @charsherufi zaidi."
         },
         {
-          "default": "Sehemu yako \"@title\" ni ndefu mno. Ondoa angalau@chars herufi.",
+          "label": "Sehemu ni ndefu mno",
           "description": "Maandishi ya maoni yanayoonyeshwa kwa sehemu ambazo ni ndefu mno (@title yatabadilishwa na mada ya sehemu, @charsyatabadilishwa na idadi ya herufi zinazohitaji kuondolewa).",
-          "label": "Sehemu ni ndefu mno"
+          "default": "Sehemu yako \"@title\" ni ndefu mno. Ondoa angalau@chars herufi."
         },
         {
-          "default": "@charsherufi ni fupi mno",
+          "label": "Sehemu ni fupi mno (wakati wa kuchapa)",
           "description": "Hali inayoonyeshwa wakati wa kuchapa kwa sehemu ambazo ni fupi mno (@chars nafasi yake itachukuliwa na idadi ya herufi zinazokosekana).",
-          "label": "Sehemu ni fupi mno (wakati wa kuchapa)"
+          "default": "@charsherufi ni fupi mno"
         },
         {
-          "default": "@charsherufi ni ndefu mno",
+          "label": "Sehemu ni ndefu mno (wakati wa kuchapa)",
           "description": "Hali inayoonyeshwa wakati wa kuchapa kwa sehemu ambazo ni ndefu mno (@chars nafasi yake itachukuliwa na idadi ya herufi zinazohitaji kuondolewa).",
-          "label": "Sehemu ni ndefu mno (wakati wa kuchapa)"
+          "default": "@charsherufi ni ndefu mno"
         },
         {
-          "default": "Maandishi yako yamenakiliwa kwenye ubao wa kunakili",
-          "label": "Maandishi yamenakiliwa kwenye ubao wa kunakili"
+          "label": "Maandishi yamenakiliwa kwenye ubao wa kunakili",
+          "default": "Maandishi yako yamenakiliwa kwenye ubao wa kunakili"
         },
         {
-          "default": "Maandishi yako hayakuweza kunakiliwa kwenye ubao wa kunakili",
-          "label": "Haiwezi kunakili kwenye ubao wa kunakili"
+          "label": "Haiwezi kunakili kwenye ubao wa kunakili",
+          "default": "Maandishi yako hayakuweza kunakiliwa kwenye ubao wa kunakili"
         },
         {
-          "default": "Sehemu",
-          "label": "Sehemu"
+          "label": "Sehemu",
+          "default": "Sehemu"
         },
         {
-          "default": "Hakukuwa na sehemu iliyotolewa kwa ukanda huu wa muundo.",
-          "label": "Maandishi ya ujumbe \"Hakuna sehemu\""
+          "label": "Maandishi ya ujumbe \"Hakuna sehemu\"",
+          "default": "Hakukuwa na sehemu iliyotolewa kwa ukanda huu wa muundo."
+        },
+        {
+          "label": "Maandishi ya kitufe cha \"Wasilisha\"",
+          "default": "Wasilisha"
         }
-      ],
-      "label": "Kiolesura cha mtumiaji"
+      ]
     },
     {
+      "label": "Kisoma maandishi",
       "fields": [
         {
-          "default": "Maoni",
-          "label": "Maoni (maandishi kwa visoma maandishi)"
+          "label": "Maelezo ya teknolojia ya usaidizi kwa kitufe cha \"Weka alama\"",
+          "default": "Weka alama majibu. Majibu yatatiwa alama kuwa sahihi, siyo sahihi au haijajibiwa."
         },
         {
-          "default": "Nakili maandishi kwenye ubao wa kunakili",
-          "label": "Nakili maandishi yako kwenye ubao wa kunakili (maandishi kwa visoma maandishi)"
+          "label": "Maelezo ya teknolojia ya usaidizi kwa kitufe cha \"Jaribu tena\"",
+          "default": "Jaribu tena kazi hiyo. Weka upya majibu yote na uanze kazi tena."
         },
         {
-          "default": "Funga dirisha",
-          "label": "Funga dirisha (maandishi kwa visoma maandishi)"
+          "label": "Maoni (maandishi kwa visoma maandishi)",
+          "default": "Maoni"
         },
         {
-          "default": "Onyesha vidokezo",
-          "label": "Onyesha vidokezo (maandishi kwa visoma maandishi)"
+          "label": "Nakili maandishi yako kwenye ubao wa kunakili (maandishi kwa visoma maandishi)",
+          "default": "Nakili maandishi kwenye ubao wa kunakili"
+        },
+        {
+          "label": "Funga dirisha (maandishi kwa visoma maandishi)",
+          "default": "Funga dirisha"
+        },
+        {
+          "label": "Onyesha vidokezo (maandishi kwa visoma maandishi)",
+          "default": "Onyesha vidokezo"
         }
-      ],
-      "label": "Kisoma maandishi"
+      ]
     }
   ]
 }

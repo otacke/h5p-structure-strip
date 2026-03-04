@@ -1,53 +1,56 @@
 {
   "semantics": [
     {
+      "label": "媒体",
       "fields": [
         {
-          "description": "在问题上方显示的可选媒体。",
-          "label": "类型"
+          "label": "类型",
+          "description": "在问题上方显示的可选媒体。"
         },
         {
           "label": "禁用图像缩放"
         }
-      ],
-      "label": "媒体"
+      ]
     },
     {
-      "description": "向你的学生解释你对他们的期望。",
-      "label": "任务描述"
+      "label": "任务描述",
+      "description": "向你的学生解释你对他们的期望。"
     },
     {
+      "label": "章节",
       "entity": "章节",
+      "widgets": [
+        {
+          "label": "默认"
+        }
+      ],
       "field": {
+        "label": "章节参数",
         "fields": [
           {
             "label": "标题"
           },
           {
-            "description": "可选地为本节添加提示或特定说明。",
-            "label": "提示"
+            "label": "提示",
+            "description": "可选地为本节添加提示或特定说明。"
           },
           {
-            "description": "确定每个部分相对于其他部分的预期长度。示例:Section 1 = 1;Section 2 = 3 (Section 1长度的三倍);Section 3 = 1(与Section 1长度相同)。",
-            "label": "权重"
+            "label": "权重",
+            "description": "确定每个部分相对于其他部分的预期长度。示例:Section 1 = 1;Section 2 = 3 (Section 1长度的三倍);Section 3 = 1(与Section 1长度相同)。"
           },
           {
-            "label": "背景颜色"
+            "label": "背景颜色",
+            "default": "#96ceb4"
           },
           {
-            "label": "文本颜色"
+            "label": "文本颜色",
+            "default": "#1c1c1c"
           }
-        ],
-        "label": "章节参数"
-      },
-      "label": "章节",
-      "widgets": [
-        {
-          "label": "默认"
-        }
-      ]
+        ]
+      }
     },
     {
+      "label": "行为设置",
       "description": "这些选项将允许您控制任务的行为。",
       "fields": [
         {
@@ -57,20 +60,20 @@
           "label": "启用“答案”"
         },
         {
-          "description": "延迟是一段长度的内置灵活性，以百分比计算。",
-          "label": "延迟"
+          "label": "延迟",
+          "description": "延迟是一段长度的内置灵活性，以百分比计算。"
         },
         {
-          "description": "定义绝对最小总文本长度。请注意，与其他部分相比，部分的权重是反馈信息的主要驱动因素，而不是这个最小值。",
-          "label": "最小文本长度"
+          "label": "最小文本长度",
+          "description": "定义绝对最小总文本长度。请注意，与其他部分相比，部分的权重是反馈信息的主要驱动因素，而不是这个最小值。"
         },
         {
-          "description": "定义绝对最大总文本长度。请注意，与其他部分相比，部分的权重是反馈信息的主要驱动因素，而不是这个最大值。",
-          "label": "最大文本长度"
+          "label": "最大文本长度",
+          "description": "定义绝对最大总文本长度。请注意，与其他部分相比，部分的权重是反馈信息的主要驱动因素，而不是这个最大值。"
         },
         {
-          "description": "决定是在打字时显示反馈，还是只在学生要求时显示反馈。",
           "label": "反馈模式",
+          "description": "决定是在打字时显示反馈，还是只在学生要求时显示反馈。",
           "options": [
             {
               "label": "按要求"
@@ -80,91 +83,102 @@
             }
           ]
         }
-      ],
-      "label": "行为设置"
+      ]
     },
     {
+      "label": "用户界面",
       "fields": [
         {
-          "default": "复制",
-          "label": "“复制”按钮的文本"
+          "label": "“复制”按钮的文本",
+          "default": "复制"
         },
         {
-          "default": "检查",
-          "label": "“检查”按钮的文本"
+          "label": "“检查”按钮的文本",
+          "default": "检查"
         },
         {
-          "default": "重试",
-          "label": "“重试”按钮的文本"
+          "label": "“重试”按钮的文本",
+          "default": "重试"
         },
         {
-          "default": "显示答案",
-          "label": "“显示答案”按钮的文本"
+          "label": "“显示答案”按钮的文本",
+          "default": "显示答案"
         },
         {
-          "default": "你的章节长度都合适。",
+          "label": "所有章节准备好",
           "description": "当所有章节的长度都可以接受时，会显示反馈文本。",
-          "label": "所有章节准备好"
+          "default": "你的章节长度都合适。"
         },
         {
-          "default": "你的章节“@主题”太短了。你至少需要@chars更多的字符。",
+          "label": "章节太短",
           "description": "对于太短的章节显示的反馈文本(@title将被部分标题替换，@chars将被缺失的字符数替换)。",
-          "label": "章节太短"
+          "default": "你的章节“@主题”太短了。你至少需要@chars更多的字符。"
         },
         {
-          "default": "你的section“@title”太长了。删除至少@字符。",
+          "label": "部分过长",
           "description": "对于太长的章节显示的反馈文本(@title将被章节标题替换，@chars将被需要删除的字符数量替换)。",
-          "label": "部分过长"
+          "default": "你的section“@title”太长了。删除至少@字符。"
         },
         {
-          "default": "@chars字符太短",
+          "label": "章节太短(打字时)",
           "description": "键入太短的章节时显示的状态(@chars将被缺少的字符数替换)。",
-          "label": "章节太短(打字时)"
+          "default": "@chars字符太短"
         },
         {
-          "default": "@chars字符太长",
+          "label": "节太长(打字时)",
           "description": "键入太长的章节时显示的状态(@chars将被需要删除的字符数量所替换)。",
-          "label": "节太长(打字时)"
+          "default": "@chars字符太长"
         },
         {
-          "default": "您的文本被复制到剪贴板",
-          "label": "文本复制到剪贴板"
+          "label": "文本复制到剪贴板",
+          "default": "您的文本被复制到剪贴板"
         },
         {
-          "default": "无法将文本复制到剪贴板",
-          "label": "无法复制到剪贴板"
+          "label": "无法复制到剪贴板",
+          "default": "无法将文本复制到剪贴板"
         },
         {
-          "default": "章节",
-          "label": "章节"
+          "label": "章节",
+          "default": "章节"
         },
         {
-          "default": "没有给出这个结构条的章节。",
-          "label": "“无章节”消息的文本"
+          "label": "“无章节”消息的文本",
+          "default": "没有给出这个结构条的章节。"
+        },
+        {
+          "label": "Text for \"Submit\" button",
+          "default": "Submit"
         }
-      ],
-      "label": "用户界面"
+      ]
     },
     {
+      "label": "朗读器",
       "fields": [
         {
-          "default": "反馈意见",
-          "label": "反馈(供读者阅读的文本)"
+          "label": "Assistive technology description for \"Check\" button",
+          "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
         },
         {
-          "default": "复制文本到剪贴板",
-          "label": "将您的文本复制到剪贴板上(用于朗读器的文本)"
+          "label": "Assistive technology description for \"Retry\" button",
+          "default": "Retry the task. Reset all responses and start the task over again."
         },
         {
-          "default": "关闭窗口",
-          "label": "关闭窗口(用于朗读器的文本)"
+          "label": "反馈(供读者阅读的文本)",
+          "default": "反馈意见"
         },
         {
-          "default": "显示提示",
-          "label": "显示提示(供朗读者使用的文本)"
+          "label": "将您的文本复制到剪贴板上(用于朗读器的文本)",
+          "default": "复制文本到剪贴板"
+        },
+        {
+          "label": "关闭窗口(用于朗读器的文本)",
+          "default": "关闭窗口"
+        },
+        {
+          "label": "显示提示(供朗读者使用的文本)",
+          "default": "显示提示"
         }
-      ],
-      "label": "朗读器"
+      ]
     }
   ]
 }

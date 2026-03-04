@@ -13,7 +13,7 @@ export default class StructureStrip extends H5P.Question {
    * @param {object} [extras] Saved state, metadata, etc.
    */
   constructor(params, contentId, extras = {}) {
-    super('structure-strip');
+    super('structure-strip', { theme: true });
 
     /*
      * this.params.behaviour.enableSolutionsButton and this.params.behaviour.enableRetry
@@ -157,21 +157,9 @@ export default class StructureStrip extends H5P.Question {
     // Register Buttons
     this.addButtons();
 
-    // Wait for content DOM to be completed to handle DOM initialization
-    if (document.readyState === 'complete') {
-      window.requestAnimationFrame(() => {
-        this.handleDOMInitialized();
-      });
-    }
-    else {
-      document.addEventListener('readystatechange', () => {
-        if (document.readyState === 'complete') {
-          window.requestAnimationFrame(() => {
-            this.handleDOMInitialized();
-          });
-        }
-      });
-    }
+    Util.callOnceVisible(this.content.getDOM(), () => {
+      this.handleDOMInitialized();
+    });
 
     this.on('resize', () => {
       this.content.resize();
@@ -189,27 +177,46 @@ export default class StructureStrip extends H5P.Question {
 
     // Check answer button
     if (this.params.behaviour.feedbackMode === 'onRequest') {
-      this.addButton('check-answer', this.params.l10n.checkAnswer, () => {
-        const feedback = this.content.checkAnswer();
-        this.setFeedback(
-          feedback,
-          null,
-          null,
-          this.params.a11y.feedback,
-        );
+      this.addButton(
+        'check-answer',
+        this.params.l10n.checkAnswer, () => {
+          const feedback = this.content.checkAnswer();
+          this.setFeedback(
+            feedback,
+            null,
+            null,
+            this.params.a11y.feedback,
+          );
 
-        this.hideButton('check-answer');
+          this.hideButton('check-answer');
 
-        if (this.params.behaviour.enableRetry) {
-          this.showButton('try-again');
-        }
-      }, true, {}, {});
+          if (this.params.behaviour.enableRetry) {
+            this.showButton('try-again');
+          }
+        },
+        true,
+        { 'aria-label': this.params.a11y.check }, // TODO: add to semantics
+        {
+          contentData: this.extras,
+          textIfSubmitting: this.params.l10n.submitAnswer, // TODO: add to semantics
+          icon: 'check',
+        },
+      );
     }
 
     // Retry button
-    this.addButton('try-again', this.params.l10n.tryAgain, () => {
-      this.retry();
-    }, false, {}, {});
+    this.addButton(
+      'try-again',
+      this.params.l10n.tryAgain, () => {
+        this.retry();
+      },
+      false,
+      { 'aria-label': this.params.a11y.retry }, // TODO: add to semantics
+      {
+        icon: 'retry',
+        styleType: 'secondary',
+      },
+    );
 
     /*
      * Only add copy button if browser supports it
@@ -230,25 +237,33 @@ export default class StructureStrip extends H5P.Question {
 
     if (canWriteToClipboard) {
       // Copy to clipboard button
-      this.addButton('copy', this.params.l10n.copy, () => {
-        const text = this.content.getText(true);
-        Util.copyTextToClipboard(text, (result) => {
-          const button = this.buttonCopy;
-          const message = (result === true) ?
-            this.params.l10n.copyToClipboardSuccess :
-            this.params.l10n.copyToClipboardError;
+      this.addButton(
+        'copy',
+        this.params.l10n.copy, () => {
+          const text = this.content.getText(true);
+          Util.copyTextToClipboard(text, (result) => {
+            const button = this.buttonCopy;
+            const message = (result === true) ?
+              this.params.l10n.copyToClipboardSuccess :
+              this.params.l10n.copyToClipboardError;
 
-          this.read(message);
+            this.read(message);
 
-          H5P.attachToastTo(button, message, { position: {
-            horizontal: 'after',
-            noOverflowRight: true,
-            offsetHorizontal: 10,
-            offsetVertical: -5,
-            vertical: 'centered',
-          } });
-        });
-      }, true, { 'aria-label': this.params.l10n.copyToClipboard }, {});
+            H5P.attachToastTo(button, message, { position: {
+              horizontal: 'right',
+              noOverflowRight: true,
+              offsetVertical: 2,
+              vertical: 'above',
+            } });
+          });
+        },
+        true,
+        { 'aria-label': this.params.l10n.copyToClipboard },
+        {
+          icon: 'copy',
+          styleType: 'secondary',
+        },
+      );
     }
   }
 
@@ -426,7 +441,7 @@ export default class StructureStrip extends H5P.Question {
    */
   handleDOMInitialized() {
     this.container = Util.closestParent(this.content.getDOM(), '.h5p-question.h5p-structure-strip');
-    this.buttonCopy = this.container.querySelector('.h5p-question-copy');
+    this.buttonCopy = this.container.querySelector('.h5p-theme-button.h5p-theme-copy');
 
     this.content.setContainer(this.container);
   }

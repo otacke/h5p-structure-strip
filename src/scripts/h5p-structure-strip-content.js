@@ -1,6 +1,7 @@
 import Overlay from '@scripts/h5p-structure-strip-overlay.js';
 import StructureStripSection from '@scripts/h5p-structure-strip-section.js';
 import Util from '@services/util.js';
+import './h5p-structure-strip-content.scss';
 
 /** Class representing the content */
 export default class StructureStripContent {

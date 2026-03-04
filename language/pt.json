@@ -1,53 +1,56 @@
 {
   "semantics": [
     {
+      "label": "Mídia",
       "fields": [
         {
-          "description": "Mídia opcional para exibir acima da pergunta.",
-          "label": "Tipo"
+          "label": "Tipo",
+          "description": "Mídia opcional para exibir acima da pergunta."
         },
         {
           "label": "Desactivar o zoom da imagem"
         }
-      ],
-      "label": "Mídia"
+      ]
     },
     {
-      "description": "Explique aos seus alunos o que se espera deles.",
-      "label": "Descrição da tarefa"
+      "label": "Descrição da tarefa",
+      "description": "Explique aos seus alunos o que se espera deles."
     },
     {
+      "label": "Secções",
       "entity": "secção",
+      "widgets": [
+        {
+          "label": "Padrão"
+        }
+      ],
       "field": {
+        "label": "Parâmetros de secção",
         "fields": [
           {
             "label": "Título"
           },
           {
-            "description": "Opcionalmente, adicione dicas ou instruções específicas para esta secção.",
-            "label": "Dicas"
+            "label": "Dicas",
+            "description": "Opcionalmente, adicione dicas ou instruções específicas para esta secção."
           },
           {
-            "description": "Insira o peso desta secção em relação a outras secções. O peso determina quanto tempo uma secção é esperada em comparação com outras secções.",
-            "label": "Peso"
+            "label": "Peso",
+            "description": "Insira o peso desta secção em relação a outras secções. O peso determina quanto tempo uma secção é esperada em comparação com outras secções."
           },
           {
-            "label": "Cor de fundo"
+            "label": "Cor de fundo",
+            "default": "#96ceb4"
           },
           {
-            "label": "Cor do texto"
+            "label": "Cor do texto",
+            "default": "#1c1c1c"
           }
-        ],
-        "label": "Parâmetros de secção"
-      },
-      "label": "Secções",
-      "widgets": [
-        {
-          "label": "Padrão"
-        }
-      ]
+        ]
+      }
     },
     {
+      "label": "Configurações comportamentais",
       "description": "Essas opções permitem controlar como a tarefa se comportará.",
       "fields": [
         {
@@ -57,20 +60,20 @@
           "label": "Activar \"Solução\""
         },
         {
-          "description": "Percentagem de folga aceitável para o comprimento de uma secção.",
-          "label": "Folga"
+          "label": "Folga",
+          "description": "Percentagem de folga aceitável para o comprimento de uma secção."
         },
         {
-          "description": "Defina um comprimento total mínimo absoluto do texto. Observe que o peso de uma secção em comparação com outras secções é o principal fator para a mensagem de feedback, não este valor mínimo.",
-          "label": "Comprimento mínimo do texto"
+          "label": "Comprimento mínimo do texto",
+          "description": "Defina um comprimento total mínimo absoluto do texto. Observe que o peso de uma secção em comparação com outras secções é o principal fator para a mensagem de feedback, não este valor mínimo."
         },
         {
-          "description": "Defina um comprimento total máximo absoluto do texto. Observe que o peso de uma secção em comparação com outras secções é o principal fator para a mensagem de feedback, não este valor máximo.",
-          "label": "Comprimento máxima do texto"
+          "label": "Comprimento máxima do texto",
+          "description": "Defina um comprimento total máximo absoluto do texto. Observe que o peso de uma secção em comparação com outras secções é o principal fator para a mensagem de feedback, não este valor máximo."
         },
         {
-          "description": "Decida se deseja exibir feedback enquanto digita ou apenas quando o aluno solicita.",
           "label": "Modo de feedback",
+          "description": "Decida se deseja exibir feedback enquanto digita ou apenas quando o aluno solicita.",
           "options": [
             {
               "label": "A pedido"
@@ -80,91 +83,102 @@
             }
           ]
         }
-      ],
-      "label": "Configurações comportamentais"
+      ]
     },
     {
+      "label": "Interface de utilizador",
       "fields": [
         {
-          "default": "Copiar",
-          "label": "Texto para o botão \"Copiar\""
+          "label": "Texto para o botão \"Copiar\"",
+          "default": "Copiar"
         },
         {
-          "default": "Verificar",
-          "label": "Texto do botão \"Verificar\""
+          "label": "Texto do botão \"Verificar\"",
+          "default": "Verificar"
         },
         {
-          "default": "Tentar novamente",
-          "label": "Texto do botão \"Tentar Novamente\""
+          "label": "Texto do botão \"Tentar Novamente\"",
+          "default": "Tentar novamente"
         },
         {
-          "default": "Mostrar solução",
-          "label": "Texto para o botão \"Mostrar solução\""
+          "label": "Texto para o botão \"Mostrar solução\"",
+          "default": "Mostrar solução"
         },
         {
-          "default": "Os comprimentos de suas secções estão de acordo.",
+          "label": "Todas as secções estão boas",
           "description": "Texto de feedback exibido quando todas as secções têm comprimento aceitável.",
-          "label": "Todas as secções estão boas"
+          "default": "Os comprimentos de suas secções estão de acordo."
         },
         {
-          "default": "Sua secção \"@title\" é muito curta. Precisa de pelo menos @chars mais caracteres.",
+          "label": "Secção muito curta",
           "description": "Texto de feedback mostrado para secções muito curtas (@title será substituído pelo título da secção, @chars será substituído pelo número de caracteres ausentes).",
-          "label": "Secção muito curta"
+          "default": "Sua secção \"@title\" é muito curta. Precisa de pelo menos @chars mais caracteres."
         },
         {
-          "default": "Sua secção \"@title\" é muito longa. Remova pelo menos @chars caracteres.",
+          "label": "Secção muito longa",
           "description": "Texto de feedback mostrado para secções muito longas (@title será substituído pelo título da secção, @chars será substituído pelo número de caracteres que precisam ser removidos).",
-          "label": "Secção muito longa"
+          "default": "Sua secção \"@title\" é muito longa. Remova pelo menos @chars caracteres."
         },
         {
-          "default": "@chars é uma quantidade pequena de caracteres",
+          "label": "Secção muito curta (ao digitar)",
           "description": "Status mostrado ao digitar secções muito curtas (@chars será substituído pelo número de caracteres ausentes).",
-          "label": "Secção muito curta (ao digitar)"
+          "default": "@chars é uma quantidade pequena de caracteres"
         },
         {
-          "default": "@chars são muitos caracteres",
+          "label": "Secção muito longa (ao digitar)",
           "description": "Status mostrado ao digitar secções muito longas (@chars será substituído pelo número de caracteres que precisam ser removidos).",
-          "label": "Secção muito longa (ao digitar)"
+          "default": "@chars são muitos caracteres"
         },
         {
-          "default": "O seu texto foi copiado para a área de transferência",
-          "label": "Texto copiado para a área de transferência"
+          "label": "Texto copiado para a área de transferência",
+          "default": "O seu texto foi copiado para a área de transferência"
         },
         {
-          "default": "O seu texto não pode ser copiado para a área de transferência",
-          "label": "Não é possível copiar para a área de transferência"
+          "label": "Não é possível copiar para a área de transferência",
+          "default": "O seu texto não pode ser copiado para a área de transferência"
         },
         {
-          "default": "Secção",
-          "label": "Secção"
+          "label": "Secção",
+          "default": "Secção"
         },
         {
-          "default": "Não foi dada nenhuma secção para esta faixa de estrutura.",
-          "label": "Texto para a mensagem \"Nenhuma secção\""
+          "label": "Texto para a mensagem \"Nenhuma secção\"",
+          "default": "Não foi dada nenhuma secção para esta faixa de estrutura."
+        },
+        {
+          "label": "Texto do botão \"Enviar\"",
+          "default": "Enviar"
         }
-      ],
-      "label": "Interface de utilizador"
+      ]
     },
     {
+      "label": "ReadSpeaker",
       "fields": [
         {
-          "default": "Feedback",
-          "label": "Feedback (texto para leitores de tela)"
+          "label": "Descrição da tecnologia de assistência para o botão \"Verificar\"",
+          "default": "Verifique as respostas. As respostas serão marcadas como correctas, incorrectas, ou sem resposta."
         },
         {
-          "default": "Copiar texto para a área de transferência",
-          "label": "Copie seu texto para a área de transferência (texto para leitores de tela)"
+          "label": "Descrição da tecnologia de assistência para o botão \"Tentar Novamente\"",
+          "default": "Tente realizar a tarefa novamente. Redefinir todas as respostas e recomece."
         },
         {
-          "default": "Fechar janela",
-          "label": "Fechar janela (texto para leitores de tela)"
+          "label": "Feedback (texto para leitores de tela)",
+          "default": "Feedback"
         },
         {
-          "default": "Mostrar dicas",
-          "label": "Mostrar dicas (texto para leitores de tela)"
+          "label": "Copie seu texto para a área de transferência (texto para leitores de tela)",
+          "default": "Copiar texto para a área de transferência"
+        },
+        {
+          "label": "Fechar janela (texto para leitores de tela)",
+          "default": "Fechar janela"
+        },
+        {
+          "label": "Mostrar dicas (texto para leitores de tela)",
+          "default": "Mostrar dicas"
         }
-      ],
-      "label": "ReadSpeaker"
+      ]
     }
   ]
 }

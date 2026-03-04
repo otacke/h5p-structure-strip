@@ -1,53 +1,56 @@
 {
   "semantics": [
     {
+      "label": "Medios",
       "fields": [
         {
-          "description": "Medios opcionales mostrados encima de la pregunta.",
-          "label": "Tipo"
+          "label": "Tipo",
+          "description": "Medios opcionales mostrados encima de la pregunta."
         },
         {
           "label": "Deshabilitar acercamiento de imagen"
         }
-      ],
-      "label": "Medios"
+      ]
     },
     {
-      "description": "Explica a tus alumnos lo que se espera de ellos.",
-      "label": "Descripción de la tarea"
+      "label": "Descripción de la tarea",
+      "description": "Explica a tus alumnos lo que se espera de ellos."
     },
     {
+      "label": "Secciones",
       "entity": "sección",
+      "widgets": [
+        {
+          "label": "Por defecto"
+        }
+      ],
       "field": {
+        "label": "Parámetros de sección",
         "fields": [
           {
             "label": "Título"
           },
           {
-            "description": "Opcionalmente, añade pistas o instrucciones particulares para esta sección.",
-            "label": "Pistas"
+            "label": "Pistas",
+            "description": "Opcionalmente, añade pistas o instrucciones particulares para esta sección."
           },
           {
-            "description": "Determine que tan larga se espera que sea cada sección con relación a las otras secciones. Ejemplo: Sección 1 = 1; Sección 2 = 3 (el triple de largo de 1); Sección 3 = 1 (mismo largo que sección 1).",
-            "label": "Ponderación"
+            "label": "Ponderación",
+            "description": "Determine que tan larga se espera que sea cada sección con relación a las otras secciones. Ejemplo: Sección 1 = 1; Sección 2 = 3 (el triple de largo de 1); Sección 3 = 1 (mismo largo que sección 1)."
           },
           {
-            "label": "Color del fondo"
+            "label": "Color del fondo",
+            "default": "#96ceb4"
           },
           {
-            "label": "Color del texto"
+            "label": "Color del texto",
+            "default": "#1c1c1c"
           }
-        ],
-        "label": "Parámetros de sección"
-      },
-      "label": "Secciones",
-      "widgets": [
-        {
-          "label": "Por defecto"
-        }
-      ]
+        ]
+      }
     },
     {
+      "label": "Configuraciones del comportamiento",
       "description": "Estas opciones le permitirán controlar cómo se comporta la tarea.",
       "fields": [
         {
@@ -57,20 +60,20 @@
           "label": "Habilitar \"Solución\""
         },
         {
-          "description": "La holgura es flexibilidad incorporada de una sección, calculada en porcentaje.",
-          "label": "Holgura"
+          "label": "Holgura",
+          "description": "La holgura es flexibilidad incorporada de una sección, calculada en porcentaje."
         },
         {
-          "description": "Define una longitud absoluta mínima total del texto. Por favor, ten en cuenta que la ponderación de una sección comparada con otras secciones es la principal causa del mensaje de retroalimentación, no este valor mínimo.",
-          "label": "Longitud mínima del texto"
+          "label": "Longitud mínima del texto",
+          "description": "Define una longitud absoluta mínima total del texto. Por favor, ten en cuenta que la ponderación de una sección comparada con otras secciones es la principal causa del mensaje de retroalimentación, no este valor mínimo."
         },
         {
-          "description": "Define una longitud máxima absoluta total del texto.Por favor tenga en cuenta que la ponderación de una sección comparada con otras secciones es la principal causa del mensaje de retroalimentación, no este valor máximo.",
-          "label": "Longitud máxima del texto"
+          "label": "Longitud máxima del texto",
+          "description": "Define una longitud máxima absoluta total del texto.Por favor tenga en cuenta que la ponderación de una sección comparada con otras secciones es la principal causa del mensaje de retroalimentación, no este valor máximo."
         },
         {
-          "description": "Decide si quieres mostrar retroalimentación mientras se escribe o solamente cuando el alumno lo solicita.",
           "label": "Modo de retroalimentación",
+          "description": "Decide si quieres mostrar retroalimentación mientras se escribe o solamente cuando el alumno lo solicita.",
           "options": [
             {
               "label": "Cuando se solicita"
@@ -80,91 +83,102 @@
             }
           ]
         }
-      ],
-      "label": "Configuraciones del comportamiento"
+      ]
     },
     {
+      "label": "Interfaz del usuario",
       "fields": [
         {
-          "default": "Copiar",
-          "label": "Texto para botón \"Copiar\""
+          "label": "Texto para botón \"Copiar\"",
+          "default": "Copiar"
         },
         {
-          "default": "Comprobar",
-          "label": "Texto para botón \"Comprobar\""
+          "label": "Texto para botón \"Comprobar\"",
+          "default": "Comprobar"
         },
         {
-          "default": "Intentar de nuevo",
-          "label": "Texto para el botón \"Intentar de nuevo\""
+          "label": "Texto para el botón \"Intentar de nuevo\"",
+          "default": "Intentar de nuevo"
         },
         {
-          "default": "Mostrar solución",
-          "label": "Texto para botón \"Mostrar solución\""
+          "label": "Texto para botón \"Mostrar solución\"",
+          "default": "Mostrar solución"
         },
         {
-          "default": "Las longitudes de tus secciones están todas bien.",
+          "label": "Todas las secciones están bien",
           "description": "Texto de retroalimentación mostrado cuando todas las secciones tienen una longitud tolerable.",
-          "label": "Todas las secciones están bien"
+          "default": "Las longitudes de tus secciones están todas bien."
         },
         {
-          "default": "Tu sección \"@title\" es demasiado corta. Necesitas al menos @chars caracteres más.",
+          "label": "Sección demasiado corta",
           "description": "Texto de retroalimentación mostrado para secciones que son demasiado cortas (@title será reemplazado por el título de la sección, @chars por el número de caracteres que faltan).",
-          "label": "Sección demasiado corta"
+          "default": "Tu sección \"@title\" es demasiado corta. Necesitas al menos @chars caracteres más."
         },
         {
-          "default": "Tu sección \"@title\" es demasiado larga. Quita al menos @chars caracteres.",
+          "label": "Sección demasiado larga",
           "description": "Texto de retroalimentación mostrado para secciones que son demasiado largas (@title será reemplazado por el título de la sección, @chars por el número de caracteres que hay que quitar).",
-          "label": "Sección demasiado larga"
+          "default": "Tu sección \"@title\" es demasiado larga. Quita al menos @chars caracteres."
         },
         {
-          "default": "faltan @chars caracteres",
+          "label": "Sección demasiado corta (al escribir)",
           "description": "Estado mostrado al escribir para secciones que son demasiado cortas (@chars será reemplazado por el número de caracteres que faltan).",
-          "label": "Sección demasiado corta (al escribir)"
+          "default": "faltan @chars caracteres"
         },
         {
-          "default": "sobran @chars caracteres",
+          "label": "Sección demasiado larga (al escribir)",
           "description": "Estado mostrado al escribir para secciones que son demasiado largas (@chars será reemplazado por el número de caracteres que es necesario quitar).",
-          "label": "Sección demasiado larga (al escribir)"
+          "default": "sobran @chars caracteres"
         },
         {
-          "default": "Tu texto se copió al portapapeles",
-          "label": "Texto copiado al portapapeles"
+          "label": "Texto copiado al portapapeles",
+          "default": "Tu texto se copió al portapapeles"
         },
         {
-          "default": "Tu texto no se pudo copiar al portapapeles",
-          "label": "No se puede copiar al portapapeles"
+          "label": "No se puede copiar al portapapeles",
+          "default": "Tu texto no se pudo copiar al portapapeles"
         },
         {
-          "default": "Sección",
-          "label": "Sección"
+          "label": "Sección",
+          "default": "Sección"
         },
         {
-          "default": "No se ha proporcionado una sección para esta tira de estructura.",
-          "label": "Texto para mensaje \"No hay sección\""
+          "label": "Texto para mensaje \"No hay sección\"",
+          "default": "No se ha proporcionado una sección para esta tira de estructura."
+        },
+        {
+          "label": "Texto para el botón \"Enviar\"",
+          "default": "Enviar"
         }
-      ],
-      "label": "Interfaz del usuario"
+      ]
     },
     {
+      "label": "Lector de pantalla",
       "fields": [
         {
-          "default": "Retroalimentación",
-          "label": "Retroalimentación (texto para lector de pantalla)"
+          "label": "Descripción para las tecnologías de asistencia del botón \"Comprobar\"",
+          "default": "Comprueba las respuestas. Las respuestas se marcarán como correctas, incorrectas o sin respuesta."
         },
         {
-          "default": "Copiar texto al portapapeles",
-          "label": "Copiar tu texto al portapapeles (texto para lector de pantalla)"
+          "label": "Descripción para las tecnologías de asistencia del botón \"Intentar de nuevo\"",
+          "default": "Vuelve a intentar la tarea. Borra todas tus respuestas y empieza de nuevo."
         },
         {
-          "default": "Cerrar ventana",
-          "label": "Cerrar ventana (texto para lector de pantalla)"
+          "label": "Retroalimentación (texto para lector de pantalla)",
+          "default": "Retroalimentación"
         },
         {
-          "default": "Mostrar pistas",
-          "label": "Mostrar pistas (texto para lector de pantalla)"
+          "label": "Copiar tu texto al portapapeles (texto para lector de pantalla)",
+          "default": "Copiar texto al portapapeles"
+        },
+        {
+          "label": "Cerrar ventana (texto para lector de pantalla)",
+          "default": "Cerrar ventana"
+        },
+        {
+          "label": "Mostrar pistas (texto para lector de pantalla)",
+          "default": "Mostrar pistas"
         }
-      ],
-      "label": "Lector de pantalla"
+      ]
     }
   ]
 }

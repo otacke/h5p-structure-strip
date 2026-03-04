@@ -1,53 +1,56 @@
 {
   "semantics": [
     {
+      "label": "Media",
       "fields": [
         {
-          "description": "Optionele media om boven de vraag weer te geven.",
-          "label": "Type"
+          "label": "Type",
+          "description": "Optionele media om boven de vraag weer te geven."
         },
         {
           "label": "Beeld zoomen uitschakelen"
         }
-      ],
-      "label": "Media"
+      ]
     },
     {
-      "description": "Beschrijf aan je studenten wat er van hen wordt verwacht.",
-      "label": "Taakomschrijving"
+      "label": "Taakomschrijving",
+      "description": "Beschrijf aan je studenten wat er van hen wordt verwacht."
     },
     {
+      "label": "Paragrafen",
       "entity": "paragraaf",
+      "widgets": [
+        {
+          "label": "Standaard"
+        }
+      ],
       "field": {
+        "label": "Paragraafinstellingen",
         "fields": [
           {
             "label": "Titel"
           },
           {
-            "description": "Optioneel hints of bijzondere aanwijzingen toevoegen voor deze paragraaf.",
-            "label": "Hints"
+            "label": "Hints",
+            "description": "Optioneel hints of bijzondere aanwijzingen toevoegen voor deze paragraaf."
           },
           {
-            "description": "Bepaal hoe lang iedere paragraaf ten opzichte van andere paragrafen moet zijn. Bijvoorbeeld: paragraaf 1 = 1; paragraaf 2 = 3 (drie keer de lengte van 1); paragraaf 3 = 1 (zelfde lengte als paragraaf 1).",
-            "label": "Gewicht"
+            "label": "Gewicht",
+            "description": "Bepaal hoe lang iedere paragraaf ten opzichte van andere paragrafen moet zijn. Bijvoorbeeld: paragraaf 1 = 1; paragraaf 2 = 3 (drie keer de lengte van 1); paragraaf 3 = 1 (zelfde lengte als paragraaf 1)."
           },
           {
-            "label": "Achtergrondkleur"
+            "label": "Achtergrondkleur",
+            "default": "#96ceb4"
           },
           {
-            "label": "Tekstkleur"
+            "label": "Tekstkleur",
+            "default": "#1c1c1c"
           }
-        ],
-        "label": "Paragraafinstellingen"
-      },
-      "label": "Paragrafen",
-      "widgets": [
-        {
-          "label": "Standaard"
-        }
-      ]
+        ]
+      }
     },
     {
+      "label": "Gedragsinstellingen",
       "description": "Met deze opties kun je bepalen hoe de taak zich gedraagt.",
       "fields": [
         {
@@ -57,20 +60,20 @@
           "label": "Schakel \"Oplossing\" in"
         },
         {
-          "description": "Percentage speelruimte dat nog acceptabel is voor de paragraaflengte.",
-          "label": "Speelruimte"
+          "label": "Speelruimte",
+          "description": "Percentage speelruimte dat nog acceptabel is voor de paragraaflengte."
         },
         {
-          "description": "Bepaal een absolute minimale tekstlengte. Denk eraan dat het gewicht van een paragraaf vergeleken met andere paragrafen de belangrijkste aanleiding is voor het feedback-bericht, niet deze minimumwaarde.",
-          "label": "Minimale tekstlengte"
+          "label": "Minimale tekstlengte",
+          "description": "Bepaal een absolute minimale tekstlengte. Denk eraan dat het gewicht van een paragraaf vergeleken met andere paragrafen de belangrijkste aanleiding is voor het feedback-bericht, niet deze minimumwaarde."
         },
         {
-          "description": "Bepaal een absolute maximale tekstlengte. Denk eraan dat het gewicht van een paragraaf vergeleken met andere paragrafen de belangrijkste aanleiding is voor het feedback-bericht, niet deze maximumwaarde.",
-          "label": "Maximale tekstlengte"
+          "label": "Maximale tekstlengte",
+          "description": "Bepaal een absolute maximale tekstlengte. Denk eraan dat het gewicht van een paragraaf vergeleken met andere paragrafen de belangrijkste aanleiding is voor het feedback-bericht, niet deze maximumwaarde."
         },
         {
-          "description": "Beslis of je feedback wilt weergeven tijdens het typen of wanneer de student er om vraagt.",
           "label": "Feedbackmodus",
+          "description": "Beslis of je feedback wilt weergeven tijdens het typen of wanneer de student er om vraagt.",
           "options": [
             {
               "label": "Op verzoek"
@@ -80,91 +83,102 @@
             }
           ]
         }
-      ],
-      "label": "Gedragsinstellingen"
+      ]
     },
     {
+      "label": "Gebruikersinterface",
       "fields": [
         {
-          "default": "Kopiëren",
-          "label": "Tekst voor \"Kopieer\"-knop"
+          "label": "Tekst voor \"Kopieer\"-knop",
+          "default": "Kopiëren"
         },
         {
-          "default": "Controleer",
-          "label": "Tekst voor \"Controleer\"-knop"
+          "label": "Tekst voor \"Controleer\"-knop",
+          "default": "Controleer"
         },
         {
-          "default": "Opnieuw",
-          "label": "Tekst voor \"Opnieuw\"-knop"
+          "label": "Tekst voor \"Opnieuw\"-knop",
+          "default": "Opnieuw"
         },
         {
-          "default": "Toon oplossing",
-          "label": "Tekst voor \"Toon oplossing\"-knop"
+          "label": "Tekst voor \"Toon oplossing\"-knop",
+          "default": "Toon oplossing"
         },
         {
-          "default": "Je paragrafen hebben allemaal een goede lengte.",
+          "label": "Alle paragrafen goed",
           "description": "Feedbacktekst die getoond wordt wanneer alle paragrafen van acceptabele lengte zijn.",
-          "label": "Alle paragrafen goed"
+          "default": "Je paragrafen hebben allemaal een goede lengte."
         },
         {
-          "default": "Je paragraaf \"@title\" is te kort. Je moet minstens @chars meer tekens gebruiken.",
+          "label": "Paragraaf te kort",
           "description": "Feedbacktekst die getoond wordt voor te korte paragrafen (@title wordt vervangen door paragraaftitel, @chars wordt vervangen door aantal ontbrekende tekens).",
-          "label": "Paragraaf te kort"
+          "default": "Je paragraaf \"@title\" is te kort. Je moet minstens @chars meer tekens gebruiken."
         },
         {
-          "default": "Je paragraaf \"@title\" is te lang. Verwijder minstens @char tekens.",
+          "label": "Paragraaf te lang",
           "description": "Feedbacktekst die getoond wordt voor te lange paragrafen (@title wordt vervangen door de paragraaftitel, @chars wordt vervangen door het aantal overvloedige tekens).",
-          "label": "Paragraaf te lang"
+          "default": "Je paragraaf \"@title\" is te lang. Verwijder minstens @char tekens."
         },
         {
-          "default": "@chars tekens te weinig",
+          "label": "Paragraaf te kort (tijdens typen)",
           "description": "Status die tijdens typen getoond wordt voor paragrafen die te kort zijn (@chars wordt vervangen door aantal ontbrekende tekens).",
-          "label": "Paragraaf te kort (tijdens typen)"
+          "default": "@chars tekens te weinig"
         },
         {
-          "default": "@chars tekens te veel",
+          "label": "Paragraaf te lang (tijdens typen)",
           "description": "Status die tijdens typen getoond wordt voor paragrafen die te lang zijn (@chars wordt vervangen door aantal overvloedige tekens).",
-          "label": "Paragraaf te lang (tijdens typen)"
+          "default": "@chars tekens te veel"
         },
         {
-          "default": "Je tekst is gekopieerd naar het klembord",
-          "label": "Tekst gekopieerd naar klembord"
+          "label": "Tekst gekopieerd naar klembord",
+          "default": "Je tekst is gekopieerd naar het klembord"
         },
         {
-          "default": "Je tekst kon niet naar het klembord worden gekopieerd",
-          "label": "Kan niet naar het klembord kopiëren"
+          "label": "Kan niet naar het klembord kopiëren",
+          "default": "Je tekst kon niet naar het klembord worden gekopieerd"
         },
         {
-          "default": "Paragraaf",
-          "label": "Paragraaf"
+          "label": "Paragraaf",
+          "default": "Paragraaf"
         },
         {
-          "default": "Er is geen paragraaf opgegeven voor deze structuurstrip.",
-          "label": "Tekst van \"Geen paragraaf\"-bericht"
+          "label": "Tekst van \"Geen paragraaf\"-bericht",
+          "default": "Er is geen paragraaf opgegeven voor deze structuurstrip."
+        },
+        {
+          "label": "Tekst voor \"Verzend\"-knop",
+          "default": "Verzend"
         }
-      ],
-      "label": "Gebruikersinterface"
+      ]
     },
     {
+      "label": "Schermlezer",
       "fields": [
         {
-          "default": "Feedback",
-          "label": "Feedback (tekst voor schermlezers)"
+          "label": "Ondersteunende technologie beschrijving voor \"Controleer\"-knop",
+          "default": "Controleer de antwoorden. De antwoorden worden gemarkeerd als juist, onjuist, of niet-beantwoord."
         },
         {
-          "default": "Kopieer tekst naar klembord",
-          "label": "Kopieer je tekst naar het klembord (tekst voor schermlezers)"
+          "label": "Ondersteunende technologie beschrijving voor \"Opnieuw\"-knop",
+          "default": "Probeer de taak opnieuw. Reset alle antwoorden en start de taak opnieuw."
         },
         {
-          "default": "Scherm sluiten",
-          "label": "Scherm sluiten (tekst voor schermlezers)"
+          "label": "Feedback (tekst voor schermlezers)",
+          "default": "Feedback"
         },
         {
-          "default": "Toon hints",
-          "label": "Toon hints (tekst voor schermlezers)"
+          "label": "Kopieer je tekst naar het klembord (tekst voor schermlezers)",
+          "default": "Kopieer tekst naar klembord"
+        },
+        {
+          "label": "Scherm sluiten (tekst voor schermlezers)",
+          "default": "Scherm sluiten"
+        },
+        {
+          "label": "Toon hints (tekst voor schermlezers)",
+          "default": "Toon hints"
         }
-      ],
-      "label": "Schermlezer"
+      ]
     }
   ]
 }

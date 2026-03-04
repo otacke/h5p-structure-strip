@@ -39,10 +39,12 @@
             "description": "Determinați cât de lungă se așteaptă să fie fiecare secțiune în raport cu celelalte. Exemplu: Secțiunea 1 = 1; Secțiunea 2 = 3 (de trei ori lungimea secțiunii 1); Secțiunea 3 = 1 (aceeași lungime ca secțiunea 1)."
           },
           {
-            "label": "Culoare de fundal"
+            "label": "Culoare de fundal",
+            "default": "#96ceb4"
           },
           {
-            "label": "Culoare text"
+            "label": "Culoare text",
+            "default": "#1c1c1c"
           }
         ]
       }
@@ -142,12 +144,24 @@
         {
           "label": "Text pentru mesajul „Nicio secțiune”",
           "default": "Nu a fost dată nicio secțiune pentru această bandă de structură."
+        },
+        {
+          "label": "Text for \"Submit\" button",
+          "default": "Submit"
         }
       ]
     },
     {
       "label": "Cititor de ecran",
       "fields": [
+        {
+          "label": "Assistive technology description for \"Check\" button",
+          "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+        },
+        {
+          "label": "Assistive technology description for \"Retry\" button",
+          "default": "Retry the task. Reset all responses and start the task over again."
+        },
         {
           "label": "Feedback (text pentru cititoarele de ecran)",
           "default": "Feedback"

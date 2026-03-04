@@ -1,53 +1,56 @@
 {
   "semantics": [
     {
+      "label": "Multivide",
       "fields": [
         {
-          "description": "Papildu multimedijs, kuru atspoguļot virs jautājuma.",
-          "label": "Tips"
+          "label": "Tips",
+          "description": "Papildu multimedijs, kuru atspoguļot virs jautājuma."
         },
         {
           "label": "Atspējot attēla tālummaiņu"
         }
-      ],
-      "label": "Multivide"
+      ]
     },
     {
-      "description": "Izskaidrojiet saviem izglītojamajiem, ko no viņiem sagaida.",
-      "label": "Uzdevuma apraksts"
+      "label": "Uzdevuma apraksts",
+      "description": "Izskaidrojiet saviem izglītojamajiem, ko no viņiem sagaida."
     },
     {
+      "label": "Paragrāfi",
       "entity": "paragrāfs",
+      "widgets": [
+        {
+          "label": "Pēc noklusējuma"
+        }
+      ],
       "field": {
+        "label": "Paragrāfu parametri",
         "fields": [
           {
             "label": "Nosaukums"
           },
           {
-            "description": "Ja vēlaties pievienojiet šai sadaļai padomus vai īpašus norādījumus.",
-            "label": "Padomi"
+            "label": "Padomi",
+            "description": "Ja vēlaties pievienojiet šai sadaļai padomus vai īpašus norādījumus."
           },
           {
-            "description": "Ievadiet šī paragrāfa garumu attiecībā pret citiem paragrāfiem. Piemēram: Paragrāfs 1 = 1; Paragrāfs 2 = 3 (trīs reizes garāks nekā 1); Paragrāfs 3 = 1 (tikpat garš kā 1. paragrāfs).",
-            "label": "Svars"
+            "label": "Svars",
+            "description": "Ievadiet šī paragrāfa garumu attiecībā pret citiem paragrāfiem. Piemēram: Paragrāfs 1 = 1; Paragrāfs 2 = 3 (trīs reizes garāks nekā 1); Paragrāfs 3 = 1 (tikpat garš kā 1. paragrāfs)."
           },
           {
-            "label": "Fona krāsa"
+            "label": "Fona krāsa",
+            "default": "#96ceb4"
           },
           {
-            "label": "Teksta krāsa"
+            "label": "Teksta krāsa",
+            "default": "#1c1c1c"
           }
-        ],
-        "label": "Paragrāfu parametri"
-      },
-      "label": "Paragrāfi",
-      "widgets": [
-        {
-          "label": "Pēc noklusējuma"
-        }
-      ]
+        ]
+      }
     },
     {
+      "label": "Uzvedības iestatītjumi",
       "description": "Šie parametri ļaus jums kontrolēt uzdevuma uzvedību.",
       "fields": [
         {
@@ -57,20 +60,20 @@
           "label": "Iespējot \"Risinājums\""
         },
         {
-          "description": "Vaļīgums ir iebūvēta sadaļas garuma elastība, kas aprēķināta procentos.",
-          "label": "Bezdarbība"
+          "label": "Bezdarbība",
+          "description": "Vaļīgums ir iebūvēta sadaļas garuma elastība, kas aprēķināta procentos."
         },
         {
-          "description": "Norādiet absolūto minimālo kopējo teksta garumu. Lūdzu, ņemiet vērā, atgriezeniskās saites ziņojuma virzītājspēks ir nevis šī minimālā vērtība, bet paragrāfa svars salīdzinājumā ar citiem paragrāfiem.",
-          "label": "Minimālais teksta garums"
+          "label": "Minimālais teksta garums",
+          "description": "Norādiet absolūto minimālo kopējo teksta garumu. Lūdzu, ņemiet vērā, atgriezeniskās saites ziņojuma virzītājspēks ir nevis šī minimālā vērtība, bet paragrāfa svars salīdzinājumā ar citiem paragrāfiem."
         },
         {
-          "description": "Norādiet absolūto maksimālo kopējo teksta garumu. Lūdzu, ņemiet vērā, atgriezeniskās saites ziņojuma virzītājspēks ir nevis šī maksimālā vērtība, bet paragrāfa svars salīdzinājumā ar citiem paragrāfiem.",
-          "label": "Maksimālais teksta garums"
+          "label": "Maksimālais teksta garums",
+          "description": "Norādiet absolūto maksimālo kopējo teksta garumu. Lūdzu, ņemiet vērā, atgriezeniskās saites ziņojuma virzītājspēks ir nevis šī maksimālā vērtība, bet paragrāfa svars salīdzinājumā ar citiem paragrāfiem."
         },
         {
-          "description": "Izlemiet, vai vēlaties rādīt atgriezenisko saiti rakstīšanas laikā vai tikai tad, kad izglītojamais to pieprasa.",
           "label": "Atgriezeniskās saites režīms",
+          "description": "Izlemiet, vai vēlaties rādīt atgriezenisko saiti rakstīšanas laikā vai tikai tad, kad izglītojamais to pieprasa.",
           "options": [
             {
               "label": "Pēc pieprasījuma"
@@ -80,91 +83,102 @@
             }
           ]
         }
-      ],
-      "label": "Uzvedības iestatītjumi"
+      ]
     },
     {
+      "label": "Lietotāja saskarne",
       "fields": [
         {
-          "default": "Kopēt",
-          "label": "Pogas \"Kopēt\" teksts"
+          "label": "Pogas \"Kopēt\" teksts",
+          "default": "Kopēt"
         },
         {
-          "default": "Pārbaudīt",
-          "label": "Pogas \"Pārbaudīt\" teksts"
+          "label": "Pogas \"Pārbaudīt\" teksts",
+          "default": "Pārbaudīt"
         },
         {
-          "default": "Mēģināt vēlreiz",
-          "label": "Pogas \"Mēģināt vēlreiz\" teksts"
+          "label": "Pogas \"Mēģināt vēlreiz\" teksts",
+          "default": "Mēģināt vēlreiz"
         },
         {
-          "default": "Rādīt risinājumu",
-          "label": "Pogas \"Parādīt risinājumu\" teksts"
+          "label": "Pogas \"Parādīt risinājumu\" teksts",
+          "default": "Rādīt risinājumu"
         },
         {
-          "default": "Jūsu paragrāfu garums ir atbilstošs.",
+          "label": "Visi paragrāfi labi",
           "description": "Atgriezeniskās saites teksts tiek rādīts, kad visi paragrāfi ir pieļaujamā garumā.",
-          "label": "Visi paragrāfi labi"
+          "default": "Jūsu paragrāfu garums ir atbilstošs."
         },
         {
-          "default": "Jūsu paragrāfs \"@title\" ir pārāk īss. Nepieciešamas vēl vismaz @chars rakstzīmes.",
+          "label": "Paragrāfs ir pārāk īss",
           "description": "Pārāk īsiem paragrāfiem tiek rādīts atgriezeniskās saites teksts (@title tiks aizstāts ar sadaļas nosaukumu, @chars tiks aizstāts ar trūkstošo rakstzīmju skaitu).",
-          "label": "Paragrāfs ir pārāk īss"
+          "default": "Jūsu paragrāfs \"@title\" ir pārāk īss. Nepieciešamas vēl vismaz @chars rakstzīmes."
         },
         {
-          "default": "Jūsu paragrāfs \"@title\" ir pārāk garš. Dzēsiet vismaz @chars rakstzīmes.",
+          "label": "Paragrāfs ir pārāk garš",
           "description": "Pārāk gariem paragrāfiem tiek rādīts atgriezeniskās saites teksts (@title tiks aizstāts ar sadaļas nosaukumu, @chars tiks aizstāts ar pārsniegto rakstzīmju skaitu).",
-          "label": "Paragrāfs ir pārāk garš"
+          "default": "Jūsu paragrāfs \"@title\" ir pārāk garš. Dzēsiet vismaz @chars rakstzīmes."
         },
         {
-          "default": "Pietrūkst @chars rakstzīmju",
+          "label": "Paragrāfs ir pārāk īss (rakstot)",
           "description": "Statuss, kas tiek parādīts, rakstot pārāk īsas sadaļas (@chars tiks aizstātas ar trūkstošo rakstzīmju skaitu).",
-          "label": "Paragrāfs ir pārāk īss (rakstot)"
+          "default": "Pietrūkst @chars rakstzīmju"
         },
         {
-          "default": "Pārsniedz par @chars rakstzīmēm",
+          "label": "Paragrāfs ir pārāk garš (rakstot)",
           "description": "Statuss, kas tiek parādīts, rakstot pārāk garus paragrāfus (@chars tiks aizstātas ar pārsniegto rakstzīmju skaitu).",
-          "label": "Paragrāfs ir pārāk garš (rakstot)"
+          "default": "Pārsniedz par @chars rakstzīmēm"
         },
         {
-          "default": "Jūsu teksts tika kopēts starplikā",
-          "label": "Teksts nokopēt uz starpliku"
+          "label": "Teksts nokopēt uz starpliku",
+          "default": "Jūsu teksts tika kopēts starplikā"
         },
         {
-          "default": "Jūsu tekstu neizdevās iekopēt starplikā",
-          "label": "Neizdevās kopēt uz starpliku"
+          "label": "Neizdevās kopēt uz starpliku",
+          "default": "Jūsu tekstu neizdevās iekopēt starplikā"
         },
         {
-          "default": "Paragrāfs",
-          "label": "Paragrāfs"
+          "label": "Paragrāfs",
+          "default": "Paragrāfs"
         },
         {
-          "default": "Šai struktūras daļai netika pievienots paragrāfs.",
-          "label": "Teksts ziņojumam \"Nav paragrāfa\""
+          "label": "Teksts ziņojumam \"Nav paragrāfa\"",
+          "default": "Šai struktūras daļai netika pievienots paragrāfs."
+        },
+        {
+          "label": "Pogas \"Iesniegt\" teksts",
+          "default": "Iesniegt"
         }
-      ],
-      "label": "Lietotāja saskarne"
+      ]
     },
     {
+      "label": "Ekrāna lasītājs",
       "fields": [
         {
-          "default": "Atgriezeniskā saite",
-          "label": "Atgriezeniskā saite (teksts ekrāna lasītājiem)"
+          "label": "Pogas \"Pārbaudīt\" apraksts priekš asistējošajām tehnoloģijām",
+          "default": "Pārbaudīt atbildes. Sniegtās atbildes tiks atzīmētas kā pareizas, nepareizas, vai neatbildētas."
         },
         {
-          "default": "Kopēt tekstu uz starpliku",
-          "label": "Kopēt tekstu starplikā (teksts ekrāna lasītājiem)"
+          "label": "Pogas \"Mēģināt vēlreiz\" apraksts priekš asistīvajām tehnoloģijām",
+          "default": "Mēģiniet uzdevumu vēlreiz. Dzēst visas iesniegtās atbildes un sākt uzdevumu no sākuma."
         },
         {
-          "default": "Aizvērt logu",
-          "label": "Aizvērt logu (teksts ekrāna lasītājiem)"
+          "label": "Atgriezeniskā saite (teksts ekrāna lasītājiem)",
+          "default": "Atgriezeniskā saite"
         },
         {
-          "default": "Rādīt padomus",
-          "label": "Rādīt padomus (teksts ekrāna lasītājiem)"
+          "label": "Kopēt tekstu starplikā (teksts ekrāna lasītājiem)",
+          "default": "Kopēt tekstu uz starpliku"
+        },
+        {
+          "label": "Aizvērt logu (teksts ekrāna lasītājiem)",
+          "default": "Aizvērt logu"
+        },
+        {
+          "label": "Rādīt padomus (teksts ekrāna lasītājiem)",
+          "default": "Rādīt padomus"
         }
-      ],
-      "label": "Ekrāna lasītājs"
+      ]
     }
   ]
 }

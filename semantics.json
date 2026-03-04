@@ -386,6 +386,13 @@
         "type": "text",
         "importance": "low",
         "default": "There was no section given for this structure strip."
+      },
+      {
+        "name": "submitAnswer",
+        "type": "text",
+        "label": "Text for \"Submit\" button",
+        "importance": "low",
+        "default": "Submit"
       }
     ]
   },
@@ -396,6 +403,20 @@
     "label": "Readspeaker",
     "importance": "low",
     "fields": [
+      {
+        "name": "check",
+        "type": "text",
+        "label": "Assistive technology description for \"Check\" button",
+        "importance": "low",
+        "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      },
+      {
+        "name": "retry",
+        "type": "text",
+        "label": "Assistive technology description for \"Retry\" button",
+        "importance": "low",
+        "default": "Retry the task. Reset all responses and start the task over again."
+      },
       {
         "name": "feedback",
         "type": "text",

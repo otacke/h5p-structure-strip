@@ -39,12 +39,10 @@
             "description": "Ingiza uzito wa sehemu hii kuhusiana na sehemu zingine. Uzito huamua ni muda gani sehemu inatarajiwa kulinganishwa na sehemu zingine."
           },
           {
-            "label": "Rangi ya Mandharinyuma",
-            "default": "#96ceb4"
+            "label": "Rangi ya Mandharinyuma"
           },
           {
-            "label": "Rangi ya maandishi",
-            "default": "#1c1c1c"
+            "label": "Rangi ya maandishi"
           }
         ]
       }

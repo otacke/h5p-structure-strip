@@ -39,12 +39,10 @@
             "description": "Ievadiet šī paragrāfa garumu attiecībā pret citiem paragrāfiem. Piemēram: Paragrāfs 1 = 1; Paragrāfs 2 = 3 (trīs reizes garāks nekā 1); Paragrāfs 3 = 1 (tikpat garš kā 1. paragrāfs)."
           },
           {
-            "label": "Fona krāsa",
-            "default": "#96ceb4"
+            "label": "Fona krāsa"
           },
           {
-            "label": "Teksta krāsa",
-            "default": "#1c1c1c"
+            "label": "Teksta krāsa"
           }
         ]
       }

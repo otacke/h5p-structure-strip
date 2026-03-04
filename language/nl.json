@@ -39,12 +39,10 @@
             "description": "Bepaal hoe lang iedere paragraaf ten opzichte van andere paragrafen moet zijn. Bijvoorbeeld: paragraaf 1 = 1; paragraaf 2 = 3 (drie keer de lengte van 1); paragraaf 3 = 1 (zelfde lengte als paragraaf 1)."
           },
           {
-            "label": "Achtergrondkleur",
-            "default": "#96ceb4"
+            "label": "Achtergrondkleur"
           },
           {
-            "label": "Tekstkleur",
-            "default": "#1c1c1c"
+            "label": "Tekstkleur"
           }
         ]
       }

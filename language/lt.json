@@ -39,12 +39,10 @@
             "description": "Nustatykite, kokio ilgio turėtų būti kiekvienas skyrius kitų skyrių atžvilgiu. Pavyzdys: 1 skyrius = 1; 2 skyrius = 3 (trigubas 1 ilgis); 3 skyrius = 1 (toks pat ilgis kaip ir 1 dalis)."
           },
           {
-            "label": "Fono spalva",
-            "default": "#96ceb4"
+            "label": "Fono spalva"
           },
           {
-            "label": "Teksto spalva",
-            "default": "#1c1c1c"
+            "label": "Teksto spalva"
           }
         ]
       }

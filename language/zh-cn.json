@@ -39,12 +39,10 @@
             "description": "确定每个部分相对于其他部分的预期长度。示例:Section 1 = 1;Section 2 = 3 (Section 1长度的三倍);Section 3 = 1(与Section 1长度相同)。"
           },
           {
-            "label": "背景颜色",
-            "default": "#96ceb4"
+            "label": "背景颜色"
           },
           {
-            "label": "文本颜色",
-            "default": "#1c1c1c"
+            "label": "文本颜色"
           }
         ]
       }

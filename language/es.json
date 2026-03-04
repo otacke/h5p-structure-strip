@@ -39,12 +39,10 @@
             "description": "Determine que tan larga se espera que sea cada sección con relación a las otras secciones. Ejemplo: Sección 1 = 1; Sección 2 = 3 (el triple de largo de 1); Sección 3 = 1 (mismo largo que sección 1)."
           },
           {
-            "label": "Color del fondo",
-            "default": "#96ceb4"
+            "label": "Color del fondo"
           },
           {
-            "label": "Color del texto",
-            "default": "#1c1c1c"
+            "label": "Color del texto"
           }
         ]
       }

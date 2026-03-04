@@ -39,12 +39,10 @@
             "description": "Lege fest, wie lang ein Abschnitt im Verhältnis zu den anderen Abschnitten sein soll. Beispiel: Abschnitt 1 = 1; Abschnitt 2 = 3 (dreifache Länge von 1); Abschnitt 3 = 1 (dieselbe Länge wie 1)."
           },
           {
-            "label": "Hintergrundfarbe",
-            "default": "#96ceb4"
+            "label": "Hintergrundfarbe"
           },
           {
-            "label": "Textfarbe",
-            "default": "#1c1c1c"
+            "label": "Textfarbe"
           }
         ]
       }

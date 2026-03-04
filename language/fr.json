@@ -39,12 +39,10 @@
             "description": "Saisir le poids de cette section par rapport aux autres sections. Le poids détermine la longueur qu'une section est censée avoir par rapport aux autres sections."
           },
           {
-            "label": "Couleur de fond",
-            "default": "#96ceb4"
+            "label": "Couleur de fond"
           },
           {
-            "label": "Couleur du texte",
-            "default": "#1c1c1c"
+            "label": "Couleur du texte"
           }
         ]
       }

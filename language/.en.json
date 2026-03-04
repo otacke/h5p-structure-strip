@@ -39,12 +39,10 @@
             "description": "Determine how long each section is expected to be in relation to the other sections. Example: Section 1 = 1; Section 2 = 3 (triple the length of 1); Section 3 = 1 (same length as section 1)."
           },
           {
-            "label": "Background color",
-            "default": "#96ceb4"
+            "label": "Background color"
           },
           {
-            "label": "Text color",
-            "default": "#1c1c1c"
+            "label": "Text color"
           }
         ]
       }

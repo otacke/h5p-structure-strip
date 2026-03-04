@@ -39,12 +39,10 @@
             "description": "Insira o peso desta seção em relação a outras seções. O peso determina quanto tempo uma seção é esperada em comparação com outras seções."
           },
           {
-            "label": "Cor de fundo",
-            "default": "#96ceb4"
+            "label": "Cor de fundo"
           },
           {
-            "label": "Cor do texto",
-            "default": "#1c1c1c"
+            "label": "Cor do texto"
           }
         ]
       }

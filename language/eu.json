@@ -39,12 +39,10 @@
             "description": "Zehaztu atal honen beste atalekiko pisua. Pisuak atal batek beste atalekin konparatuz duen tamaina zehazten du."
           },
           {
-            "label": "Atzeko planoko kolorea",
-            "default": "#96ceb4"
+            "label": "Atzeko planoko kolorea"
           },
           {
-            "label": "Testuaren kolorea",
-            "default": "#1c1c1c"
+            "label": "Testuaren kolorea"
           }
         ]
       }
